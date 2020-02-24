@@ -32,8 +32,18 @@ git checkout branch-to-merge-into
 git merge branch-wanted-to-be-merged
 ```
 
+* Angular:
+
+```ng serve```
+
 ### Branch structure
 
+\* master
+| \
+|  * develop
+|  |\
+|  | \
+|  |  * feature 
 
 ### Technologies used
 
@@ -42,3 +52,5 @@ git merge branch-wanted-to-be-merged
 * Bootstrap: 4.4.1
 
 ## Usage
+
+Internal 
