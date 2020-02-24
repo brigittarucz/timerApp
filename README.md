@@ -38,12 +38,14 @@ git merge branch-wanted-to-be-merged
 
 ### Branch structure
 
+<pre>
 \* master
 | \
 |  * develop
 |  |\
 |  | \
 |  |  * feature 
+</pre>
 
 ### Technologies used
 
