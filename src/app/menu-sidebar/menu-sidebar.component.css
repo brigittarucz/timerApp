@@ -1,0 +1,15 @@
+.navigation__profile-icon-container {
+  width: 48px;
+  height: 48px;
+  background-color: aquamarine;
+  border-radius: 32px;
+  border: 1px solid black;
+}
+
+.navigation__profile-icon {
+  all: unset;
+}
+
+hr {
+  width: 100%;
+}
