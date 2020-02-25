@@ -10,6 +10,10 @@
   cursor: pointer;
 }
 
+.navigation__menu-icon:hover {
+  cursor: pointer;
+}
+
 .navigation__profile-icon {
   all: unset;
 }

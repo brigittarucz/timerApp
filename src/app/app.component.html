@@ -1,5 +1,10 @@
 <header>
-  <app-navigation-bar></app-navigation-bar>
-<app-menu-sidebar></app-menu-sidebar>
-
+<app-navigation-bar (menuClick)="openMenu($event)"></app-navigation-bar>
 </header>
+<aside>
+<app-menu-sidebar [ngClass]="clickFromNav === true ? 'sidebar-animation-open' : 'sidebar-animation-close'" 
+ [boolVal]="clickFromNav" 
+ style="position: absolute; top:0;"
+ [style.display]="initialDisplay"
+ (sidebarClick)="closeMenu($event)"></app-menu-sidebar>
+</aside>

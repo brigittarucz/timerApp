@@ -1,1 +1,30 @@
+ul {
+  list-style-type: none;
+}
 
+.navigation__profile-icon-container {
+  width: 48px;
+  height: 48px;
+  background-color: aquamarine;
+  border-radius: 32px;
+  border: 1px solid black;
+}
+
+.navigation__profile-icon-container:hover {
+  cursor: pointer;
+}
+
+.navigation__profile-icon {
+  all: unset;
+}
+
+.icon-sidebar::before {
+  content: url(../../assets/navbar-icon-dummy.PNG);
+  width: 32px;
+  height: 32px;
+}
+
+.align-content {
+  display: flex;
+  align-items: center;
+}
