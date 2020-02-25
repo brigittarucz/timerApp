@@ -6,8 +6,19 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: [ './menu-sidebar.component.css' ]
 })
 export class MenuSidebarComponent implements OnInit {
-	blue = 'blue';
+	toggleNav = false;
+	displayNav = 'none';
+
 	constructor() {}
+
+	toggleNavbar() {
+		this.toggleNav = !this.toggleNav;
+		if (this.toggleNav) {
+			this.displayNav = 'block';
+		} else {
+			this.displayNav = 'none';
+		}
+	}
 
 	ngOnInit(): void {}
 }

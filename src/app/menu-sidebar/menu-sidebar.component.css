@@ -6,6 +6,10 @@
   border: 1px solid black;
 }
 
+.navigation__profile-icon-container:hover {
+  cursor: pointer;
+}
+
 .navigation__profile-icon {
   all: unset;
 }

@@ -4,11 +4,12 @@
   </a>
   <button class="navigation__profile-icon float-right navbar-toggler" 
   type="button" 
+  (click)="toggleNavbar()"
   >
     <div class="navigation__profile-icon-container">
     </div> 
   </button>
-  <div class="collapse navbar-collapse" style="display:block">
+  <div class="collapse navbar-collapse" style="display:block" [style.display]="displayNav">
     <div class="navbar-nav">
     <hr class="mt-2 mb-2"> 
       <p class="navigation__profile-username text-4 text-center"> Alex D </p>
