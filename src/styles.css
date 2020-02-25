@@ -1,1 +1,71 @@
 /* You can add global styles to this file, and also import other style files */
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: var(--grey-color);
+}
+
+/* General colors */
+
+:root {
+  --grey-color: #727272;
+  --blue-color: #4B87AD;
+  --light-mint-color: #A6ECDD;
+  --turqoise-color: #4FDABC;
+  --pine-green-color: #47A89B;
+  --white-color: #F8F8F8;
+  --generic-shadow: 0px 3px 10px #4E4D4D;
+}
+
+/* Fonts Import */
+
+@font-face {
+  font-family: 'MontserratRegular';
+  src: url(./assets/fonts/Montserrat-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'MontserratMedium';
+  src: url(./assets/fonts/Montserrat-Medium.ttf);
+}
+
+@font-face {
+  font-family: 'MontserratSemiBold';
+  src: url(./assets/fonts/Montserrat-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: 'MontserratBold';
+  src: url(./assets/fonts/Montserrat-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'RobotoLight';
+  src: url(./assets/fonts/Roboto-Light.ttf);
+}
+
+/* Typography */
+
+.text-1 {}
+
+.text-2 {}
+
+.text-3 {}
+
+.text-4_regular {
+  font-family: 'MontserratRegular';
+  font-size: 1.8rem;
+}
+
+.text-4 {
+  font-family: 'MontserratSemiBold';
+  font-size: 1.8rem;
+}
+
+.text-5 {
+  font-family: 'MontserratRegular';
+  font-size: 1.5rem;
+}

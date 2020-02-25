@@ -1,3 +1,5 @@
+/* Animations Sidebar */
+
 .sidebar-animation-close {
   animation: moveOutOfView 1s 1 forwards;
 }
