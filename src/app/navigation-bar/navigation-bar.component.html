@@ -1,6 +1,9 @@
 <nav class="navbar navbar-light bg-light">
   <a class="navigation__menu-icon" (click)="toggleSidebar()">
-    <img src="../../assets/menu-icon-dummy.png" width="32" height="32" alt="Menu Icon">
+    <img src="../../assets/header/burgermenu-icon.png" width="32" height="22" alt="Menu Icon">
+  </a>
+  <a class="navbar-brand float-left navigation__logo-icon" href="#">
+    <img src="../../assets/header/logo.png" width="150" alt="Wiredelta">
   </a>
   <button class="navigation__profile-icon float-right navbar-toggler" 
   type="button" 
@@ -9,7 +12,7 @@
     <div class="navigation__profile-icon-container">
     </div> 
   </button>
-  <div class="collapse navbar-collapse" style="display:block" [style.display]="displayNav">
-    <app-profile-quickview> </app-profile-quickview>
-  </div>
 </nav>
+<div class="collapse navbar-collapse" style="display:block;" [style.display]="displayNav">
+  <app-profile-quickview> </app-profile-quickview>
+</div>

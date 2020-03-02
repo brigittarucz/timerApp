@@ -1,14 +1,9 @@
 <nav class="navbar navbar-light bg-light">
   <a class="navigation__menu-icon">
-    <img src="../../assets/close-icon-dummy.png" width="32" height="32" alt="Menu Icon" (click)="closeSidebar()">
+    <img src="../../assets/cross-icon.png" width="24" height="24" alt="Menu Icon" (click)="closeSidebar()">
   </a>
-  <button class="navigation__profile-icon float-right navbar-toggler" 
-  type="button" 
-  (click)="toggleNavbar()"
-  >
     <div class="navigation__profile-icon-container">
     </div> 
-  </button>
   <div class="collapse navbar-collapse" style="display:block" [style.display]="displayNav">
     <app-profile-quickview> </app-profile-quickview>
   </div>
@@ -19,24 +14,24 @@
   <li class="list-group-item">
   <p class="text-4"> User </p>
   <ul>
-    <li class="text-5 align-content"> <span class="icon-sidebar pr-2 icon_tracking"> </span>Tracking </li>
-    <li class="text-5 align-content"> <span class="icon-sidebar pr-2 icon_user-history"> </span>User History </li>
-    <li class="text-5 align-content"> <span class="icon-sidebar pr-2 icon_activity"> </span>Activity </li>
+    <li class="text-5 align-content"> <span class="icon-sidebar pr-4 icon_tracking"> </span>Tracking </li>
+    <li class="text-5 align-content"> <span class="icon-sidebar pr-4 icon_user-history"> </span>User History </li>
+    <li class="text-5 align-content"> <span class="icon-sidebar pr-4 icon_activity"> </span>Activity </li>
   </ul>
   </li>
   <li class="list-group-item"> 
   <p class="text-4"> Projects</p>
   <ul>
-    <li class="text-5 align-content"> <span class="icon-sidebar pr-2 icon_project-history"> </span>Project History</li>
+    <li class="text-5 align-content"> <span class="icon-sidebar pr-4 icon_project-history"> </span>Project History</li>
   </ul>
   </li>
   <li class="list-group-item"> 
   <p class="text-4"> Admin </p>
   <ul>
-    <li class="text-5 align-content"> <span class="icon-sidebar pr-2 icon_form-setting"> </span>Form Setting </li>
-    <li class="text-5 align-content"> <span class="icon-sidebar pr-2 icon_users"> </span>Users </li>
-    <li class="text-5 align-content"> <span class="icon-sidebar pr-2 icon_clients-projects"> </span>Clients & Projects </li>
-    <li class="text-5 align-content"> <span class="icon-sidebar pr-2 icon_user-access"> </span>User Access </li>
+    <li class="text-5 align-content"> <span class="icon-sidebar pr-4 icon_form-setting"> </span>Form Setting </li>
+    <li class="text-5 align-content"> <span class="icon-sidebar pr-4 icon_users"> </span>Users </li>
+    <li class="text-5 align-content"> <span class="icon-sidebar pr-4 icon_clients-projects"> </span>Clients & Projects </li>
+    <li class="text-5 align-content"> <span class="icon-sidebar pr-4 icon_user-access"> </span>User Access </li>
   </ul>
   </li>
   </ul>

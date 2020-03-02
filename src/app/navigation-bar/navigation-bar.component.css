@@ -6,6 +6,10 @@
   border: 1px solid black;
 }
 
+nav {
+  box-shadow: var(--soft-shadow);
+}
+
 .navigation__profile-icon-container:hover {
   cursor: pointer;
 }
@@ -20,4 +24,19 @@
 
 hr {
   width: 100%;
+}
+
+.navigation__logo-icon {
+  display: none;
+}
+
+.navbar-collapse {
+  overflow-x: hidden;
+}
+
+@media screen and (min-width: 600px) {
+  .navigation__logo-icon {
+    display: block;
+    margin-left: -70%;
+  }
 }
