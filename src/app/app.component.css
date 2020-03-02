@@ -44,5 +44,6 @@
 
   .sidebar-desktop {
     display: block;
+    width: 80px;
   }
 }

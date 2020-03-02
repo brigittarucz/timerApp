@@ -1,28 +1,7 @@
-<div class="sidebar__quick-navigation">
-  <a href="#">
-    <span class="icon-sidebar pr-4 icon_tracking"></span>
-  </a>
-  <a href="#">
-    <span class="icon-sidebar pr-4 icon_user-history"> </span>
-  </a>
-  <a href="#">
-    <span class="icon-sidebar pr-4 icon_activity"> </span>
-  </a>
-  <hr>
-  <a href="#">
-    <span class="icon-sidebar pr-4 icon_project-history"> </span>
-  </a>
-  <hr>
-  <a href="#">
-    <span class="icon-sidebar pr-4 icon_form-setting"> </span>
-  </a>
-  <a href="#">
-    <span class="icon-sidebar pr-4 icon_users"> </span>
-  </a>
-  <a href="#">
-    <span class="icon-sidebar pr-4 icon_clients-projects"> </span>
-  </a>
-  <a href="#">
-    <span class="icon-sidebar pr-4 icon_user-access"> </span>
+<div class="sidebar__quick-navigation" *ngFor="let class of classesArr; let i = index"> 
+  <a href="#" (click)="onSelect($event)" [class.active]="class === selectedButton">
+    <div [ngStyle]="class === selectedButton && {'background-color': 'var(--blue-color)', 'border-radius': '60px'}"> 
+    <span class="icon-sidebar pr-4 {{class}}" [ngStyle]="class === selectedButton && {'background-image': 'url(../../assets/navigation/' + classesImgArr[i] + '-white.png)'}"></span>
+    </div>
   </a>
 </div>
