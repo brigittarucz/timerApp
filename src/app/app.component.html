@@ -1,10 +1,13 @@
 <header>
-<app-navigation-bar (menuClick)="openMenu($event)"></app-navigation-bar>
+  <app-navigation-bar (menuClick)="openMenu($event)"></app-navigation-bar>
 </header>
 <aside>
-<app-menu-sidebar [ngClass]="clickFromNav === true ? 'sidebar-animation-open' : 'sidebar-animation-close'" 
- [boolVal]="clickFromNav" 
- style="position: absolute; top:0;"
- [style.display]="initialDisplay"
- (sidebarClick)="closeMenu($event)"></app-menu-sidebar>
+  <div class="sidebar-mobile">
+    <app-menu-sidebar [ngClass]="clickFromNav === true ? 'sidebar-animation-open' : 'sidebar-animation-close'"
+      [boolVal]="clickFromNav" style="position: absolute; top:0;" [style.display]="initialDisplay"
+      (sidebarClick)="closeMenu($event)"></app-menu-sidebar>
+  </div>
+  <div class="sidebar-desktop">
+    <app-menu-sidebar-desktop> </app-menu-sidebar-desktop>
+  </div>
 </aside>

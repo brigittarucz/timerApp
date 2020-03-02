@@ -1,7 +1,6 @@
 .navbar-nav {
   width: 100%;
   background-color: var(--white-color);
-  box-shadow: var(--soft-shadow);
 }
 
 .navigation__profile-controls div {
@@ -40,9 +39,12 @@
   .navbar-nav {
     width: 380px;
     background-color: var(--white-color);
-    margin-left: calc(100% - 370px);
+    margin-left: calc(100% - 380px);
     padding: 10px;
     margin-bottom: 10px;
+    box-shadow: var(--soft-shadow);
+    position: absolute;
+    overflow-x: hidden;
   }
 
   .navigation__profile-image {

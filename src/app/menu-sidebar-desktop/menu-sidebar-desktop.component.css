@@ -1,21 +1,10 @@
-ul {
-  list-style-type: none;
+.sidebar__quick-navigation {
+  width: 70px;
 }
 
-.navbar {
-  z-index: 4;
-}
-
-.navigation__profile-icon-container {
-  width: 48px;
-  height: 48px;
-  background-color: aquamarine;
-  border-radius: 32px;
-  border: 1px solid black;
-}
-
-.navigation__profile-icon {
-  all: unset;
+.sidebar__quick-navigation *:not(hr) {
+  display: block;
+  padding: 10px;
 }
 
 .icon-sidebar::before {
@@ -58,51 +47,4 @@ ul {
 
 .icon_user-access::before {
   background-image: url(../../assets/navigation/useraccess-icon-resized.png);
-}
-
-.align-content {
-  display: flex;
-  align-items: center;
-}
-
-.menu-option {
-  margin-top: 15px;
-}
-
-@media screen and (min-width: 800px) {
-  .navbar {
-    display: none;
-  }
-
-  .menu {
-    z-index: 2;
-    margin-top: 58px;
-    width: 300px;
-    background-color: white;
-  }
-
-  .menu__list-options {
-    height: calc(100vh - 58px);
-    overflow-y: hidden;
-    box-shadow: var(--soft-shadow);
-  }
-
-  ul,
-  li {
-    margin-top: auto;
-    margin-bottom: auto;
-  }
-
-  .list-group-item {
-    border: none;
-  }
-
-  .list-group-item:nth-of-type(1) {
-    border-bottom: 1px solid rgba(0, 0, 0, .125);
-  }
-
-  .list-group-item:nth-of-type(3) {
-    border-top: 1px solid rgba(0, 0, 0, .125);
-  }
-
 }

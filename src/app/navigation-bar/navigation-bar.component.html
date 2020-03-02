@@ -1,6 +1,6 @@
-<nav class="navbar navbar-light bg-light">
-  <a class="navigation__menu-icon" (click)="toggleSidebar()">
-    <img src="../../assets/header/burgermenu-icon.png" width="32" height="22" alt="Menu Icon">
+<nav class="navbar navbar-light bg-light" [style.box-shadow]="displayShadow">
+  <a class="navigation__menu-icon" (click)="toggleSidebar($event)">
+    <img src="../../assets/header/burgermenu-icon.png" width="28" height="22" alt="Menu Icon">
   </a>
   <a class="navbar-brand float-left navigation__logo-icon" href="#">
     <img src="../../assets/header/logo.png" width="150" alt="Wiredelta">

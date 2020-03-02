@@ -32,3 +32,17 @@
     margin-left: -100%;
   }
 }
+
+.sidebar-desktop {
+  display: none;
+}
+
+@media screen and (min-width: 800px) {
+  .sidebar-mobile {
+    width: 30%;
+  }
+
+  .sidebar-desktop {
+    display: block;
+  }
+}

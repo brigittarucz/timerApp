@@ -1,13 +1,13 @@
+.navbar {
+  z-index: 3;
+}
+
 .navigation__profile-icon-container {
   width: 48px;
   height: 48px;
   background-color: aquamarine;
   border-radius: 32px;
   border: 1px solid black;
-}
-
-nav {
-  box-shadow: var(--soft-shadow);
 }
 
 .navigation__profile-icon-container:hover {
@@ -32,11 +32,24 @@ hr {
 
 .navbar-collapse {
   overflow-x: hidden;
+  box-shadow: var(--soft-shadow);
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 800px) {
   .navigation__logo-icon {
     display: block;
     margin-left: -70%;
+  }
+
+  .navigation__menu-icon {
+    margin-left: 10px;
+  }
+
+  .navigation__profile-icon {
+    margin-right: 10px;
+  }
+
+  .navbar-collapse {
+    box-shadow: none;
   }
 }

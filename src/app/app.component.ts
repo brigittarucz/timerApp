@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
 	selector: 'app-root',
@@ -9,6 +9,7 @@ export class AppComponent {
 	title = 'timer-app';
 	clickFromNav = false;
 	initialDisplay = 'none';
+	windowWidth = window.innerWidth;
 
 	constructor() {}
 
