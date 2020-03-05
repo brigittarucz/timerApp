@@ -14,12 +14,12 @@ The timer tracker is built in order to provide an internal time registration ser
 
 ```npm install```
 
-* Work with atomic commits and ammend them:
+* Work with atomic commits and squash them together:
 
 ```
 git add .
 git commit "commit message"
-git commit --ammend -m "ammend message"
+git rebase -i HEAD~[n]
 ```
 * Commands to remember for branch manipulation:
 
