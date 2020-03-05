@@ -1,41 +1,52 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-	selector: 'app-menu-sidebar-desktop',
-	templateUrl: './menu-sidebar-desktop.component.html',
-	styleUrls: [ './menu-sidebar-desktop.component.css' ]
+  selector: "app-menu-sidebar-desktop",
+  templateUrl: "./menu-sidebar-desktop.component.html",
+  styleUrls: ["./menu-sidebar-desktop.component.css"]
 })
 export class MenuSidebarDesktopComponent implements OnInit {
-	itIsTrue = true;
-	selectedButton;
+  itIsTrue = true;
+  selectedButton;
 
-	constructor() {}
+  constructor() {}
 
-	classesArr = [
-		'icon_tracking',
-		'icon_user-history',
-		'icon_activity',
-		'icon_project-history',
-		'icon_form-setting',
-		'icon_users',
-		'icon_clients-projects',
-		'icon_user-access'
-	];
+  classesArr = [
+    "icon_tracking",
+    "icon_user-history",
+    "icon_activity",
+    "icon_project-history",
+    "icon_form-setting",
+    "icon_users",
+    "icon_clients-projects",
+    "icon_user-access"
+  ];
 
-	classesImgArr = [
-		'tracking-icon',
-		'userhistory-icon',
-		'activity-icon',
-		'projectshistory-icon',
-		'taskformsettings-icon',
-		'users-icon',
-		'clients&projects-icon',
-		'useraccess-icon'
-	];
+  classesImgArr = [
+    "tracking-icon",
+    "userhistory-icon",
+    "activity-icon",
+    "projectshistory-icon",
+    "taskformsettings-icon",
+    "users-icon",
+    "clients&projects-icon",
+    "useraccess-icon"
+  ];
 
-	ngOnInit(): void {}
+  routesArr = [
+    "",
+    "/user-history",
+    "/activity",
+    "/project-history",
+    "/form-setting",
+    "/users",
+    "/clients-projects",
+    "/user-access"
+  ];
 
-	onSelect(clicked) {
-		this.selectedButton = clicked.target.classList[1];
-	}
+  ngOnInit(): void {}
+
+  onSelect(clicked) {
+    this.selectedButton = clicked.target.classList[1];
+  }
 }

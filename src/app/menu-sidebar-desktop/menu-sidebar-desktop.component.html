@@ -1,5 +1,5 @@
 <div class="sidebar__quick-navigation" *ngFor="let class of classesArr; let i = index"> 
-  <a href="#" (click)="onSelect($event)" [class.active]="class === selectedButton">
+  <a href="{{routesArr[i]}}" (click)="onSelect($event)" [class.active]="class === selectedButton">
     <div [ngStyle]="class === selectedButton && {'background-color': 'var(--blue-color)', 'border-radius': '60px'}"> 
     <span class="icon-sidebar pr-4 {{class}}" [ngStyle]="class === selectedButton && {'background-image': 'url(../../assets/navigation/' + classesImgArr[i] + '-white.png)'}"></span>
     </div>

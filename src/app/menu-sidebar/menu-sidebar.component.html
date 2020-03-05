@@ -11,27 +11,10 @@
 
 <div class="menu" style="text-transform: uppercase;">
   <ul class="list-group menu__list-options"> 
-  <li class="list-group-item">
-  <p class="text-4"> User </p>
-  <ul>
-    <li class="menu-option text-5 align-content"> <span class="icon-sidebar pr-4 icon_tracking"> </span>Tracking </li>
-    <li class="menu-option text-5 align-content"> <span class="icon-sidebar pr-4 icon_user-history"> </span>User History </li>
-    <li class="menu-option text-5 align-content"> <span class="icon-sidebar pr-4 icon_activity"> </span>Activity </li>
-  </ul>
-  </li>
-  <li class="list-group-item"> 
-  <p class="text-4"> Projects</p>
-  <ul>
-    <li class="menu-option text-5 align-content"> <span class="icon-sidebar pr-4 icon_project-history"> </span>Project History</li>
-  </ul>
-  </li>
-  <li class="list-group-item"> 
-  <p class="text-4"> Admin </p>
-  <ul>
-    <li class="menu-option text-5 align-content"> <span class="icon-sidebar pr-4 icon_form-setting"> </span>Form Setting </li>
-    <li class="menu-option text-5 align-content"> <span class="icon-sidebar pr-4 icon_users"> </span>Users </li>
-    <li class="menu-option text-5 align-content"> <span class="icon-sidebar pr-4 icon_clients-projects"> </span>Clients & Projects </li>
-    <li class="menu-option text-5 align-content"> <span class="icon-sidebar pr-4 icon_user-access"> </span>User Access </li>
+  <li class="list-group-item" *ngFor="let obj of arrMenuItems;">
+  <p class="text-4"> {{ obj.name }} </p>
+  <ul *ngFor="let item of obj.arr">
+    <li class="menu-option text-5 align-content"> <a href="{{item[2]}}"> <span class="icon-sidebar pr-4 {{item[1]}}"> {{item[0]}} </span> </a> </li>
   </ul>
   </li>
   </ul>

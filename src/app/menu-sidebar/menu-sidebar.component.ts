@@ -1,32 +1,58 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 
 @Component({
-	selector: 'app-menu-sidebar',
-	templateUrl: './menu-sidebar.component.html',
-	styleUrls: [ './menu-sidebar.component.css' ]
+  selector: "app-menu-sidebar",
+  templateUrl: "./menu-sidebar.component.html",
+  styleUrls: ["./menu-sidebar.component.css"]
 })
 export class MenuSidebarComponent implements OnInit {
-	toggleNav = false;
+  toggleNav = false;
 
-	@Output() sidebarClick = new EventEmitter();
+  @Output() sidebarClick = new EventEmitter();
 
-	displayNav = 'none';
+  displayNav = "none";
 
-	@Input() boolVal;
-	constructor() {}
+  @Input() boolVal;
+  constructor() {}
 
-	closeSidebar() {
-		this.sidebarClick.emit(false);
-	}
+  arrMenuItems = [
+    {
+      name: "User",
+      arr: [
+        ["Tracking", "icon_tracking", ""],
+        ["User History", "icon_user-history", "/user-history"],
+        ["Activity", "icon_activity", "/activity"]
+      ]
+    },
+    {
+      name: "Projects",
+      arr: [["Project History", "icon_project-history", "/project-history"]]
+    },
+    {
+      name: "Admin",
+      arr: [
+        ["Form Setting", "icon_form-setting", "/form-setting"],
+        ["Users", "icon_users", "/users"],
+        ["Clients & Projects", "icon_clients-projects", "/clients-projects"],
+        ["User Access", "icon_user-access", "/user-access"]
+      ]
+    }
+  ];
 
-	toggleNavbar() {
-		this.toggleNav = !this.toggleNav;
-		if (this.toggleNav) {
-			this.displayNav = 'block';
-		} else {
-			this.displayNav = 'none';
-		}
-	}
+  arrMenuNames = ["User", "Projects", "Admin"];
 
-	ngOnInit(): void {}
+  closeSidebar() {
+    this.sidebarClick.emit(false);
+  }
+
+  toggleNavbar() {
+    this.toggleNav = !this.toggleNav;
+    if (this.toggleNav) {
+      this.displayNav = "block";
+    } else {
+      this.displayNav = "none";
+    }
+  }
+
+  ngOnInit(): void {}
 }

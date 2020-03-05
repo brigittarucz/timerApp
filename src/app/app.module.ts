@@ -1,19 +1,31 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
 
-import { AppComponent } from './app.component';
-import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
-import { MenuSidebarComponent } from './menu-sidebar/menu-sidebar.component';
-import { ProfileQuickviewComponent } from './profile-quickview/profile-quickview.component';
-import { MenuSidebarDesktopComponent } from './menu-sidebar-desktop/menu-sidebar-desktop.component';
-import { TrackingComponent } from './tracking/tracking.component';
-import { UserHistoryComponent } from './user-history/user-history.component';
-import { ActivityComponent } from './activity/activity.component';
-import { ProjectHistoryComponent } from './project-history/project-history.component';
-import { FormSettingComponent } from './form-setting/form-setting.component';
-import { UsersComponent } from './users/users.component';
-import { ClientsProjectsComponent } from './clients-projects/clients-projects.component';
-import { UserAccessComponent } from './user-access/user-access.component';
+import { AppComponent } from "./app.component";
+import { NavigationBarComponent } from "./navigation-bar/navigation-bar.component";
+import { MenuSidebarComponent } from "./menu-sidebar/menu-sidebar.component";
+import { ProfileQuickviewComponent } from "./profile-quickview/profile-quickview.component";
+import { MenuSidebarDesktopComponent } from "./menu-sidebar-desktop/menu-sidebar-desktop.component";
+import { TrackingComponent } from "./tracking/tracking.component";
+import { UserHistoryComponent } from "./user-history/user-history.component";
+import { ActivityComponent } from "./activity/activity.component";
+import { ProjectHistoryComponent } from "./project-history/project-history.component";
+import { FormSettingComponent } from "./form-setting/form-setting.component";
+import { UsersComponent } from "./users/users.component";
+import { ClientsProjectsComponent } from "./clients-projects/clients-projects.component";
+import { UserAccessComponent } from "./user-access/user-access.component";
+
+const appRoutes: Routes = [
+  { path: "", component: TrackingComponent },
+  { path: "user-history", component: UserHistoryComponent },
+  { path: "activity", component: ActivityComponent },
+  { path: "project-history", component: ProjectHistoryComponent },
+  { path: "form-setting", component: FormSettingComponent },
+  { path: "users", component: UsersComponent },
+  { path: "clients-projects", component: ClientsProjectsComponent },
+  { path: "user-access", component: UserAccessComponent }
+];
 
 @NgModule({
   declarations: [
@@ -31,10 +43,8 @@ import { UserAccessComponent } from './user-access/user-access.component';
     ClientsProjectsComponent,
     UserAccessComponent
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule, RouterModule.forRoot(appRoutes)],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
