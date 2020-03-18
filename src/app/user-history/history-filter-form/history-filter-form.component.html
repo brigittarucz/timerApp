@@ -67,22 +67,23 @@
         </div>
       </div>
       <div class="col-3">
-        <div class="button-base-toggle float-right " data-toggle="buttons">
+        <div class="btn-base-toggle" data-toggle="buttons" (click)="onToggleButton()">
+          <span
+            [ngClass]="{'btn-switcher-animate': animState.currentAnim === 'btn-switcher-animate', 'btn-switcher-animate-reverse': animState.currentAnim === 'btn-switcher-animate-reverse'}"
+            class="btn-switcher"></span>
           <button
-            (click)="onToggleButton(true)"
-            [ngClass]="{'btn-toggle-active': buttonState, 'toggle-left': btnAnimate}"
+            [ngClass]="{'btn-toggle-active': animState.btn1}"
             class="btn-toggle btn-toggle-fix"
             type="button">Check in</button>
           <button
-            (click)="onToggleButton(false)"
-            [ngClass]="{'btn-toggle-active': !buttonState, 'toggle-right': !btnAnimate}"
+            [ngClass]="{'btn-toggle-active': animState.btn2}"
             class="btn-toggle right btn-toggle-fix"
             type="button">Tasks</button>
         </div>
       </div>
     </div>
   </form>
-  <button (click)="openModal()" class="btn btn-round_turqoise float-right">
+  <button  class="btn btn-round_turqoise float-right">
     <img src="../../../assets/user-history/add-icon-white.png" width="30">
   </button>
 </div>

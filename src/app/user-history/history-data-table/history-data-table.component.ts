@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-history-data-table',
   templateUrl: './history-data-table.component.html',
-  styleUrls: ['./history-data-table.component.css']
+  styleUrls: ['./history-data-table.component.scss']
 })
 export class HistoryDataTableComponent implements OnInit {
   isTodayActive = true;

@@ -3,7 +3,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 @Component({
   selector: "app-menu-sidebar",
   templateUrl: "./menu-sidebar.component.html",
-  styleUrls: ["./menu-sidebar.component.css"]
+  styleUrls: ["./menu-sidebar.component.scss"]
 })
 export class MenuSidebarComponent implements OnInit {
   toggleNav = false;
