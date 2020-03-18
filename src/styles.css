@@ -50,11 +50,36 @@ body {
 
 /* Typography */
 
-.text-1 {}
+.text-1_regular {
+  font-family: 'MontserratRegular';
+  font-size: 3.2rem;
+}
 
-.text-2 {}
+/* Page Title */
 
-.text-3 {}
+.text-2 {
+  font-family: 'MontserratSemiBold';
+  text-transform: uppercase;
+  font-size: 2.5rem;
+}
+
+.text-2_regular {
+  font-family: 'MontserratRegular';
+  text-transform: uppercase;
+  font-size: 2.5rem;
+}
+
+/* Page Subtitle */
+
+.text-3 {
+  font-family: 'MontserratMedium';
+  font-size: 2rem;
+}
+
+.text-3_regular {
+  font-family: 'MontserratRegular';
+  font-size: 2rem;
+}
 
 .text-4_regular {
   font-family: 'MontserratRegular';
@@ -64,9 +89,108 @@ body {
 .text-4 {
   font-family: 'MontserratSemiBold';
   font-size: 1.8rem;
+  text-transform: uppercase;
 }
 
 .text-5 {
   font-family: 'MontserratRegular';
   font-size: 1.5rem;
 }
+
+.text-5_SemiBold {
+  font-family: 'MontserratSemiBold';
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+/* Buttons */
+
+.button-base {
+  font-family: "MontserratMedium";
+  font-size: 1.6rem;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: var(--white-color);
+  text-transform: uppercase;
+  box-shadow: var(--soft-shadow);
+}
+
+.button-cancel {
+  background-color: var(--blue-color);
+}
+
+.button-disabled {
+  background-color: var(--light-mint-color);
+}
+
+.button-active {
+  background-color: var(--turqoise-color);
+}
+
+.button-active:hover {
+  background-color: var(--pine-green-color);
+  color: var(--white-color);
+}
+
+@media screen and (min-width: 800px) {
+  .button-base {
+    font-family: "MontserratSemibold";
+    font-size: 2.2rem;
+    padding: 10px 15px;
+  }
+
+  .button-disabled {
+    background-color: var(--light-mint-color);
+  }
+
+  .button-active {
+    background-color: var(--turqoise-color);
+  }
+
+  .button-active:hover {
+    background-color: var(--pine-green-color);
+    color: var(--white-color);
+  }
+
+}
+
+/* Form styles */
+
+.select__generic {
+  border: 0;
+  border-bottom: 1.5px solid var(--grey-color);
+  padding-left: 0;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  z-index: 1;
+}
+
+.reset__select {
+  margin: 5px;
+  margin-top: -25px;
+  width: 15px;
+  height: 15px;
+  float: right;
+  background: url("assets/cross-icon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  z-index: 2;
+}
+
+.reset__select:hover {
+  cursor: pointer;
+}
+
+/* Overwrite the styles of the mat-dialog-container
+element globally, but only for those that have an id
+of modal-component */
+
+mat-dialog-container#modal-component {
+  border-radius: 11px;
+  background-color: white;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

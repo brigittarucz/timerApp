@@ -15,6 +15,10 @@ import { FormSettingComponent } from "./form-setting/form-setting.component";
 import { UsersComponent } from "./users/users.component";
 import { ClientsProjectsComponent } from "./clients-projects/clients-projects.component";
 import { UserAccessComponent } from "./user-access/user-access.component";
+import { HistoryDataTableComponent } from './user-history/history-data-table/history-data-table.component';
+import { HistoryFilterFormComponent } from './user-history/history-filter-form/history-filter-form.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
 
 const appRoutes: Routes = [
   { path: "", component: TrackingComponent },
@@ -41,9 +45,11 @@ const appRoutes: Routes = [
     FormSettingComponent,
     UsersComponent,
     ClientsProjectsComponent,
-    UserAccessComponent
+    UserAccessComponent,
+    HistoryDataTableComponent,
+    HistoryFilterFormComponent,
   ],
-  imports: [BrowserModule, RouterModule.forRoot(appRoutes)],
+  imports: [BrowserModule, RouterModule.forRoot(appRoutes), BrowserAnimationsModule, MatButtonToggleModule],
   providers: [],
   bootstrap: [AppComponent]
 })

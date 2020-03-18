@@ -1,0 +1,89 @@
+<div class="container">
+  <form>
+    <div class="row">
+      <div class="col-3">
+        <div class="form-group">
+          <label class="text-4_SemiBold_LowerCase_blue" for="department">Department</label>
+          <select class="form-control text-5" id="department">
+            <option value="">Select a department</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="form-group">
+          <label  class="text-4_SemiBold_LowerCase_blue" for="client">Client</label>
+          <select class="form-control text-5" id="client">
+            <option value="">Select a client</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="form-group">
+          <label class="text-4_SemiBold_LowerCase_blue" for="startDate">StartDate</label>
+          <input class="form-control text-5" type="date" id="startDate">
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="form-group">
+          <label class="text-4_SemiBold_LowerCase_blue" for="year">Year</label>
+          <input class="form-control text-5" type="number" id="year" placeholder="Select a year">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-3">
+        <div class="form-group">
+          <label class="text-4_SemiBold_LowerCase_blue" for="category">Category</label>
+          <select class="form-control text-5" id="category">
+            <option value="">Select a category</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="form-group">
+          <label class="text-4_SemiBold_LowerCase_blue" for="project">Project</label>
+          <select class="form-control text-5" id="project">
+            <option value="">Select a project</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="form-group">
+          <label class="text-4_SemiBold_LowerCase_blue" for="endDate">End Date</label>
+          <input class="form-control text-5" type="date" id="endDate">
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="button-base-toggle float-right " data-toggle="buttons">
+          <button
+            (click)="onToggleButton(true)"
+            [ngClass]="{'btn-toggle-active': buttonState, 'toggle-left': btnAnimate}"
+            class="btn-toggle btn-toggle-fix"
+            type="button">Check in</button>
+          <button
+            (click)="onToggleButton(false)"
+            [ngClass]="{'btn-toggle-active': !buttonState, 'toggle-right': !btnAnimate}"
+            class="btn-toggle right btn-toggle-fix"
+            type="button">Tasks</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <button (click)="openModal()" class="btn btn-round_turqoise float-right">
+    <img src="../../../assets/user-history/add-icon-white.png" width="30">
+  </button>
+</div>
+
