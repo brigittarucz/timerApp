@@ -26,13 +26,13 @@ export class HistoryFilterFormComponent implements OnInit {
       this.animState.btn1 = true;
       this.animState.btn2 = false;
 
-      this.animState.currentAnim = 'btn-switcher-animate-reverse';
+      this.animState.currentAnim = 'btn-switcher__animate__reverse';
       // console.log('Check in got clicked');
     } else {
       this.animState.btn1 = false;
       this.animState.btn2 = true;
 
-      this.animState.currentAnim = 'btn-switcher-animate';
+      this.animState.currentAnim = 'btn-switcher__animate';
       // console.log('Tasks got clicked')
     }
 
