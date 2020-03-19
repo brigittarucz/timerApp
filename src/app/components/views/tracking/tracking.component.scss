@@ -1,0 +1,42 @@
+.mat-raised-button:disabled {
+  font-family: "MontserratMedium";
+  padding: 12px 10px;
+  border-radius: 60px;
+  color: var(--white-color);
+  text-transform: uppercase;
+  box-shadow: var(--soft-shadow);
+  background-color: var(--light-mint-color);
+}
+
+.div__tracking-notask {
+  margin-bottom: 60px;
+}
+
+.div__tracking-begin {
+  position: relative;
+  box-shadow: var(--soft-shadow);
+}
+
+.button__begin {
+  background-color: var(--turqoise-color);
+  border: 0;
+  padding: 12px 10px;
+  border-radius: 60px;
+  position: absolute;
+  margin-left: calc(50% - 20px);
+}
+
+@media screen and (min-width: 800px) {
+  .div__tracking-begin {
+    box-shadow: 0 5px 5px -5px #d1cfcf, 0 -5px 5px -5px #d1cfcf;
+  }
+
+  .div__tracking-notasktext {
+    margin: 30px;
+  }
+
+  .time-controller {
+    display: none;
+  }
+
+}

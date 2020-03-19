@@ -1,1 +1,21 @@
-<p>tracking works!</p>
+<app-timer-counter (isUserCheckedIn)="viewState($event)" class="time-controller"> </app-timer-counter>
+
+<h1 class="text-1 text-center mt-5 mb-5 pt-5 pb-5"> Tracking </h1>
+
+<ng-template #notask>
+  <div class="div__tracking-notask">
+    <h3 class="text-3 p-3" style="color:var(--turqoise-color); text-align: center;"> Please check in before beginning a
+      task </h3>
+    <div class="div__tracking-begin pt-3 pb-5">
+      <p class="text-5 p-3 div__tracking-notasktext" style="text-align:center;"> No task in progress </p>
+      <button mat-raised-button (click)="openModal()" [disabled]="!checkedIn"
+        class="button__begin button-base button-active">
+        <img src="../../assets/tracking/add-icon-white.png" width="30"> </button>
+    </div>
+  </div>
+</ng-template>
+
+<app-timer-visual *ngIf="checkedIn && hasAddedTask else notask"> </app-timer-visual>
+<h3 class="text-3" style="text-align: center"> Tasks Done </h3>
+
+<app-tasks-done></app-tasks-done>

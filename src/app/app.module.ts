@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './components/root-view/app.component';
-import {Components} from './app.components';
+import {Components, EntryComponents} from './app.components';
 import {Imports} from './app.imports';
+import {Providers} from "./app.providers";
 
 
 @NgModule({
@@ -10,7 +11,8 @@ import {Imports} from './app.imports';
     ...Components
   ],
   imports: [ ...Imports ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ ...Providers],
+  bootstrap: [AppComponent],
+  entryComponents: [ ...EntryComponents ]
 })
 export class AppModule {}

@@ -13,6 +13,12 @@ import {ClientsProjectsComponent} from './components/views/clients-projects/clie
 import {UserAccessComponent} from './components/views/user-access/user-access.component';
 import {HistoryDataTableComponent} from './components/views/user-history/history-data-table/history-data-table.component';
 import {HistoryFilterFormComponent} from './components/views/user-history/history-filter-form/history-filter-form.component';
+import {TimerVisualComponent} from "./components/views/tracking/timer-visual/timer-visual.component";
+import {ModalTrackingComponent} from "./components/ui-artifacts/modal-tracking/modal-tracking.component";
+import {TimerCounterComponent} from "./components/views/tracking/timer-counter/timer-counter.component";
+import {TasksDoneComponent} from "./components/views/tracking/tasks-done/tasks-done.component";
+import {AddTaskFieldComponent} from "./components/ui-artifacts/add-task-tracking/add-task-field/add-task-field.component";
+import {AddTaskTrackingComponent} from "./components/ui-artifacts/add-task-tracking/add-task-tracking.component";
 
 export const Components = [
   AppComponent,
@@ -30,4 +36,15 @@ export const Components = [
   UserAccessComponent,
   HistoryDataTableComponent,
   HistoryFilterFormComponent,
+  TimerCounterComponent,
+  TasksDoneComponent,
+  TimerVisualComponent,
+  ModalTrackingComponent,
+  AddTaskTrackingComponent,
+  AddTaskFieldComponent
+];
+
+
+export const EntryComponents = [
+  ModalTrackingComponent,
 ];
