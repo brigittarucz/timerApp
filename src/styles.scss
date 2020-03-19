@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import "styles/overrides/bootstrap-override";
+@import "../node_modules/bootstrap/scss/bootstrap";
 
 html {
   font-size: 62.5%;
@@ -200,7 +202,3 @@ mat-dialog-container#modal-component {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-
-@import "styles/overrides/bootstrap-override";
-@import "../node_modules/bootstrap/scss/bootstrap";
