@@ -6,15 +6,6 @@ ul {
   z-index: 4;
 }
 
-a {
-  all: unset;
-  color: var(--grey-color);
-}
-
-a:hover {
-  cursor: pointer;
-}
-
 .navigation__profile-icon-container {
   width: 48px;
   height: 48px;
@@ -36,6 +27,7 @@ a:hover {
   content: "";
   background-position: center;
 }
+
 
 .icon_tracking::before {
   background-image: url(../../../../assets/navigation/tracking-icon.png);
@@ -79,7 +71,7 @@ a:hover {
 }
 
 @media screen and (min-width: 800px) {
-  .navbar {
+  .sidebar-mobile {
     display: none;
   }
 

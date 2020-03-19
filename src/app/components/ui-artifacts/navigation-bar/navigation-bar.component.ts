@@ -36,11 +36,11 @@ export class NavigationBarComponent implements OnInit {
 		this.menuClick.emit(this.toggleSide);
 		let navigIcon = event.target;
 		if (this.toggleSide && window.innerWidth > 800) {
-			navigIcon.setAttribute('src', '../../assets/cross-icon.png');
+			navigIcon.setAttribute('src', '../../../../assets/cross-icon.png');
 			navigIcon.setAttribute('height', '28');
 			navigIcon.setAttribute('width', '28');
 		} else {
-			navigIcon.setAttribute('src', '../../assets/header/burgermenu-icon.png');
+			navigIcon.setAttribute('src', '../../../../assets/header/burgermenu-icon.png');
 			navigIcon.setAttribute('width', '28');
 			navigIcon.setAttribute('height', '22');
 		}

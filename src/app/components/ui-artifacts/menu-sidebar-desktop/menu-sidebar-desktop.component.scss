@@ -1,20 +1,57 @@
 .sidebar__quick-navigation * {
-  display: block;
-  padding: 10px;
+  display: inline-block;
+  padding: 10px 25px 10px 10px;
+}
+
+.sidebar__quick-navigation-menu {
+  position: absolute;
+  top: 60px;
+  padding-left: 30px;
+  height: calc(100vh - 60px);
+  overflow-x: hidden;
+  width: 300px;
+  overflow-y: hidden;
+  box-shadow: var(--soft-shadow);
+  animation: openMenu 0.5s 1 forwards;
+}
+
+.sidebar__quick-navigation-open {
+  padding: 5px 10px;
+}
+
+.sidebar__quick-navigation-open * {
+  display: inline-block;
+  padding: 10px 25px 10px 10px;
+  display: flex;
+  align-items: center;
 }
 
 .icon-sidebar {
   background-size: contain;
   background-repeat: no-repeat;
   display: inline-block;
-  height: 34px;
-  width: 34px;
+  height: 30px;
+  width: 30px;
   background-position: center;
 }
 
-a div {
-  height: 55px;
+.sidebar__quick-navigation a div {
+  height: 50px;
   width: 55px;
+}
+
+.sidebar__quick-navigation-open a {
+  all: unset;
+}
+
+.sidebar__quick-navigation-open a div {
+  height: 50px;
+  width: 245px;
+  color: var(--grey-color);
+}
+
+a div:hover {
+  cursor: pointer;
 }
 
 .icon_tracking {
@@ -47,4 +84,73 @@ a div {
 
 .icon_user-access {
   background-image: url(../../../../assets/navigation/useraccess-icon.png);
+}
+
+/* Opened up value */
+
+.container-menu {
+  display: inline;
+}
+
+.container-menu span {
+  padding-top: 5px;
+}
+
+/* Animation open navigation */
+
+@keyframes increaseOpacity {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes openMenu {
+  from {
+    height: 500px;
+    width: 250px;
+  }
+
+  to {
+    height: calc(100vh - 60px);
+    width: 300px;
+  }
+}
+
+@keyframes translateXY {
+  from {
+    transform: translateX(-10px) translateY(-20px);
+  }
+
+  to {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+@keyframes animationDisplayMenu {
+  from {
+    transform: translateX(0) translateY(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateX(30px) translateY(40px);
+    opacity: 0;
+  }
+}
+
+.sidebar__quick-navigation-menu {
+  animation: increaseOpacity 1s 1 forwards;
+}
+
+.container-menu:nth-of-type(1) {
+  opacity: 0;
+  animation: increaseOpacity 0.5s 1 0.5s forwards, translateXY 1s 1 0.5s forwards;
+}
+
+.category-menu {
+  animation: increaseOpacity 0.5s 1 forwards, translateXY 1.2s 1 forwards;
 }

@@ -1,0 +1,37 @@
+button {
+  margin: 30px 10px;
+}
+
+.button-checkIn {
+  margin-left: calc(50% - 135px);
+}
+
+@media screen and (min-width: 800px) {
+  button {
+    margin: 5px;
+  }
+
+  .button-checkIn {
+    margin-left: 5px;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .button-checkIn {
+    grid-column: 1/span 1;
+  }
+
+  .counter__row {
+    padding-top: 10px;
+    grid-column: 2/span 1;
+    grid-row: 1/span 1;
+  }
+
+  .button-checkOut {
+    grid-column: 3/span 1;
+  }
+}

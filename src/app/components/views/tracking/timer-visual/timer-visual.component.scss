@@ -1,0 +1,61 @@
+.div__tracking {
+  box-shadow: var(--soft-shadow);
+  height: 350px;
+  margin-bottom: 150px;
+}
+
+.div__tracking-visual {
+  background-color: var(--turqoise-color);
+  width: 250px;
+  height: 250px;
+  border-radius: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--soft-shadow);
+  margin-left: calc(50% - 125px);
+}
+
+.div__tracking-visual-border {
+  width: 200px;
+  height: 200px;
+  border-radius: 200px;
+  border: 5px solid var(--light-mint-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  color: white;
+}
+
+.controls-image {
+  width: 25px;
+  margin: 10px;
+}
+
+
+@media screen and (min-width: 800px) {
+  .div__tracking {
+    box-shadow: 0 5px 5px -5px #d1cfcf, 0 -5px 5px -5px #d1cfcf;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: 1fr;
+    height: 220px;
+  }
+
+  .div__tracking-registration {
+    grid-column: 2/span 1;
+  }
+
+  .div__tracking-visual {
+    margin-top: -30px;
+    grid-row: 1/span 1;
+    width: 280px;
+    height: 280px;
+  }
+
+  .div__tracking-visual-border {
+    width: 230px;
+    height: 230px;
+  }
+}

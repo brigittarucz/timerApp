@@ -2,6 +2,8 @@
 @import "styles/overrides/bootstrap-override";
 @import "../node_modules/bootstrap/scss/bootstrap";
 
+/* You can add global styles to this file, and also import other style files */
+
 html {
   font-size: 62.5%;
 }
@@ -57,13 +59,13 @@ body {
   font-size: 3.2rem;
 }
 
+/* Page Title */
+
 .text-1 {
   font-family: 'MontserratSemiBold';
   text-transform: uppercase;
   font-size: 3.2rem;
 }
-
-/* Page Title */
 
 .text-2 {
   font-family: 'MontserratSemiBold';
@@ -115,12 +117,12 @@ body {
 
 .button-base {
   font-family: "MontserratMedium";
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   padding: 10px 20px;
   border-radius: 10px;
   color: var(--white-color);
   text-transform: uppercase;
-  box-shadow: var(--soft-shadow);
+  /* box-shadow: var(--soft-shadow); */
 }
 
 .button-cancel {
@@ -140,10 +142,15 @@ body {
   color: var(--white-color);
 }
 
+.button-active:disabled:hover {
+  background-color: var(--turqoise-color);
+  cursor: default;
+}
+
 @media screen and (min-width: 800px) {
   .button-base {
     font-family: "MontserratSemibold";
-    font-size: 2.2rem;
+    font-size: 1.6rem;
     padding: 10px 15px;
   }
 
@@ -193,12 +200,10 @@ body {
 
 /* Overwrite the styles of the mat-dialog-container
 element globally, but only for those that have an id
-of modal-component */
+of `modal-component` */
 
 mat-dialog-container#modal-component {
   border-radius: 11px;
   background-color: white;
+  color: var(--grey-color);
 }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
