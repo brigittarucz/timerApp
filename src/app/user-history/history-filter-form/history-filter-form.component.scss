@@ -9,20 +9,20 @@
   color: var(--blue-color)
 }
 
-.btn-round_turqoise {
+.btn-round__turqoise {
   padding: .75rem;
   border-radius: 100rem;
   background: var(--turqoise-color);
   box-shadow: var(--soft-shadow);
 }
 
-.box-shadow_soft {
+.box-shadow__soft {
   box-shadow: var(--soft-shadow);
 }
 /* ----------------------------------------- */
 /* ------------- TOGGLE BUTTON ------------- */
 
-.btn-base-toggle {
+.btn-base__toggle {
   font-family: "MontserratMedium";
   text-transform: uppercase;
   font-size: 1.6rem;
@@ -43,7 +43,7 @@
     position: absolute;
     content: '';
 
-    &-animate {
+    &__animate {
       animation: toggleAnim .4s forwards ease-in-out;
 
       @keyframes toggleAnim {
@@ -55,18 +55,18 @@
           transform: translateX(100%);
         }
       }
-    }
 
-    &-animate-reverse {
-      animation: toggleAnimRev .4s forwards ease-in-out;
+      &__reverse {
+        animation: toggleAnimRev .4s forwards ease-in-out;
 
-      @keyframes toggleAnimRev {
-        0% {
-          transform: translateX(100%);
-        }
+        @keyframes toggleAnimRev {
+          0% {
+            transform: translateX(100%);
+          }
 
-        100% {
-          transform: translateX(0);
+          100% {
+            transform: translateX(0);
+          }
         }
       }
     }
@@ -86,7 +86,7 @@
     right: 0;
   }
 
-  &-active {
+  &__active {
     color: var(--white-color);
     border-radius: 10px;
     background: transparent;
@@ -94,7 +94,7 @@
     position: absolute;
   }
 
-  &-fix {
+  &__fix {
     border-top-right-radius: 10px!important;
     border-bottom-right-radius: 10px!important;
   }

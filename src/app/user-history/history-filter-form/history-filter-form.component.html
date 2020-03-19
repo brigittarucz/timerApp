@@ -1,90 +1,87 @@
-<div class="container">
-  <form>
-    <div class="row">
-      <div class="col-3">
-        <div class="form-group">
-          <label class="text-4_SemiBold_LowerCase_blue" for="department">Department</label>
-          <select class="form-control text-5" id="department">
-            <option value="">Select a department</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-          </select>
-        </div>
-      </div>
-      <div class="col-3">
-        <div class="form-group">
-          <label  class="text-4_SemiBold_LowerCase_blue" for="client">Client</label>
-          <select class="form-control text-5" id="client">
-            <option value="">Select a client</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-          </select>
-        </div>
-      </div>
-      <div class="col-3">
-        <div class="form-group">
-          <label class="text-4_SemiBold_LowerCase_blue" for="startDate">StartDate</label>
-          <input class="form-control text-5" type="date" id="startDate">
-        </div>
-      </div>
-      <div class="col-3">
-        <div class="form-group">
-          <label class="text-4_SemiBold_LowerCase_blue" for="year">Year</label>
-          <input class="form-control text-5" type="number" id="year" placeholder="Select a year">
-        </div>
+<form>
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-lg-3">
+      <div class="form-group">
+        <label class="text-4_SemiBold_LowerCase_blue" for="department">Department</label>
+        <select class="form-control text-5" id="department">
+          <option value="">Select a department</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
       </div>
     </div>
+    <div class="col-xs-12 col-md-6 col-lg-3">
+      <div class="form-group">
+        <label  class="text-4_SemiBold_LowerCase_blue" for="client">Client</label>
+        <select class="form-control text-5" id="client">
+          <option value="">Select a client</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-6 col-lg-3">
+      <div class="form-group">
+        <label class="text-4_SemiBold_LowerCase_blue" for="startDate">StartDate</label>
+        <input class="form-control text-5" type="date" id="startDate">
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-6 col-lg-3">
+      <div class="form-group">
+        <label class="text-4_SemiBold_LowerCase_blue" for="year">Year</label>
+        <input class="form-control text-5" type="number" id="year" placeholder="Select a year">
+      </div>
+    </div>
+  </div>
 
-    <div class="row">
-      <div class="col-3">
-        <div class="form-group">
-          <label class="text-4_SemiBold_LowerCase_blue" for="category">Category</label>
-          <select class="form-control text-5" id="category">
-            <option value="">Select a category</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-          </select>
-        </div>
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-lg-3">
+      <div class="form-group">
+        <label class="text-4_SemiBold_LowerCase_blue" for="category">Category</label>
+        <select class="form-control text-5" id="category">
+          <option value="">Select a category</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
       </div>
-      <div class="col-3">
-        <div class="form-group">
-          <label class="text-4_SemiBold_LowerCase_blue" for="project">Project</label>
-          <select class="form-control text-5" id="project">
-            <option value="">Select a project</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-          </select>
-        </div>
+    </div>
+    <div class="col-xs-12 col-md-6 col-lg-3">
+      <div class="form-group">
+        <label class="text-4_SemiBold_LowerCase_blue" for="project">Project</label>
+        <select class="form-control text-5" id="project">
+          <option value="">Select a project</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
       </div>
-      <div class="col-3">
-        <div class="form-group">
-          <label class="text-4_SemiBold_LowerCase_blue" for="endDate">End Date</label>
-          <input class="form-control text-5" type="date" id="endDate">
-        </div>
+    </div>
+    <div class="col-xs-12 col-md-6 col-lg-3">
+      <div class="form-group">
+        <label class="text-4_SemiBold_LowerCase_blue" for="endDate">End Date</label>
+        <input class="form-control text-5" type="date" id="endDate">
       </div>
-      <div class="col-3">
-        <div class="btn-base-toggle" data-toggle="buttons" (click)="onToggleButton()">
+    </div>
+    <div class="col-xs-12 col-md-6 col-lg-3">
+      <div class="btn-base__toggle" data-toggle="buttons" (click)="onToggleButton()">
           <span
-            [ngClass]="{'btn-switcher-animate': animState.currentAnim === 'btn-switcher-animate', 'btn-switcher-animate-reverse': animState.currentAnim === 'btn-switcher-animate-reverse'}"
+            [ngClass]="{'btn-switcher__animate': animState.currentAnim === 'btn-switcher__animate', 'btn-switcher__animate__reverse': animState.currentAnim === 'btn-switcher__animate__reverse'}"
             class="btn-switcher"></span>
-          <button
-            [ngClass]="{'btn-toggle-active': animState.btn1}"
-            class="btn-toggle btn-toggle-fix"
-            type="button">Check in</button>
-          <button
-            [ngClass]="{'btn-toggle-active': animState.btn2}"
-            class="btn-toggle right btn-toggle-fix"
-            type="button">Tasks</button>
-        </div>
+        <button
+          [ngClass]="{'btn-toggle__active': animState.btn1}"
+          class="btn-toggle btn-toggle__fix"
+          type="button">Check in</button>
+        <button
+          [ngClass]="{'btn-toggle__active': animState.btn2}"
+          class="btn-toggle right btn-toggle__fix"
+          type="button">Tasks</button>
       </div>
     </div>
-  </form>
-  <button  class="btn btn-round_turqoise float-right">
-    <img src="../../../assets/user-history/add-icon-white.png" width="30">
-  </button>
-</div>
-
+  </div>
+</form>
+<button  class="btn btn-round__turqoise float-right">
+  <img src="../../../assets/user-history/add-icon-white.png" width="30">
+</button>
