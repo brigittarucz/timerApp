@@ -1,109 +1,47 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {UserHistoryService} from "../../../../services/user-history/user-history.service";
+import {TaskEntry} from "../../../../models/taskEntryModel";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-history-data-table',
   templateUrl: './history-data-table.component.html',
   styleUrls: ['./history-data-table.component.scss']
 })
-export class HistoryDataTableComponent implements OnInit {
-  isTodayActive = true;
-  isYesterdayActive = false;
+export class HistoryDataTableComponent implements OnInit, OnDestroy {
 
-  isNotOnMove = true;
+  tasks: Array<TaskEntry> = [];
+  currentMonthName: string = new Date().toLocaleString('default', { month: 'long' });
+  taskDataSubscription: Subscription;
 
-  isOnMoveLeft = false;
-  isOnMoveRight = false;
+  totalWorkedTime: number = 0;
 
-  constructor() {}
-
-  ChangeState(el) {
-    if (!el.target.classList[1]) {
-      if (el.target.textContent === 'Yesterday') {
-        // Toggle classes on and off
-
-        this.isTodayActive = false;
-        this.isYesterdayActive = true;
-        this.isNotOnMove = false;
-        this.isOnMoveRight = true;
-        el.target.style.zIndex = '2';
-
-        // Modify date in directive
-
-        let yesterdayDate: any = new Date();
-        yesterdayDate.setDate(yesterdayDate.getDate() - 1);
-        this.pickedDate = yesterdayDate.toISOString();
-
-        // Remove classes after animation finishes
-
-        setTimeout(() => {
-          this.isNotOnMove = true;
-          this.isOnMoveRight = false;
-          el.target.style.zIndex = '0';
-        }, 1000);
-      } else {
-        this.isTodayActive = true;
-        this.isYesterdayActive = false;
-        this.isNotOnMove = false;
-        this.isOnMoveLeft = true;
-        el.target.style.zIndex = '2';
-
-        let todayDate = new Date().toISOString();
-        this.pickedDate = todayDate;
-
-        setTimeout(() => {
-          this.isNotOnMove = true;
-          this.isOnMoveLeft = false;
-          el.target.style.zIndex = '0';
-        }, 1000);
-      }
-    }
+  constructor(private historyService: UserHistoryService) {
   }
 
-  pickedDate = new Date().toISOString();
+  ngOnInit(): void {
+    this.doGetTableData();
+  }
 
-  sessions = [
-    {
-      date: new Date().toISOString(),
-      department: 'Development',
-      category: 'AngularJS',
-      client: 'AeroFit',
-      project: 'AeroFit',
-      time: '00:00:00'
-    },
-    {
-      date: new Date().toISOString(),
-      department: 'Development',
-      category: 'AngularJS',
-      client: 'AeroFit',
-      project: 'AeroFit',
-      time: '00:00:00'
-    },
-    {
-      date: new Date('March 5, 2020 01:15:00').toISOString(),
-      department: 'Development',
-      category: 'HTML',
-      client: 'AeroFit',
-      project: 'AeroFit',
-      time: '00:00:00'
-    },
-    {
-      date: new Date('March 5, 2020 01:15:00').toISOString(),
-      department: 'Development',
-      category: 'AngularJS',
-      client: 'AeroFit',
-      project: 'AeroFit',
-      time: '00:00:00'
-    },
-    {
-      date: new Date('March 4, 2020 01:15:00').toISOString(),
-      department: 'Development',
-      category: 'AngularJS',
-      client: 'AeroFit',
-      project: 'AeroFit',
-      time: '00:00:00'
-    }
-  ];
+  private doCountTotalWorkedTime() {
+    this.totalWorkedTime = this.tasks.reduce((a, b) => a + (b.timeSpent || 0), 0);
+  }
 
-  ngOnInit(): void {}
+  private doGetTableData() {
+    this.taskDataSubscription = this.historyService.doListenForUserTaskHistory().subscribe(res => {
+      if(res) {
+        const { entries, name } = res;
+        this.tasks = entries.tasks;
+        this.currentMonthName = name;
 
+        this.doCountTotalWorkedTime()
+      }
+    });
+
+    this.historyService.doGetUserTaskHistoryForMonth(1);
+  }
+
+  ngOnDestroy(): void {
+    this.taskDataSubscription.unsubscribe();
+  }
 }

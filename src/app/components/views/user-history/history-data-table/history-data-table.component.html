@@ -1,4 +1,4 @@
-<div class="data-table__dropdown">February</div>
+<div class="data-table__dropdown">{{currentMonthName.toUpperCase()}}</div>
 
 <div class="data-table tasksdone__view-day pt-5 pb-2 mb-5">
   <div class="container">
@@ -16,32 +16,32 @@
       </div>
     </div>
     <hr>
-    <div *ngFor="let session of sessions">
-      <div *ngIf="session.date.slice(0,10) === pickedDate.slice(0,10)">
-        <div class="row mt-4 mb-4">
-          <div class="col-4 col-lg-5 d-lg-flex justify-content-around">
-            <p class="text-5 "> {{ session.department }} </p>
-            <p class="text-5 "> {{ session.category }} </p>
-          </div>
-          <div class="col-4  col-lg-4 d-lg-flex justify-content-around">
-            <p class="text-5 "> {{ session.client }} </p>
-            <p class="text-5 "> {{ session.project }} </p>
-          </div>
-          <div class="col-4  col-lg-3 d-lg-flex justify-content-around">
-            <p class="text-5 "> {{ session.time }} </p>
-            <img src="../../../assets/tracking/restart-icon.png" width="22" height="22" style="margin-left: 45px;"
-                 class="">
-          </div>
+    <div *ngFor="let task of tasks">
+<!--      <div *ngIf="task.date.slice(0,10) === pickedDate.slice(0,10)">-->
+<!--      </div>-->
+      <div class="row mt-4 mb-4">
+        <div class="col-4 col-lg-5 d-lg-flex justify-content-around">
+          <p class="text-5 "> {{ task.department }} </p>
+          <p class="text-5 "> {{ task.category }} </p>
         </div>
-        <hr>
+        <div class="col-4  col-lg-4 d-lg-flex justify-content-around">
+          <p class="text-5 "> {{ task.client }} </p>
+          <p class="text-5 "> {{ task.project }} </p>
+        </div>
+        <div class="col-4  col-lg-3 d-lg-flex justify-content-around">
+          <p class="text-5 "> {{ task.timeSpent | millisToTime }} </p>
+          <img src="../../../../../assets/tracking/restart-icon.png" width="22px" height="22px" style="margin-left: 45px;"
+               class="">
+        </div>
       </div>
+      <hr>
     </div>
     <div class="row justify-content-end mt-4 mb-4">
       <div class="col-4">
         <p class="text-5_SemiBold"> Total </p>
       </div>
       <div class="col-4">
-        <p class="text-5"> 00 : 00 : 00 </p>
+        <p class="text-5"> {{totalWorkedTime | millisToTime}} </p>
       </div>
     </div>
   </div>

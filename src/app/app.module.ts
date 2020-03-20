@@ -7,6 +7,7 @@ import {Providers} from "./app.providers";
 import {Pipes} from "./app.pipes";
 
 
+
 @NgModule({
   declarations: [
     ...Components,
