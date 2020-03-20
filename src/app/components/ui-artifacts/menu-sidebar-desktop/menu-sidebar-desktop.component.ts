@@ -60,6 +60,17 @@ export class MenuSidebarDesktopComponent implements OnInit {
     'User Access'
   ];
 
+  routesArr = [
+    "",
+    "/user-history",
+    "/activity",
+    "/project-history",
+    "/form-setting",
+    "/users",
+    "/clients-projects",
+    "/user-access"
+  ];
+
   ngOnInit(): void {}
 
   onSelect(clicked) {

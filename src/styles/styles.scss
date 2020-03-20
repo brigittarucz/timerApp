@@ -1,6 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
-@import "styles/overrides/bootstrap-override";
-@import "../node_modules/bootstrap/scss/bootstrap";
+@import "../styles/overrides/bootstrap-override";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "./general/colors.scss";
+@import "./general/fonts.scss";
+@import "./general/input.scss";
+@import "./general/label.scss";
+@import "./general/select.scss";
+@import "./general/table.scss";
+@import "./general/toggle-button.scss";
+@import "./general/typography.scss";
 
 /* You can add global styles to this file, and also import other style files */
 
@@ -29,27 +37,27 @@ body {
 
 @font-face {
   font-family: 'MontserratRegular';
-  src: url(./assets/fonts/Montserrat-Regular.ttf);
+  src: url(../assets/fonts/Montserrat-Regular.ttf);
 }
 
 @font-face {
   font-family: 'MontserratMedium';
-  src: url(./assets/fonts/Montserrat-Medium.ttf);
+  src: url(../assets/fonts/Montserrat-Medium.ttf);
 }
 
 @font-face {
   font-family: 'MontserratSemiBold';
-  src: url(./assets/fonts/Montserrat-SemiBold.ttf);
+  src: url(../assets/fonts/Montserrat-SemiBold.ttf);
 }
 
 @font-face {
   font-family: 'MontserratBold';
-  src: url(./assets/fonts/Montserrat-Bold.ttf);
+  src: url(../assets/fonts/Montserrat-Bold.ttf);
 }
 
 @font-face {
   font-family: 'RobotoLight';
-  src: url(./assets/fonts/Roboto-Light.ttf);
+  src: url(../assets/fonts/Roboto-Light.ttf);
 }
 
 /* Typography */
@@ -186,7 +194,7 @@ body {
   width: 15px;
   height: 15px;
   float: right;
-  background: url("assets/cross-icon.png");
+  background: url("../assets/cross-icon.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
