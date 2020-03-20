@@ -1,0 +1,14 @@
+.div__table-container {
+  background-color: var(--white-color);
+  margin-top: -45px;
+  box-shadow: var(--soft-shadow);
+  position: relative;
+  z-index: -1;
+}
+
+@media screen and (min-width: 800px) {
+  .div__table-container {
+    width: 80%;
+    margin-left: 10%;
+  }
+}
