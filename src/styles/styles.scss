@@ -1,16 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../styles/overrides/bootstrap-override";
 @import "../../node_modules/bootstrap/scss/bootstrap";
+@import "./general/button.scss";
 @import "./general/colors.scss";
 @import "./general/fonts.scss";
-@import "./general/input.scss";
-@import "./general/label.scss";
-@import "./general/select.scss";
+@import "./general/forms.scss";
 @import "./general/table.scss";
 @import "./general/toggle-button.scss";
 @import "./general/typography.scss";
 
 /* You can add global styles to this file, and also import other style files */
+
 
 html {
   font-size: 62.5%;
@@ -18,163 +18,6 @@ html {
 
 body {
   color: var(--grey-color);
-}
-
-/* General colors */
-
-:root {
-  --grey-color: #727272;
-  --blue-color: #4B87AD;
-  --light-mint-color: #A6ECDD;
-  --turqoise-color: #4FDABC;
-  --pine-green-color: #47A89B;
-  --white-color: #F8F8F8;
-  --generic-shadow: 0px 3px 10px #4E4D4D;
-  --soft-shadow: 0px 2px 10px #d1cfcf;
-}
-
-/* Fonts Import */
-
-@font-face {
-  font-family: 'MontserratRegular';
-  src: url(../assets/fonts/Montserrat-Regular.ttf);
-}
-
-@font-face {
-  font-family: 'MontserratMedium';
-  src: url(../assets/fonts/Montserrat-Medium.ttf);
-}
-
-@font-face {
-  font-family: 'MontserratSemiBold';
-  src: url(../assets/fonts/Montserrat-SemiBold.ttf);
-}
-
-@font-face {
-  font-family: 'MontserratBold';
-  src: url(../assets/fonts/Montserrat-Bold.ttf);
-}
-
-@font-face {
-  font-family: 'RobotoLight';
-  src: url(../assets/fonts/Roboto-Light.ttf);
-}
-
-/* Typography */
-
-.text-1_regular {
-  font-family: 'MontserratRegular';
-  font-size: 3.2rem;
-}
-
-/* Page Title */
-
-.text-1 {
-  font-family: 'MontserratSemiBold';
-  text-transform: uppercase;
-  font-size: 3.2rem;
-}
-
-.text-2 {
-  font-family: 'MontserratSemiBold';
-  text-transform: uppercase;
-  font-size: 2.5rem;
-}
-
-.text-2_regular {
-  font-family: 'MontserratRegular';
-  text-transform: uppercase;
-  font-size: 2.5rem;
-}
-
-/* Page Subtitle */
-
-.text-3 {
-  font-family: 'MontserratMedium';
-  font-size: 2rem;
-}
-
-.text-3_regular {
-  font-family: 'MontserratRegular';
-  font-size: 2rem;
-}
-
-.text-4_regular {
-  font-family: 'MontserratRegular';
-  font-size: 1.8rem;
-}
-
-.text-4 {
-  font-family: 'MontserratSemiBold';
-  font-size: 1.8rem;
-  text-transform: uppercase;
-}
-
-.text-5 {
-  font-family: 'MontserratRegular';
-  font-size: 1.5rem;
-}
-
-.text-5_SemiBold {
-  font-family: 'MontserratSemiBold';
-  font-size: 1.5rem;
-  text-transform: uppercase;
-}
-
-/* Buttons */
-
-.button-base {
-  font-family: "MontserratMedium";
-  font-size: 1.4rem;
-  padding: 10px 20px;
-  border-radius: 10px;
-  color: var(--white-color);
-  text-transform: uppercase;
-  /* box-shadow: var(--soft-shadow); */
-}
-
-.button-cancel {
-  background-color: var(--blue-color);
-}
-
-.button-disabled {
-  background-color: var(--light-mint-color);
-}
-
-.button-active {
-  background-color: var(--turqoise-color);
-}
-
-.button-active:hover {
-  background-color: var(--pine-green-color);
-  color: var(--white-color);
-}
-
-.button-active:disabled:hover {
-  background-color: var(--turqoise-color);
-  cursor: default;
-}
-
-@media screen and (min-width: 800px) {
-  .button-base {
-    font-family: "MontserratSemibold";
-    font-size: 1.6rem;
-    padding: 10px 15px;
-  }
-
-  .button-disabled {
-    background-color: var(--light-mint-color);
-  }
-
-  .button-active {
-    background-color: var(--turqoise-color);
-  }
-
-  .button-active:hover {
-    background-color: var(--pine-green-color);
-    color: var(--white-color);
-  }
-
 }
 
 /* Form styles */

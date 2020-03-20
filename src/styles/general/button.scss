@@ -1,0 +1,53 @@
+.button-base {
+  font-family: "MontserratMedium";
+  font-size: 1.4rem;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: var(--white-color);
+  text-transform: uppercase;
+  /* box-shadow: var(--soft-shadow); */
+}
+
+.button-cancel {
+  background-color: var(--blue-color);
+}
+
+.button-disabled {
+  background-color: var(--light-mint-color);
+}
+
+.button-active {
+  background-color: var(--turqoise-color);
+}
+
+.button-active:hover {
+  background-color: var(--pine-green-color);
+  color: var(--white-color);
+}
+
+.button-active:disabled:hover {
+  background-color: var(--turqoise-color);
+  cursor: default;
+}
+
+@media screen and (min-width: 800px) {
+  .button-base {
+    font-family: "MontserratSemibold";
+    font-size: 1.6rem;
+    padding: 10px 15px;
+  }
+
+  .button-disabled {
+    background-color: var(--light-mint-color);
+  }
+
+  .button-active {
+    background-color: var(--turqoise-color);
+  }
+
+  .button-active:hover {
+    background-color: var(--pine-green-color);
+    color: var(--white-color);
+  }
+
+}
