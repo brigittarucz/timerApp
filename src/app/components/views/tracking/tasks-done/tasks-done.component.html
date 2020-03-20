@@ -1,4 +1,4 @@
-<div class="tasksdone__switch-day" style="margin: 25px;margin-left: calc(50% - 150px);">
+<div class="tasksdone__switch-day">
   <span [ngClass]="{'active2 toggleLeft': isOnMoveLeft, 'active toggleRight': isOnMoveRight}"
     [ngStyle]="{'display': isNotOnMove ? 'none' : 'block'}"> </span>
   <button class="button-base-switch" [class.active-switch]="isTodayActive === true"
@@ -7,19 +7,19 @@
     (click)="ChangeState($event)">Yesterday</button>
 </div>
 
-<div class="tasksdone__view-day pt-5 pb-2 mb-5">
+<div class="tasksdone__view-day div__table-container pt-5 pb-2 mb-5">
   <div class="container">
     <div class="row">
       <div class="col-4 col-lg-5 d-lg-flex justify-content-around">
-        <h3 class="text-5_SemiBold"> Department </h3>
-        <h3 class="text-5_SemiBold"> Category </h3>
+        <h3 class="text-5_semibold"> Department </h3>
+        <h3 class="text-5_semibold"> Category </h3>
       </div>
       <div class="col-4 col-lg-4 d-lg-flex justify-content-around">
-        <h3 class="text-5_SemiBold "> Client </h3>
-        <h3 class="text-5_SemiBold "> Project </h3>
+        <h3 class="text-5_semibold "> Client </h3>
+        <h3 class="text-5_semibold "> Project </h3>
       </div>
       <div class="col-4 col-lg-3">
-        <h3 class="text-5_SemiBold "> Time Spent </h3>
+        <h3 class="text-5_semibold "> Time Spent </h3>
       </div>
     </div>
     <hr>
@@ -27,17 +27,16 @@
       <div *ngIf="session.date.slice(0,10) === pickedDate.slice(0,10)">
         <div class="row mt-4 mb-4">
           <div class="col-4 col-lg-5 d-lg-flex justify-content-around">
-            <p class="text-5 "> {{ session.department }} </p>
-            <p class="text-5 "> {{ session.category }} </p>
+            <p class="text-5_regular"> {{ session.department }} </p>
+            <p class="text-5_regular"> {{ session.category }} </p>
           </div>
           <div class="col-4  col-lg-4 d-lg-flex justify-content-around">
-            <p class="text-5 "> {{ session.client }} </p>
-            <p class="text-5 "> {{ session.project }} </p>
+            <p class="text-5_regular"> {{ session.client }} </p>
+            <p class="text-5_regular"> {{ session.project }} </p>
           </div>
           <div class="col-4  col-lg-3 d-lg-flex justify-content-around">
-            <p class="text-5 "> {{ session.time }} </p>
-            <img src="../../../assets/tracking/restart-icon.png" width="22" height="22" style="margin-left: 45px;"
-              class="">
+            <p class="text-5_regular"> {{ session.time }} </p>
+            <img src="../../../assets/tracking/restart-icon.png" width="22" height="22" class="ml-5">
           </div>
         </div>
         <hr>
@@ -45,10 +44,10 @@
     </div>
     <div class="row justify-content-end mt-4 mb-4">
       <div class="col-4">
-        <p class="text-5_SemiBold"> Total </p>
+        <p class="text-5_semibold"> Total </p>
       </div>
       <div class="col-4">
-        <p class="text-5"> 00 : 00 : 00 </p>
+        <p class="text-5_regular"> 00 : 00 : 00 </p>
       </div>
     </div>
   </div>

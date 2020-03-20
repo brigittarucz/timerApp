@@ -3,15 +3,17 @@
   font-size: 3.2rem;
 }
 
-/* Page Title */
+// Before: text-1
 
-.text-1 {
+.text-1_semibold {
   font-family: 'MontserratSemiBold', sans-serif;
   text-transform: uppercase;
   font-size: 3.2rem;
 }
 
-.text-2 {
+// Before: text-2
+
+.text-2_semibold {
   font-family: 'MontserratSemiBold', sans-serif;
   text-transform: uppercase;
   font-size: 2.5rem;
@@ -23,9 +25,9 @@
   font-size: 2.5rem;
 }
 
-/* Page Subtitle */
+// Before: text-3 
 
-.text-3 {
+.text-3_medium {
   font-family: 'MontserratMedium', sans-serif;
   font-size: 2rem;
 }
@@ -40,18 +42,24 @@
   font-size: 1.8rem;
 }
 
-.text-4 {
+// Before: text-4
+
+.text-4_semibold {
   font-family: 'MontserratSemiBold', sans-serif;
   font-size: 1.8rem;
   text-transform: uppercase;
 }
 
-.text-5 {
+// Before: text-5
+
+.text-5_regular {
   font-family: 'MontserratRegular', sans-serif;
   font-size: 1.5rem;
 }
 
-.text-5_SemiBold {
+// Before: text-5_SemiBold
+
+.text-5_semibold {
   font-family: 'MontserratSemiBold', sans-serif;
   font-size: 1.5rem;
   text-transform: uppercase;

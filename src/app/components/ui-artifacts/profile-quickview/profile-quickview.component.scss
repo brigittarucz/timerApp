@@ -1,6 +1,8 @@
 .navbar-nav {
   width: 100%;
   background-color: var(--white-color);
+  position: absolute;
+  z-index: 10;
 }
 
 .navigation__profile-controls div {

@@ -5,6 +5,7 @@
 @import "./general/colors.scss";
 @import "./general/fonts.scss";
 @import "./general/forms.scss";
+@import "./general/layout.scss";
 @import "./general/table.scss";
 @import "./general/toggle-button.scss";
 @import "./general/typography.scss";
@@ -57,4 +58,13 @@ mat-dialog-container#modal-component {
   border-radius: 11px;
   background-color: white;
   color: var(--grey-color);
+}
+
+.mat-raised-button:disabled {
+  padding: 12px 10px;
+  border-radius: 60px;
+  color: var(--white-color);
+  text-transform: uppercase;
+  box-shadow: var(--soft-shadow);
+  background-color: var(--light-mint-color) !important;
 }

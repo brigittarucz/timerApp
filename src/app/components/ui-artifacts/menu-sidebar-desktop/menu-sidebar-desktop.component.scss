@@ -1,13 +1,19 @@
-.sidebar__quick-navigation * {
+.sidebar__quick-navigation-small * {
   display: inline-block;
   padding: 10px 25px 10px 10px;
 }
 
-.sidebar__quick-navigation-menu {
+.sidebar__quick-navigation-small a div {
+  height: 50px;
+  width: 55px;
+}
+
+.sidebar__quick-navigation-large {
+  top: 0;
   position: absolute;
-  top: 60px;
   padding-left: 30px;
-  height: calc(100vh - 60px);
+  background-color: white;
+  height: 100vh;
   overflow-x: hidden;
   width: 300px;
   overflow-y: hidden;
@@ -15,11 +21,11 @@
   animation: openMenu 0.5s 1 forwards;
 }
 
-.sidebar__quick-navigation-open {
+.sidebar__quick-navigation-large-open {
   padding: 5px 10px;
 }
 
-.sidebar__quick-navigation-open * {
+.sidebar__quick-navigation-large-open * {
   display: inline-block;
   padding: 10px 25px 10px 10px;
   display: flex;
@@ -35,16 +41,11 @@
   background-position: center;
 }
 
-.sidebar__quick-navigation a div {
-  height: 50px;
-  width: 55px;
-}
-
-.sidebar__quick-navigation-open a {
+.sidebar__quick-navigation-large-open a {
   all: unset;
 }
 
-.sidebar__quick-navigation-open a div {
+.sidebar__quick-navigation-large-open a div {
   height: 50px;
   width: 245px;
   color: var(--grey-color);
@@ -142,7 +143,7 @@ a div:hover {
   }
 }
 
-.sidebar__quick-navigation-menu {
+.sidebar__quick-navigation-large {
   animation: increaseOpacity 1s 1 forwards;
 }
 

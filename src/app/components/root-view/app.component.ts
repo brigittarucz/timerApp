@@ -6,23 +6,23 @@ import { Component, Input } from '@angular/core';
 	styleUrls: [ './app.component.scss' ]
 })
 export class AppComponent {
-  title = 'timer-app';
-  clickFromNav = false;
-  initialDisplay = 'none';
-  windowWidth = window.innerWidth;
+	title = 'timer-app';
+	clickFromNav = false;
+	initialDisplay = 'none';
+	windowWidth = window.innerWidth;
 
-  constructor() {}
+	constructor() {}
 
-  openMenu(boolVal) {
-    if (window.innerWidth < 800) {
-      this.initialDisplay = 'block';
-      this.clickFromNav = boolVal;
-    } else {
-      this.clickFromNav = boolVal;
-    }
-  }
+	openMenu(boolVal) {
+		if (window.innerWidth < 800) {
+			this.initialDisplay = 'block';
+			this.clickFromNav = boolVal;
+		} else {
+			this.clickFromNav = boolVal;
+		}
+	}
 
-  closeMenu(boolVal) {
-    this.clickFromNav = boolVal;
-  }
+	closeMenu(boolVal) {
+		this.clickFromNav = boolVal;
+	}
 }

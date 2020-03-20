@@ -1,45 +1,43 @@
-<nav class="sidebar-mobile navbar navbar-light bg-light">
-  <a class="navigation__menu-icon">
-    <img src="../../assets/cross-icon.png" width="28" height="28" alt="Menu Icon" (click)="closeSidebar()">
-  </a>
-  <div class="navigation__profile-icon-container">
-  </div>
-  <div class="collapse navbar-collapse" style="display:block" [style.display]="displayNav">
-    <app-profile-quickview> </app-profile-quickview>
-  </div>
-</nav>
+<div class="navigation__sidebar-container">
 
-<div class="menu" style="text-transform: uppercase;">
-  <ul class="list-group menu__list-options">
-    <li class="list-group-item">
-      <p class="text-4"> User </p>
-      <ul>
-        <li class="menu-option text-5 align-content"> <span class="icon-sidebar pr-4 icon_tracking"> </span>Tracking
-        </li>
-        <li class="menu-option text-5 align-content"> <span class="icon-sidebar pr-4 icon_user-history"> </span>User
-          History </li>
-        <li class="menu-option text-5 align-content"> <span class="icon-sidebar pr-4 icon_activity"> </span>Activity
-        </li>
-      </ul>
-    </li>
-    <li class="list-group-item">
-      <p class="text-4"> Projects</p>
-      <ul>
-        <li class="menu-option text-5 align-content"> <span class="icon-sidebar pr-4 icon_project-history">
-          </span>Project History</li>
-      </ul>
-    </li>
-    <li class="list-group-item">
-      <p class="text-4"> Admin </p>
-      <ul>
-        <li class="menu-option text-5 align-content"> <span class="icon-sidebar pr-4 icon_form-setting"> </span>Form
-          Setting </li>
-        <li class="menu-option text-5 align-content"> <span class="icon-sidebar pr-4 icon_users"> </span>Users </li>
-        <li class="menu-option text-5 align-content"> <span class="icon-sidebar pr-4 icon_clients-projects">
-          </span>Clients & Projects </li>
-        <li class="menu-option text-5 align-content"> <span class="icon-sidebar pr-4 icon_user-access"> </span>User
-          Access </li>
-      </ul>
-    </li>
-  </ul>
+  <div class="menu">
+    <ul class="list-group menu__list-options">
+      <li class="list-group-item">
+        <p class="text-4_semibold"> User </p>
+        <ul>
+          <li class="menu-option text-5_regular align-content"> <span class="icon-sidebar pr-4 icon_tracking">
+            </span>Tracking
+          </li>
+          <li class="menu-option text-5_regular align-content"> <span class="icon-sidebar pr-4 icon_user-history">
+            </span>User
+            History </li>
+          <li class="menu-option text-5_regular align-content"> <span class="icon-sidebar pr-4 icon_activity">
+            </span>Activity
+          </li>
+        </ul>
+      </li>
+      <li class="list-group-item">
+        <p class="text-4_semibold"> Projects</p>
+        <ul>
+          <li class="menu-option text-5_regular align-content"> <span class="icon-sidebar pr-4 icon_project-history">
+            </span>Project History</li>
+        </ul>
+      </li>
+      <li class="list-group-item">
+        <p class="text-4_semibold"> Admin </p>
+        <ul>
+          <li class="menu-option text-5_regular align-content"> <span class="icon-sidebar pr-4 icon_form-setting">
+            </span>Form
+            Setting </li>
+          <li class="menu-option text-5_regular align-content"> <span class="icon-sidebar pr-4 icon_users"> </span>Users
+          </li>
+          <li class="menu-option text-5_regular align-content"> <span class="icon-sidebar pr-4 icon_clients-projects">
+            </span>Clients & Projects </li>
+          <li class="menu-option text-5_regular align-content"> <span class="icon-sidebar pr-4 icon_user-access">
+            </span>User
+            Access </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
 </div>

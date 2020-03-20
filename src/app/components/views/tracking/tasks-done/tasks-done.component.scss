@@ -3,7 +3,15 @@
   background-color: var(--white-color);
   border-radius: 10px;
   box-shadow: var(--soft-shadow);
+  margin: 25px;
+  margin-left: calc(50% - 150px);
 }
+
+h3 {
+  padding: 5px 0;
+}
+
+// Toggler
 
 .button-base-switch {
   font-family: "MontserratMedium";
@@ -68,34 +76,5 @@
 
   100% {
     opacity: 0;
-  }
-}
-
-h3 {
-  padding: 5px 0;
-}
-
-.tasksdone__view-day {
-  background-color: var(--white-color);
-  margin-top: -45px;
-  box-shadow: var(--soft-shadow);
-  position: relative;
-  z-index: -1;
-}
-
-@media screen and (min-width: 800px) {
-  .tasksdone__view-day {
-    width: 80%;
-    margin-left: 10%;
-  }
-
-  .changeDisplay {
-    display: inline-block;
-    margin-right: 15%;
-    text-align: center;
-  }
-
-  .blabla * {
-    text-align: center;
   }
 }

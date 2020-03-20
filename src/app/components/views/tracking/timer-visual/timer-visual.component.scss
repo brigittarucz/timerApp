@@ -28,6 +28,12 @@
   color: white;
 }
 
+.div__tracking-controls {
+  flex-basis: 100%;
+  margin-left: calc(50% - 45px);
+  margin-top: -60px
+}
+
 .controls-image {
   width: 25px;
   margin: 10px;

@@ -2,7 +2,7 @@ button {
   margin: 30px 10px;
 }
 
-.button-checkIn {
+.button-checkin {
   margin-left: calc(50% - 135px);
 }
 
@@ -11,7 +11,7 @@ button {
     margin: 5px;
   }
 
-  .button-checkIn {
+  .button-checkin {
     margin-left: 5px;
   }
 
@@ -21,17 +21,17 @@ button {
     grid-template-rows: 1fr;
   }
 
-  .button-checkIn {
+  .button-checkin {
     grid-column: 1/span 1;
   }
 
-  .counter__row {
+  .div__counter {
     padding-top: 10px;
     grid-column: 2/span 1;
     grid-row: 1/span 1;
   }
 
-  .button-checkOut {
+  .button-checkout {
     grid-column: 3/span 1;
   }
 }

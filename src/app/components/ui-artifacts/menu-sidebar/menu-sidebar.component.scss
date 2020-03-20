@@ -2,21 +2,26 @@ ul {
   list-style-type: none;
 }
 
-.navbar {
-  z-index: 4;
+.navigation__sidebar-container {
+  position: absolute;
+  top: 58px;
+  background-color: white;
+  z-index: 5;
+  width: 100%;
+  height: 100vh;
+  text-transform: uppercase;
 }
 
-.navigation__profile-icon-container {
-  width: 48px;
-  height: 48px;
-  background-color: aquamarine;
-  border-radius: 32px;
-  border: 1px solid black;
+.align-content {
+  display: flex;
+  align-items: center;
 }
 
-.navigation__profile-icon {
-  all: unset;
+.menu-option {
+  margin-top: 15px;
 }
+
+// Icons styling
 
 .icon-sidebar::before {
   background-size: contain;
@@ -27,7 +32,6 @@ ul {
   content: "";
   background-position: center;
 }
-
 
 .icon_tracking::before {
   background-image: url(../../../../assets/navigation/tracking-icon.png);
@@ -59,51 +63,4 @@ ul {
 
 .icon_user-access::before {
   background-image: url(../../../../assets/navigation/useraccess-icon.png);
-}
-
-.align-content {
-  display: flex;
-  align-items: center;
-}
-
-.menu-option {
-  margin-top: 15px;
-}
-
-@media screen and (min-width: 800px) {
-  .sidebar-mobile {
-    display: none;
-  }
-
-  .menu {
-    z-index: 2;
-    margin-top: 58px;
-    width: 300px;
-    background-color: white;
-  }
-
-  .menu__list-options {
-    height: calc(100vh - 58px);
-    overflow-y: hidden;
-    box-shadow: var(--soft-shadow);
-  }
-
-  ul,
-  li {
-    margin-top: auto;
-    margin-bottom: auto;
-  }
-
-  .list-group-item {
-    border: none;
-  }
-
-  .list-group-item:nth-of-type(1) {
-    border-bottom: 1px solid rgba(0, 0, 0, .125);
-  }
-
-  .list-group-item:nth-of-type(3) {
-    border-top: 1px solid rgba(0, 0, 0, .125);
-  }
-
 }

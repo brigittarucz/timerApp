@@ -1,13 +1,3 @@
-.mat-raised-button:disabled {
-  font-family: "MontserratMedium";
-  padding: 12px 10px;
-  border-radius: 60px;
-  color: var(--white-color);
-  text-transform: uppercase;
-  box-shadow: var(--soft-shadow);
-  background-color: var(--light-mint-color);
-}
-
 .div__tracking-notask {
   margin-bottom: 60px;
 }
@@ -17,13 +7,9 @@
   box-shadow: var(--soft-shadow);
 }
 
-.button__begin {
-  background-color: var(--turqoise-color);
-  border: 0;
-  padding: 12px 10px;
-  border-radius: 60px;
-  position: absolute;
+.button-add {
   margin-left: calc(50% - 20px);
+  position: absolute;
 }
 
 @media screen and (min-width: 800px) {
@@ -35,7 +21,7 @@
     margin: 30px;
   }
 
-  .time-controller {
+  .app__timer-controller {
     display: none;
   }
 

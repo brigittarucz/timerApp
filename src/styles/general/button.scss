@@ -30,6 +30,19 @@
   cursor: default;
 }
 
+// Overriding mat button's CSS properties
+
+.button-add {
+  background-color: var(--turqoise-color);
+  border: 0 !important;
+  padding: 12px 10px !important;
+  border-radius: 60px !important;
+}
+
+.button-add:disabled {
+  background-color: var(--pine-green-color);
+}
+
 @media screen and (min-width: 800px) {
   .button-base {
     font-family: "MontserratSemibold";

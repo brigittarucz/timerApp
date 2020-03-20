@@ -1,32 +1,32 @@
-import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: "app-menu-sidebar",
-  templateUrl: "./menu-sidebar.component.html",
-  styleUrls: ["./menu-sidebar.component.scss"]
+	selector: 'app-menu-sidebar',
+	templateUrl: './menu-sidebar.component.html',
+	styleUrls: [ './menu-sidebar.component.scss' ]
 })
 export class MenuSidebarComponent implements OnInit {
-  toggleNav = false;
+	toggleNav = false;
 
-  @Output() sidebarClick = new EventEmitter();
+	@Output() sidebarClick = new EventEmitter();
 
-  displayNav = 'none';
+	displayNav = 'none';
 
-  @Input() boolVal;
-  constructor() {}
+	@Input() boolVal;
+	constructor() {}
 
-  closeSidebar() {
-    this.sidebarClick.emit(false);
-  }
+	closeSidebar() {
+		this.sidebarClick.emit(false);
+	}
 
-  toggleNavbar() {
-    this.toggleNav = !this.toggleNav;
-    if (this.toggleNav && window.innerWidth < 800) {
-      this.displayNav = 'block';
-    } else {
-      this.displayNav = 'none';
-    }
-  }
+	toggleNavbar() {
+		this.toggleNav = !this.toggleNav;
+		if (this.toggleNav && window.innerWidth < 800) {
+			this.displayNav = 'block';
+		} else {
+			this.displayNav = 'none';
+		}
+	}
 
-  ngOnInit(): void {}
+	ngOnInit(): void {}
 }

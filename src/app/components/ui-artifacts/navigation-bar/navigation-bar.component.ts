@@ -35,7 +35,7 @@ export class NavigationBarComponent implements OnInit {
 		this.toggleSide = !this.toggleSide;
 		this.menuClick.emit(this.toggleSide);
 		let navigIcon = event.target;
-		if (this.toggleSide && window.innerWidth > 800) {
+		if (this.toggleSide) {
 			navigIcon.setAttribute('src', '../../../../assets/cross-icon.png');
 			navigIcon.setAttribute('height', '28');
 			navigIcon.setAttribute('width', '28');

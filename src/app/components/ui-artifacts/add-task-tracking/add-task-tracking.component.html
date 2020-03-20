@@ -1,12 +1,12 @@
 <h1 class="text-2_regular text-center m-5"> New Task </h1>
-<form (ngSubmit)="onSubmit(f)" #f="ngForm" class="container form-task" (change)="updateFormValidity()">
+<form (ngSubmit)="onSubmit(f)" #f="ngForm" class="container form__add-task" (change)="updateFormValidity()">
   <div id="user-data" ngModelGroup="userData" #userData="ngModelGroup" class="row">
 
     <app-add-task-field class="form-group col-10 offset-1 mb-4" *ngFor="let taskParam of taskParameters; let i = index"
       (changeSelect)="updateFields($event)" (eliminateSelect)="getClickedField($event)"
       [taskParameter]="taskParameters[i]"> </app-add-task-field>
     <div class="container mt-4">
-      <div class="form-control-buttons row justify-content-center">
+      <div class="form__control-buttons row justify-content-center">
         <button [disabled]="!formManualValidity" class="btn button-base button-active col-4 col-lg-2" type="submit">
           Start
         </button>
