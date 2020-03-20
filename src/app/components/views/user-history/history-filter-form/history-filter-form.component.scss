@@ -3,102 +3,23 @@
   outline: none;
 }
 
-.text-4_SemiBold_LowerCase_blue {
-  font-family: 'MontserratSemiBold';
-  font-size: 1.8rem;
-  color: var(--blue-color)
+.form-fix {
+  margin: auto 3rem;
 }
 
-.btn-round__turqoise {
-  padding: .75rem;
-  border-radius: 100rem;
-  background: var(--turqoise-color);
-  box-shadow: var(--soft-shadow);
+.container-margin-bottom {
+  margin-bottom: 10rem;
+}
+
+.button-add {
+  margin: 3rem 5rem;
 }
 
 .box-shadow__soft {
   box-shadow: var(--soft-shadow);
 }
-/* ----------------------------------------- */
-/* ------------- TOGGLE BUTTON ------------- */
 
-.btn-base__toggle {
-  font-family: "MontserratMedium";
-  text-transform: uppercase;
-  font-size: 1.6rem;
-  width: 100%;
-  height: 3rem;
-  background-color: var(--white-color);
-  color: var(--blue-color);
-  border-radius: 10px!important;
-  box-shadow: var(--soft-shadow);
-  position: relative;
 
-  .btn-switcher {
-    background-color: var(--blue-color);
-    width: 50%;
-    height: inherit;
-    border-radius: 10px;
-    z-index: 1;
-    position: absolute;
-    content: '';
-
-    &__animate {
-      animation: toggleAnim .4s forwards ease-in-out;
-
-      @keyframes toggleAnim {
-        0% {
-          transform: translateX(0);
-        }
-
-        100% {
-          transform: translateX(100%);
-        }
-      }
-
-      &__reverse {
-        animation: toggleAnimRev .4s forwards ease-in-out;
-
-        @keyframes toggleAnimRev {
-          0% {
-            transform: translateX(100%);
-          }
-
-          100% {
-            transform: translateX(0);
-          }
-        }
-      }
-    }
-  }
-}
-
-.btn-toggle {
-  color: var(--blue-color);
-  width: 50%;
-  height: inherit;
-  border: none;
-  background: transparent;
-  position: absolute;
-  z-index: 2;
-
-  &.right {
-    right: 0;
-  }
-
-  &__active {
-    color: var(--white-color);
-    border-radius: 10px;
-    background: transparent;
-    z-index: 2;
-    position: absolute;
-  }
-
-  &__fix {
-    border-top-right-radius: 10px!important;
-    border-bottom-right-radius: 10px!important;
-  }
-}
 
 
 

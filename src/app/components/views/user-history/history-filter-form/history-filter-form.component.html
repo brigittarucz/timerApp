@@ -1,9 +1,9 @@
-<div class="container">
-  <form>
+<div class="container container-margin-bottom">
+  <form class="form-fix">
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-xl-3">
         <div class="form-group">
-          <label class="text-4_SemiBold_LowerCase_blue" for="department">Department</label>
+          <label class="basic-label" for="department">Department</label>
           <select class="basic-select text-5 basic-select" id="department">
             <option value="">Select a department</option>
             <option value="1">1</option>
@@ -14,7 +14,7 @@
       </div>
       <div class="col-xs-12 col-sm-6 col-xl-3">
         <div class="form-group">
-          <label  class="text-4_SemiBold_LowerCase_blue" for="client">Client</label>
+          <label  class="basic-label" for="client">Client</label>
           <select class="basic-select text-5 basic-select" id="client">
             <option value="">Select a client</option>
             <option value="1">1</option>
@@ -25,14 +25,14 @@
       </div>
       <div class="col-xs-12 col-sm-6 col-xl-3">
         <div class="form-group">
-          <label class="text-4_SemiBold_LowerCase_blue" for="startDate">StartDate</label>
+          <label class="basic-label" for="startDate">StartDate</label>
           <input class="basic-input text-5" type="date" id="startDate">
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-xl-3">
         <div class="form-group">
-          <label class="text-4_SemiBold_LowerCase_blue" for="year">Year</label>
-          <input class="basic-select text-5" type="number" id="year" placeholder="Select a year">
+          <label class="basic-label" for="year">Year</label>
+          <input class="basic-input text-5" type="number" id="year" placeholder="Select a year">
         </div>
       </div>
     </div>
@@ -40,7 +40,7 @@
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-xl-3">
         <div class="form-group">
-          <label class="text-4_SemiBold_LowerCase_blue" for="category">Category</label>
+          <label class="basic-label" for="category">Category</label>
           <select class="basic-select text-5 basic-select" id="category">
             <option value="">Select a category</option>
             <option value="1">1</option>
@@ -51,7 +51,7 @@
       </div>
       <div class="col-xs-12 col-sm-6 col-xl-3">
         <div class="form-group">
-          <label class="text-4_SemiBold_LowerCase_blue" for="project">Project</label>
+          <label class="basic-label" for="project">Project</label>
           <select class="basic-select text-5 basic-select" id="project">
             <option value="">Select a project</option>
             <option value="1">1</option>
@@ -62,12 +62,12 @@
       </div>
       <div class="col-xs-12 col-sm-6 col-xl-3">
         <div class="form-group">
-          <label class="text-4_SemiBold_LowerCase_blue" for="endDate">End Date</label>
+          <label class="basic-label" for="endDate">End Date</label>
           <input class="basic-input text-5" type="date" id="endDate">
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-xl-3">
-        <div class="btn-base__toggle" data-toggle="buttons" (click)="onToggleButton()">
+        <div class="btn-base-toggle align-bottom" data-toggle="buttons" (click)="onToggleButton()">
           <span
             [ngClass]="{'btn-switcher__animate': animState.currentAnim === 'btn-switcher__animate', 'btn-switcher__animate__reverse': animState.currentAnim === 'btn-switcher__animate__reverse'}"
             class="btn-switcher"></span>
@@ -83,7 +83,7 @@
       </div>
     </div>
   </form>
-  <button  class="btn btn-round__turqoise float-right">
+  <button  class="btn button-add float-right">
     <img src="../../../../../assets/user-history/add-icon-white.png" width="30">
   </button>
 

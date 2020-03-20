@@ -20,16 +20,19 @@ select {
   display: block;
   width: 100%;
   height: calc(1.5em + 0.75rem + 2px);
-  padding: 0.375rem 0.75rem;
+  padding: 0.375rem 0;
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.5;
-  color: $grey-color;
+  color: $grey-color-light;
   background-color: #fff;
   background-clip: padding-box;
-  border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  border-bottom: 2px solid grey;
+  border-bottom: .1rem solid grey;
+
+  &:focus {
+    color: $grey-color;
+  }
 }
 
 
@@ -37,14 +40,23 @@ select {
   display: block;
   width: 100%;
   height: calc(1.5em + 0.75rem + 2px);
-  padding: 0.375rem 0.75rem;
+  padding: 0.375rem 0;
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.5;
-  color: $grey-color;
+  color: $grey-color-light;
   background-color: #fff;
   background-clip: padding-box;
-  border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  border-bottom: 2px solid grey;
+  border-bottom: .1rem solid grey;
+
+  &:focus {
+    color: $grey-color;
+  }
+}
+
+.basic-label {
+  font-family: 'MontserratSemiBold', sans-serif;
+  font-size: 1.8rem;
+  color: var(--blue-color)
 }

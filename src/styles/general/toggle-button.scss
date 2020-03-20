@@ -1,0 +1,78 @@
+
+.btn-base-toggle {
+  font-family: "MontserratMedium", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  width: 100%;
+  height: 4rem;
+  background-color: var(--white-color);
+  color: var(--blue-color);
+  border-radius: 10px!important;
+  box-shadow: var(--soft-shadow);
+  position: relative;
+
+  .btn-switcher {
+    background-color: var(--blue-color);
+    width: 50%;
+    height: inherit;
+    border-radius: 10px;
+    z-index: 1;
+    position: absolute;
+    content: '';
+
+    &__animate {
+      animation: toggleAnim .4s forwards ease-in-out;
+
+      @keyframes toggleAnim {
+        0% {
+          transform: translateX(0);
+        }
+
+        100% {
+          transform: translateX(100%);
+        }
+      }
+
+      &__reverse {
+        animation: toggleAnimRev .4s forwards ease-in-out;
+
+        @keyframes toggleAnimRev {
+          0% {
+            transform: translateX(100%);
+          }
+
+          100% {
+            transform: translateX(0);
+          }
+        }
+      }
+    }
+  }
+}
+
+.btn-toggle {
+  color: var(--blue-color);
+  width: 50%;
+  height: inherit;
+  border: none;
+  background: transparent;
+  position: absolute;
+  z-index: 2;
+
+  &.right {
+    right: 0;
+  }
+
+  &__active {
+    color: var(--white-color);
+    border-radius: 10px;
+    background: transparent;
+    z-index: 2;
+    position: absolute;
+  }
+
+  &__fix {
+    border-top-right-radius: 10px!important;
+    border-bottom-right-radius: 10px!important;
+  }
+}
