@@ -1,7 +1,8 @@
-<div class="container container-margin-bottom">
-  <form class="form-fix">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-xl-3">
+<div class="main-container">
+  <form class="main-container__margin">
+    <div class="form-grid">
+
+      <div class="template-area">
         <div class="form-group">
           <label class="basic-label" for="department">Department</label>
           <select class="basic-select text-5 basic-select" id="department">
@@ -12,7 +13,8 @@
           </select>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-6 col-xl-3">
+
+      <div class="template-area">
         <div class="form-group">
           <label  class="basic-label" for="client">Client</label>
           <select class="basic-select text-5 basic-select" id="client">
@@ -23,22 +25,22 @@
           </select>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-6 col-xl-3">
+
+      <div class="template-area">
         <div class="form-group">
           <label class="basic-label" for="startDate">StartDate</label>
           <input class="basic-input text-5" type="date" id="startDate">
         </div>
       </div>
-      <div class="col-xs-12 col-sm-6 col-xl-3">
+
+      <div class="template-area">
         <div class="form-group">
           <label class="basic-label" for="year">Year</label>
           <input class="basic-input text-5" type="number" id="year" placeholder="Select a year">
         </div>
       </div>
-    </div>
 
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-xl-3">
+      <div class="template-area">
         <div class="form-group">
           <label class="basic-label" for="category">Category</label>
           <select class="basic-select text-5 basic-select" id="category">
@@ -49,7 +51,8 @@
           </select>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-6 col-xl-3">
+
+      <div class="template-area">
         <div class="form-group">
           <label class="basic-label" for="project">Project</label>
           <select class="basic-select text-5 basic-select" id="project">
@@ -60,13 +63,15 @@
           </select>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-6 col-xl-3">
+
+      <div class="template-area">
         <div class="form-group">
           <label class="basic-label" for="endDate">End Date</label>
           <input class="basic-input text-5" type="date" id="endDate">
         </div>
       </div>
-      <div class="col-xs-12 col-sm-6 col-xl-3">
+
+      <div class="template-area">
         <div class="btn-base-toggle align-bottom" data-toggle="buttons" (click)="onToggleButton()">
           <span
             [ngClass]="{'btn-switcher__animate': animState.currentAnim === 'btn-switcher__animate', 'btn-switcher__animate__reverse': animState.currentAnim === 'btn-switcher__animate__reverse'}"
@@ -82,9 +87,9 @@
         </div>
       </div>
     </div>
-  </form>
-  <button  class="btn button-add float-right">
-    <img src="../../../../../assets/user-history/add-icon-white.png" width="30">
-  </button>
 
+    <button  class="btn button-add float-right">
+      <img src="../../../../../assets/user-history/add-icon-white.png" width="30">
+    </button>
+  </form>
 </div>

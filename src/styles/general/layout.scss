@@ -13,6 +13,27 @@
   }
 }
 
+/* ************************************* */
+/* ************* PAGE LAYOUT *********** */
+
+.main-container {
+  width: 100%;
+  margin: auto;
+  padding: 5rem 0;
+
+  &__margin {
+    padding: 0 4rem;
+    margin: auto;
+  }
+}
+
+.header-container {
+  width: 100%;
+  margin: auto;
+  padding: 3rem 0;
+}
+
+
 /* This is my version of the table,
 data-table = is a base class of the grey box
 __dropdown-container is container for dropdown-button in the button.scss
@@ -24,25 +45,35 @@ __toggle-container is container for the toggle-button in the toggle-button.scss 
   margin: -4.5rem auto auto auto;
   box-shadow: var(--soft-shadow);
   position: relative;
-  z-index: -1;
-  width: 100vw;
+  z-index: 1;
+  width: 100%;
 
   &__dropdown-container {
     width: 100%;
     position: relative;
     margin: 2.5rem 0;
+    z-index: 2;
   }
 
   &__toggle-container {
     width: 60%;
     position: relative;
     margin: 2.5rem auto;
+    z-index: 2;
   }
 }
 
 @media screen and (min-width: 800px) {
+  .main-container {
+    max-width: 85vw;
+
+    &__table-margin {
+      padding: 0 4rem;
+    }
+  }
+
   .data-table {
-    width: 80vw;
+    max-width: 85vw;
 
     &__dropdown-container {
       width: 60%;
