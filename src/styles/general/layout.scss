@@ -12,3 +12,42 @@
     margin-left: 10%;
   }
 }
+
+/* This is my version of the table,
+data-table = is a base class of the grey box
+__dropdown-container is container for dropdown-button in the button.scss
+__toggle-container is container for the toggle-button in the toggle-button.scss */
+
+.data-table {
+  font-family: "MontserratMedium", sans-serif;
+  background-color: var(--white-color);
+  margin: -4.5rem auto auto auto;
+  box-shadow: var(--soft-shadow);
+  position: relative;
+  z-index: -1;
+  width: 100vw;
+
+  &__dropdown-container {
+    width: 100%;
+    position: relative;
+    margin: 2.5rem 0;
+  }
+
+  &__toggle-container {
+    width: 60%;
+    position: relative;
+    margin: 2.5rem auto;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .data-table {
+    width: 80vw;
+
+    &__dropdown-container {
+      width: 60%;
+      margin: 2.5rem auto;
+    }
+  }
+}
+

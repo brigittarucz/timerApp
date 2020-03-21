@@ -44,4 +44,39 @@ export class HistoryDataTableComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.taskDataSubscription.unsubscribe();
   }
+
+  // ************************************
+
+
+  buttonState = true;
+
+  animState = {
+    btn1: true,
+    btn2: false,
+    currentAnim: "",
+    play: false,
+  };
+
+  onToggleButton() {
+    this.buttonState = !this.buttonState;
+    if(this.buttonState) {
+      this.animState.btn1 = true;
+      this.animState.btn2 = false;
+
+      this.animState.currentAnim = 'btn-switcher__animate__reverse';
+      // console.log('Check in got clicked');
+    } else {
+      this.animState.btn1 = false;
+      this.animState.btn2 = true;
+
+      this.animState.currentAnim = 'btn-switcher__animate';
+      // console.log('Tasks got clicked')
+    }
+
+    this.animState.play = true;
+  }
 }
+
+
+
+

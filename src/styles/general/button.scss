@@ -62,5 +62,38 @@
     background-color: var(--pine-green-color);
     color: var(--white-color);
   }
+}
 
+/* ************************************* */
+/* ********** DROPDOWN BUTTON ********** */
+
+.dropdown-button {
+  width: 100%;
+  text-transform: uppercase;
+  background-color: var(--blue-color);
+  color: var(--white-color);
+  padding: 1.3rem 5rem;
+  box-shadow: var(--soft-shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__header {
+    display: flex;
+
+    &__margin {
+      margin-right: 2rem;
+    }
+  }
+
+  &__arrow {
+    width: 1.5rem;
+    transform: rotate(270deg);
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .dropdown-button {
+    border-radius: 10px;
+  }
 }
