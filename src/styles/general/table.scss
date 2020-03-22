@@ -1,0 +1,74 @@
+/* ************************************* */
+/* *********** TABLE 1 LAYOUT ********** */
+
+.table1-grid {
+  width: 100%;
+  display: grid!important;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 1rem;
+}
+
+@media screen and (min-width: 992px) {
+  .table1-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr) 0.5fr;
+    grid-column-gap: 1rem;
+  }
+}
+
+.table1 {
+  width: 100%;
+
+  thead > tr {
+    border-bottom: .2rem solid $grey-color-light;
+  }
+
+  tbody > tr {
+    padding: 1rem 0;
+    border-bottom: .1rem solid $grey-color-light;
+    display: flex;
+    flex-wrap: wrap;
+    vertical-align: middle;
+    justify-content: space-between;
+
+    &:last-child {
+      border: none;
+    }
+  }
+
+  tfoot > tr {
+    padding-top: 1rem;
+    border-top: .2rem solid $grey-color-light;
+  }
+
+
+  th, td {
+    padding: .5rem 0;
+
+    &:last-child {
+      text-align: right;
+    }
+  }
+
+  img {
+    width: 2rem;
+  }
+
+  h3 {
+    text-transform: uppercase;
+  }
+}
+
+
+@media screen and (min-width: 992px) {
+  table {
+    tr {
+      padding: 0;
+    }
+
+    th {
+      padding: 2rem 0;
+    }
+  }
+}
+

@@ -19,36 +19,31 @@
     <div class="data-table">
       <div class="data-table__content">
 
-        <table>
+        <table class="table1">
           <thead>
-            <tr>
-              <th><h3 class="text-5_SemiBold">Department</h3></th>
-              <th><h3 class="text-5_SemiBold">Category</h3></th>
-              <th><h3 class="text-5_SemiBold">Client</h3></th>
-              <th><h3 class="text-5_SemiBold">Project</h3></th>
-              <th><h3 class="text-5_SemiBold">Time Spent</h3></th>
+            <tr class="table1-grid">
+              <th><h3 class="text-4_semibold">Department</h3></th>
+              <th><h3 class="text-4_semibold">Category</h3></th>
+              <th><h3 class="text-4_semibold">Client</h3></th>
+              <th><h3 class="text-4_semibold">Project</h3></th>
+              <th><h3 class="text-4_semibold">Time Spent</h3></th>
               <th></th>
             </tr>
           </thead>
-<!--          <tbody>-->
-<!--            <tr *ngFor="let task of tasks">-->
-<!--              <td><p class="text-5">{{ task.department }}</p></td>-->
-<!--              <td><p class="text-5">{{ task.category }}</p></td>-->
-<!--              <td><p class="text-5">{{ task.client }}</p></td>-->
-<!--              <td><p class="text-5">{{ task.project }}</p></td>-->
-<!--              <td><p class="text-5">{{ task.timeSpent | millisToTime }}</p></td>-->
-<!--              <td>-->
-<!--                <img src="../../../../../assets/tracking/restart-icon.png"-->
-<!--                     class="table__img">-->
-<!--              </td>-->
-<!--            </tr>-->
-<!--          </tbody>-->
-<!--          <tfoot>-->
-<!--            <tr>-->
-<!--              <td><p class="text-5_SemiBold">Total </p></td>-->
-<!--              <td><p class="text-5">{{ totalWorkedTime | millisToTime }}</p></td>-->
-<!--            </tr>-->
-<!--          </tfoot>-->
+          <tbody>
+            <tr
+              class="table1-grid"
+              *ngFor="let task of tasks">
+              <td><p class="text-5_regular">{{ task.department }}</p></td>
+              <td><p class="text-5_regular">{{ task.category }}</p></td>
+              <td><p class="text-5_regular">{{ task.client }}</p></td>
+              <td><p class="text-5_regular">{{ task.project }}</p></td>
+              <td><p class="text-5_regular">{{ task.timeSpent | millisToTime }}</p></td>
+              <td>
+                <img src="../../../../../assets/tracking/restart-icon.png">
+              </td>
+            </tr>
+          </tbody>
         </table>
 
       </div>
@@ -84,48 +79,43 @@
     <div class="data-table">
       <div class="data-table__content">
 
-        <div class="row">
-          <div class="col-4 col-lg-5 d-lg-flex justify-content-around">
-            <h3 class="text-5_SemiBold"> Department </h3>
-            <h3 class="text-5_SemiBold"> Category </h3>
-          </div>
-          <div class="col-4 col-lg-4 d-lg-flex justify-content-around">
-            <h3 class="text-5_SemiBold "> Client </h3>
-            <h3 class="text-5_SemiBold "> Project </h3>
-          </div>
-          <div class="col-4 col-lg-3">
-            <h3 class="text-5_SemiBold "> Time Spent </h3>
-          </div>
-        </div>
-        <hr>
-        <div *ngFor="let task of tasks">
-          <!--      <div *ngIf="task.date.slice(0,10) === pickedDate.slice(0,10)">-->
-          <!--      </div>-->
-          <div class="row mt-4 mb-4">
-            <div class="col-4 col-lg-5 d-lg-flex justify-content-around">
-              <p class="text-5 "> {{ task.department }} </p>
-              <p class="text-5 "> {{ task.category }} </p>
-            </div>
-            <div class="col-4  col-lg-4 d-lg-flex justify-content-around">
-              <p class="text-5 "> {{ task.client }} </p>
-              <p class="text-5 "> {{ task.project }} </p>
-            </div>
-            <div class="col-4  col-lg-3 d-lg-flex justify-content-around">
-              <p class="text-5 "> {{ task.timeSpent | millisToTime }} </p>
-              <img src="../../../../../assets/tracking/restart-icon.png" width="22px" height="22px" style="margin-left: 45px;"
-                   class="">
-            </div>
-          </div>
-          <hr>
-        </div>
-        <div class="row justify-content-end mt-4 mb-4">
-          <div class="col-4">
-            <p class="text-5_SemiBold"> Total </p>
-          </div>
-          <div class="col-4">
-            <p class="text-5"> {{totalWorkedTime | millisToTime}} </p>
-          </div>
-        </div>
+        <table class="table1">
+          <thead>
+          <tr class="table1-grid">
+            <th><h3 class="text-4_semibold">Department</h3></th>
+            <th><h3 class="text-4_semibold">Category</h3></th>
+            <th><h3 class="text-4_semibold">Client</h3></th>
+            <th><h3 class="text-4_semibold">Project</h3></th>
+            <th><h3 class="text-4_semibold">Time Spent</h3></th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr
+            class="table1-grid"
+            *ngFor="let task of tasks">
+            <td><p class="text-5_regular">{{ task.department }}</p></td>
+            <td><p class="text-5_regular">{{ task.category }}</p></td>
+            <td><p class="text-5_regular">{{ task.client }}</p></td>
+            <td><p class="text-5_regular">{{ task.project }}</p></td>
+            <td><p class="text-5_regular">{{ task.timeSpent | millisToTime }}</p></td>
+            <td>
+              <img src="../../../../../assets/tracking/restart-icon.png">
+            </td>
+          </tr>
+          </tbody>
+          <tfoot>
+          <tr class="table1-grid">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><p class="text-5_semibold">Total </p></td>
+            <td><p class="text-5_semibold">{{ totalWorkedTime | millisToTime }}</p></td>
+            <td></td>
+          </tr>
+          </tfoot>
+        </table>
+
       </div>
     </div>
 
