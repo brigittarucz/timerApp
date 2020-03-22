@@ -163,10 +163,16 @@
                     *ngFor="let task of tasks">
                     <td>
                       <img class="profile-pic" src="https://icon2.cleanpng.com/20171220/qve/anonymous-mask-png-5a3a4666911942.7179111615137685505943.jpg">
-                      <span class="table-timeline__span-fix">
-                        <p class="text-5_semibold">{{ task.department }}</p>
-                        <p class="text-5_regular">{{ task.client }}</p>
-                      </span>
+
+                      <table>
+                        <tbody>
+                          <tr class="table-timeline__nested-table">
+                            <p class="text-5_semibold">{{ task.department }}</p>
+                            <p class="text-5_regular">{{ task.client }}</p>
+                          </tr>
+                        </tbody>
+                      </table>
+
                     </td>
                     <td><p class="text-5_regular">{{ task.timeSpent | millisToTime }}</p></td>
                   </tr>

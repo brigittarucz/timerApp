@@ -107,9 +107,13 @@
 }
 
 @media screen and (min-width: 1200px) {
-  .table-timeline__span-fix {
-    display: flex;
-    width: 20vw;
-    justify-content: space-between;
+  .table-timeline__nested-table {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 11vw;
+  }
+
+  .table-timeline__nested-table> p {
+    width: 9vw;
   }
 }
