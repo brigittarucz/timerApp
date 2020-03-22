@@ -19,7 +19,7 @@
 .main-container {
   width: 100%;
   margin: auto;
-  padding: 5rem 0;
+  padding: 3rem 0;
 
   /* consistent margin on the sides!, when working with table use &__table-margin */
   &__margin {
@@ -62,7 +62,7 @@ __toggle-container is container for the toggle-button in the toggle-button.scss 
   z-index: 1;
   width: 100%;
   padding-top: 5rem;
-  padding-bottom: 1.5rem;
+  padding-bottom: 5rem;
 
   &__dropdown-container {
     width: 100%;
@@ -78,7 +78,7 @@ __toggle-container is container for the toggle-button in the toggle-button.scss 
     z-index: 2;
   }
 
-  &__content {
+  &__content, &__content__timeline {
     padding: 0 5rem;
   }
 }
@@ -91,6 +91,12 @@ __toggle-container is container for the toggle-button in the toggle-button.scss 
       width: 60%;
       margin: 2.5rem auto;
     }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .data-table__content__timeline {
+    padding: 0 13rem;
   }
 }
 

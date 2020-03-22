@@ -72,3 +72,44 @@
   }
 }
 
+
+/* ************************************* */
+/* ***** TABLE WITH TIMELINE LAYOUT **** */
+
+.table-timeline {
+  position: relative;
+  width: 100%;
+  padding: 1rem 5rem;
+  justify-content: space-between;
+
+  tr {
+    border-bottom: .1rem solid $grey-color-light;
+
+    &:last-child {
+      border: none;
+    }
+
+    td {
+      display: inline-flex;
+      align-items: center;
+      padding: 2rem;
+
+      &:last-child {
+        float: right;
+      }
+
+      .profile-pic {
+        width: 6rem;
+        padding-right: 2rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .table-timeline__span-fix {
+    display: flex;
+    width: 20vw;
+    justify-content: space-between;
+  }
+}
