@@ -21,6 +21,7 @@
   margin: auto;
   padding: 5rem 0;
 
+  /* consistent margin on the sides!, when working with table use &__table-margin */
   &__margin {
     padding: 0 4rem;
     margin: auto;
@@ -33,6 +34,19 @@
   padding: 3rem 0;
 }
 
+@media screen and (min-width: 800px) {
+  .main-container {
+    max-width: 85vw;
+
+    &__table-margin {
+      padding: 0 4rem;
+    }
+  }
+}
+
+
+/* ************************************* */
+/* ************ TABLE LAYOUT *********** */
 
 /* This is my version of the table,
 data-table = is a base class of the grey box
@@ -47,6 +61,8 @@ __toggle-container is container for the toggle-button in the toggle-button.scss 
   position: relative;
   z-index: 1;
   width: 100%;
+  padding-top: 4rem;
+  padding-bottom: 0.5rem;
 
   &__dropdown-container {
     width: 100%;
@@ -61,17 +77,13 @@ __toggle-container is container for the toggle-button in the toggle-button.scss 
     margin: 2.5rem auto;
     z-index: 2;
   }
+
+  &__content {
+    padding: 0 5rem;
+  }
 }
 
 @media screen and (min-width: 800px) {
-  .main-container {
-    max-width: 85vw;
-
-    &__table-margin {
-      padding: 0 4rem;
-    }
-  }
-
   .data-table {
     max-width: 85vw;
 
@@ -81,4 +93,40 @@ __toggle-container is container for the toggle-button in the toggle-button.scss 
     }
   }
 }
+
+/* ************************************* */
+/* ************* FORM LAYOUT *********** */
+
+.form-grid {
+  width: 100%;
+}
+
+//.template-area {
+//  background: pink;
+//}
+
+@media screen and (min-width: 550px) {
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 5rem;
+  }
+}
+
+@media screen and (min-width: 950px) {
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 5rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 5rem;
+  }
+}
+
 

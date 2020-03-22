@@ -21,6 +21,11 @@ body {
   color: var(--grey-color);
 }
 
+*:focus
+{
+  outline: none;
+}
+
 /* Form styles */
 
 .select__generic {
