@@ -23,6 +23,8 @@ import { ActivityFilterFormComponent } from './components/views/activity/activit
 import { ActivityDataTableComponent } from './components/views/activity/activity-data-table/activity-data-table.component';
 import { ProjHistoryFilterFormComponent } from './components/views/project-history/proj-history-filter-form/proj-history-filter-form.component';
 import { ProjHistoryProjectComponent } from './components/views/project-history/proj-history-project/proj-history-project.component';
+import {OfficesOverviewComponent} from "./components/views/activity/offices-overview/offices-overview.component";
+import {ActivityTableComponent} from "./components/views/activity/activity-table/activity-table.component";
 
 
 export const Components = [
@@ -51,8 +53,9 @@ export const Components = [
   ActivityDataTableComponent,
   ProjHistoryFilterFormComponent,
   ProjHistoryProjectComponent,
+  OfficesOverviewComponent,
+  ActivityTableComponent
 ];
-
 
 export const EntryComponents = [
   ModalTrackingComponent,

@@ -1,14 +1,15 @@
-<!--<div class="div__inline div__filter mb-4">-->
-<!--  <p class="text-4_semibold"> Filter &nbsp;&nbsp; </p>-->
+<div class="div__inline div__filter mb-4">
+  <p class="text-4_semibold"> Filter &nbsp;&nbsp; </p>
+  <img src="../../../../../assets/arrow-icon-down.png" class="dropdown-icon" height="10" width="15"
+       (click)="toggleDropdown()" [ngStyle]="dropdownState && {'animation': 'rotateDropdown 0.5s 1 forwards'}">
+</div>
+
+
+<!--<div class="filter-dropdown div__filter">-->
+<!--  <p class="text-4_semibold">Filter </p>-->
 <!--  <img src="../../../../../assets/arrow-icon-down.png" class="dropdown-icon"-->
 <!--       (click)="toggleDropdown()" [ngStyle]="dropdownState && {'animation': 'rotateDropdown 0.5s 1 forwards'}">-->
 <!--</div>-->
-
-<div class="filter-dropdown">
-  <p class="text-4_semibold">Filter </p>
-  <img src="../../../../../assets/arrow-icon-down.png" class="dropdown-icon"
-       (click)="toggleDropdown()" [ngStyle]="dropdownState && {'animation': 'rotateDropdown 0.5s 1 forwards'}">
-</div>
 
 <!--<div class="green-message">-->
 <!--  <h3>Offices overview</h3>-->

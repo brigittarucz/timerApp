@@ -6,11 +6,12 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: [ './offices-overview.component.scss' ]
 })
 export class OfficesOverviewComponent implements OnInit {
-	dropdownState1: boolean = false;
+  dropdownState1: boolean = false;
 
-	constructor() {}
+  constructor() {}
 
-	ngOnInit(): void {}
+  ngOnInit(): void {}
 
-	toggleDropdown1() {}
+  toggleDropdown1() {}
 }
+

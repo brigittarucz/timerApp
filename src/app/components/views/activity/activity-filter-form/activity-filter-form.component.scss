@@ -27,3 +27,58 @@
 .filter-dropdown {
   display: inline-flex;
 }
+
+
+// Brigitta
+
+.div__inline * {
+  display: inline;
+}
+
+a {
+  all: unset;
+}
+
+.div__inline:hover {
+  cursor: pointer;
+}
+
+.text-4_semibold {
+  text-transform: capitalize;
+}
+
+.row-dropdown {
+  opacity: 0;
+  height: 0rem;
+}
+
+@keyframes increaseHeight {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: 30rem;
+  }
+}
+
+@keyframes increaseOpacity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .div__filter {
+    //display: none;
+  }
+
+  .row-dropdown {
+    opacity: 1;
+    height: initial;
+  }
+}
