@@ -1,125 +1,118 @@
 <!---------------------------------------------------------------------------------->
 <!------------- Example of a component with dropdown button on top ----------------->
 
-<div class="main-container">
-  <div class="main-container__table-margin">
-
-    <div class="data-table__dropdown-container">
-      <div class="dropdown-button">
-        <div class="dropdown-button__header">
-          <div class="dropdown-button__header__margin">
-            <p class="text-4_medium">{{currentMonthName.toUpperCase()}}</p>
-          </div>
-          <p class="text-4_regular">{{totalWorkedTime | millisToTime}}</p>
-        </div>
-        <button>
-          <img class="dropdown-button__arrow" src="../../../../../assets/user-history/arrow-icon-white.png"/>
-        </button>
+<div class="data-table__dropdown-container">
+  <div class="dropdown-button">
+    <div class="dropdown-button__header">
+      <div class="dropdown-button__header__margin">
+        <p class="text-4_medium">{{currentMonthName.toUpperCase()}}</p>
       </div>
+      <p class="text-4_regular">{{totalWorkedTime | millisToTime}}</p>
     </div>
+    <button>
+      <img class="dropdown-button__arrow" src="../../../../../assets/user-history/arrow-icon-white.png"/>
+    </button>
+  </div>
+</div>
 
-    <div class="data-table">
-      <div class="data-table__content">
+<div class="data-table">
+  <div class="data-table__content">
 
-        <table class="table1">
-          <thead>
-            <tr class="table1-grid">
-              <th><h3 class="text-4_semibold">Department</h3></th>
-              <th><h3 class="text-4_semibold">Category</h3></th>
-              <th><h3 class="text-4_semibold">Client</h3></th>
-              <th><h3 class="text-4_semibold">Project</h3></th>
-              <th><h3 class="text-4_semibold">Time Spent</h3></th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr
-              class="table1-grid"
-              *ngFor="let task of tasks">
-              <td><p class="text-5_regular">{{ task.department }}</p></td>
-              <td><p class="text-5_regular">{{ task.category }}</p></td>
-              <td><p class="text-5_regular">{{ task.client }}</p></td>
-              <td><p class="text-5_regular">{{ task.project }}</p></td>
-              <td><p class="text-5_regular">{{ task.timeSpent | millisToTime }}</p></td>
-              <td>
-                <img src="../../../../../assets/tracking/restart-icon.png">
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-      </div>
-    </div>
+    <table class="table1">
+      <thead>
+      <tr class="table1-grid">
+        <th><h3 class="text-4_semibold">Department</h3></th>
+        <th><h3 class="text-4_semibold">Category</h3></th>
+        <th><h3 class="text-4_semibold">Client</h3></th>
+        <th><h3 class="text-4_semibold">Project</h3></th>
+        <th><h3 class="text-4_semibold">Time Spent</h3></th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr
+        class="table1-grid"
+        *ngFor="let task of tasks">
+        <td><p class="text-5_regular">{{ task.department }}</p></td>
+        <td><p class="text-5_regular">{{ task.category }}</p></td>
+        <td><p class="text-5_regular">{{ task.client }}</p></td>
+        <td><p class="text-5_regular">{{ task.project }}</p></td>
+        <td><p class="text-5_regular">{{ task.timeSpent | millisToTime }}</p></td>
+        <td>
+          <img src="../../../../../assets/tracking/restart-icon.png">
+        </td>
+      </tr>
+      </tbody>
+    </table>
 
   </div>
 </div>
 
 
-<!---------------------------------------------------------------------------------->
-<!------------- Example of a component with toggle button on top ------------------->
-<hr>
+<!--&lt;!&ndash;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;-->
+<!--&lt;!&ndash;-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; Example of a component with toggle button on top -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;-->
 
-<div class="main-container">
-  <div class="main-container__table-margin">
+<!--<div class="main-container">-->
+<!--  <div class="main-container__table-margin">-->
 
-    <div class="data-table__toggle-container">
-      <div class="btn-base-toggle align-bottom" data-toggle="buttons" (click)="onToggleButton()">
-    <span
-      [ngClass]="{'btn-switcher__animate': animState.currentAnim === 'btn-switcher__animate', 'btn-switcher__animate__reverse': animState.currentAnim === 'btn-switcher__animate__reverse'}"
-      class="btn-switcher"></span>
-        <button
-          [ngClass]="{'btn-toggle__active': animState.btn1}"
-          class="btn-toggle btn-toggle__fix"
-          type="button">Today</button>
-        <button
-          [ngClass]="{'btn-toggle__active': animState.btn2}"
-          class="btn-toggle right btn-toggle__fix"
-          type="button">Yesterday</button>
-      </div>
-    </div>
+<!--    <div class="data-table__toggle-container">-->
+<!--      <div class="btn-base-toggle align-bottom" data-toggle="buttons" (click)="onToggleButton()">-->
+<!--    <span-->
+<!--      [ngClass]="{'btn-switcher__animate': animState.currentAnim === 'btn-switcher__animate', 'btn-switcher__animate__reverse': animState.currentAnim === 'btn-switcher__animate__reverse'}"-->
+<!--      class="btn-switcher"></span>-->
+<!--        <button-->
+<!--          [ngClass]="{'btn-toggle__active': animState.btn1}"-->
+<!--          class="btn-toggle btn-toggle__fix"-->
+<!--          type="button">Today</button>-->
+<!--        <button-->
+<!--          [ngClass]="{'btn-toggle__active': animState.btn2}"-->
+<!--          class="btn-toggle right btn-toggle__fix"-->
+<!--          type="button">Yesterday</button>-->
+<!--      </div>-->
+<!--    </div>-->
 
-    <div class="data-table">
-      <div class="data-table__content">
+<!--    <div class="data-table">-->
+<!--      <div class="data-table__content">-->
 
-        <table class="table1">
-          <thead>
-          <tr class="table1-grid">
-            <th><h3 class="text-4_semibold">Department</h3></th>
-            <th><h3 class="text-4_semibold">Category</h3></th>
-            <th><h3 class="text-4_semibold">Client</h3></th>
-            <th><h3 class="text-4_semibold">Project</h3></th>
-            <th><h3 class="text-4_semibold">Time Spent</h3></th>
-            <th></th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr
-            class="table1-grid"
-            *ngFor="let task of tasks">
-            <td><p class="text-5_regular">{{ task.department }}</p></td>
-            <td><p class="text-5_regular">{{ task.category }}</p></td>
-            <td><p class="text-5_regular">{{ task.client }}</p></td>
-            <td><p class="text-5_regular">{{ task.project }}</p></td>
-            <td><p class="text-5_regular">{{ task.timeSpent | millisToTime }}</p></td>
-            <td>
-              <img src="../../../../../assets/tracking/restart-icon.png">
-            </td>
-          </tr>
-          </tbody>
-          <tfoot>
-          <tr class="table1-grid">
-            <td></td>
-            <td></td>
-            <td></td>
-            <td><p class="text-5_semibold">Total </p></td>
-            <td><p class="text-5_semibold">{{ totalWorkedTime | millisToTime }}</p></td>
-            <td></td>
-          </tr>
-          </tfoot>
-        </table>
+<!--        <table class="table1">-->
+<!--          <thead>-->
+<!--          <tr class="table1-grid">-->
+<!--            <th><h3 class="text-4_semibold">Department</h3></th>-->
+<!--            <th><h3 class="text-4_semibold">Category</h3></th>-->
+<!--            <th><h3 class="text-4_semibold">Client</h3></th>-->
+<!--            <th><h3 class="text-4_semibold">Project</h3></th>-->
+<!--            <th><h3 class="text-4_semibold">Time Spent</h3></th>-->
+<!--            <th></th>-->
+<!--          </tr>-->
+<!--          </thead>-->
+<!--          <tbody>-->
+<!--          <tr-->
+<!--            class="table1-grid"-->
+<!--            *ngFor="let task of tasks">-->
+<!--            <td><p class="text-5_regular">{{ task.department }}</p></td>-->
+<!--            <td><p class="text-5_regular">{{ task.category }}</p></td>-->
+<!--            <td><p class="text-5_regular">{{ task.client }}</p></td>-->
+<!--            <td><p class="text-5_regular">{{ task.project }}</p></td>-->
+<!--            <td><p class="text-5_regular">{{ task.timeSpent | millisToTime }}</p></td>-->
+<!--            <td>-->
+<!--              <img src="../../../../../assets/tracking/restart-icon.png">-->
+<!--            </td>-->
+<!--          </tr>-->
+<!--          </tbody>-->
+<!--          <tfoot>-->
+<!--          <tr class="table1-grid">-->
+<!--            <td></td>-->
+<!--            <td></td>-->
+<!--            <td></td>-->
+<!--            <td><p class="text-5_semibold">Total </p></td>-->
+<!--            <td><p class="text-5_semibold">{{ totalWorkedTime | millisToTime }}</p></td>-->
+<!--            <td></td>-->
+<!--          </tr>-->
+<!--          </tfoot>-->
+<!--        </table>-->
 
-      </div>
-    </div>
+<!--      </div>-->
+<!--    </div>-->
 
-  </div>
-</div>
+<!--  </div>-->
+<!--</div>-->

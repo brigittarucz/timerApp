@@ -1,0 +1,9 @@
+@import "../../../../styles/general/colors";
+
+.green-message {
+  color: $turquoise-color;
+  display: inline-flex;
+  width: 100%;
+  justify-content: center;
+  padding-top: 3rem;
+}

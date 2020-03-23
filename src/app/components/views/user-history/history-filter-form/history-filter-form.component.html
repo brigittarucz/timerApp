@@ -1,96 +1,91 @@
-<div class="main-container">
-  <div class="main-container__margin">
+<form class="form-grid form-grid__large">
 
-    <form class="form-grid form-grid__large">
+  <div class="template-area">
+    <div class="group-form">
+      <label class="basic-label" for="department">Department</label>
+      <select class="basic-select text-5" id="department">
+        <option value="">Select a department</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+    </div>
+  </div>
 
-      <div class="template-area">
-        <div class="form-group">
-          <label class="basic-label" for="department">Department</label>
-          <select class="basic-select text-5 basic-select" id="department">
-            <option value="">Select a department</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-          </select>
-        </div>
-      </div>
+  <div class="template-area">
+    <div class="group-form">
+      <label  class="basic-label" for="client">Client</label>
+      <select class="basic-select text-5" id="client">
+        <option value="">Select a client</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+    </div>
+  </div>
 
-      <div class="template-area">
-        <div class="form-group">
-          <label  class="basic-label" for="client">Client</label>
-          <select class="basic-select text-5 basic-select" id="client">
-            <option value="">Select a client</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-          </select>
-        </div>
-      </div>
+  <div class="template-area">
+    <div class="group-form">
+      <label class="basic-label" for="startDate">Start Date</label>
+      <input class="basic-input text-5" type="date" id="startDate">
+    </div>
+  </div>
 
-      <div class="template-area">
-        <div class="form-group">
-          <label class="basic-label" for="startDate">StartDate</label>
-          <input class="basic-input text-5" type="date" id="startDate">
-        </div>
-      </div>
+  <div class="template-area">
+    <div class="group-form">
+      <label class="basic-label" for="year">Year</label>
+      <input class="basic-input text-5" type="number" id="year" placeholder="Select a year">
+    </div>
+  </div>
 
-      <div class="template-area">
-        <div class="form-group">
-          <label class="basic-label" for="year">Year</label>
-          <input class="basic-input text-5" type="number" id="year" placeholder="Select a year">
-        </div>
-      </div>
+  <div class="template-area">
+    <div class="group-form">
+      <label class="basic-label" for="category">Category</label>
+      <select class="basic-select text-5" id="category">
+        <option value="">Select a category</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+    </div>
+  </div>
 
-      <div class="template-area">
-        <div class="form-group">
-          <label class="basic-label" for="category">Category</label>
-          <select class="basic-select text-5 basic-select" id="category">
-            <option value="">Select a category</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-          </select>
-        </div>
-      </div>
+  <div class="template-area">
+    <div class="group-form">
+      <label class="basic-label" for="project">Project</label>
+      <select class="basic-select text-5" id="project">
+        <option value="">Select a project</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+    </div>
+  </div>
 
-      <div class="template-area">
-        <div class="form-group">
-          <label class="basic-label" for="project">Project</label>
-          <select class="basic-select text-5 basic-select" id="project">
-            <option value="">Select a project</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-          </select>
-        </div>
-      </div>
+  <div class="template-area">
+    <div class="group-form">
+      <label class="basic-label" for="endDate">End Date</label>
+      <input class="basic-input text-5" type="date" id="endDate">
+    </div>
+  </div>
 
-      <div class="template-area">
-        <div class="form-group">
-          <label class="basic-label" for="endDate">End Date</label>
-          <input class="basic-input text-5" type="date" id="endDate">
-        </div>
-      </div>
-
-      <div class="template-area">
-        <div class="btn-base-toggle align-bottom" data-toggle="buttons" (click)="onToggleButton()">
+  <div class="template-area">
+    <div class="btn-base-toggle align-bottom" data-toggle="buttons" (click)="onToggleButton()">
           <span
             [ngClass]="{'btn-switcher__animate': animState.currentAnim === 'btn-switcher__animate', 'btn-switcher__animate__reverse': animState.currentAnim === 'btn-switcher__animate__reverse'}"
             class="btn-switcher"></span>
-          <button
-            [ngClass]="{'btn-toggle__active': animState.btn1}"
-            class="btn-toggle btn-toggle__fix"
-            type="button">Check in</button>
-          <button
-            [ngClass]="{'btn-toggle__active': animState.btn2}"
-            class="btn-toggle right btn-toggle__fix"
-            type="button">Tasks</button>
-        </div>
-      </div>
-    </form>
-
-    <button  class="button-add float-right">
-      <img src="../../../../../assets/user-history/add-icon-white.png" width="30">
-    </button>
+      <button
+        [ngClass]="{'btn-toggle__active': animState.btn1}"
+        class="btn-toggle btn-toggle__fix"
+        type="button">Check in</button>
+      <button
+        [ngClass]="{'btn-toggle__active': animState.btn2}"
+        class="btn-toggle right btn-toggle__fix"
+        type="button">Tasks</button>
+    </div>
   </div>
-</div>
+</form>
+
+<button  class="button-add float-right">
+  <img class="button-add__png" src="../../../../../assets/user-history/add-icon-white.png">
+</button>

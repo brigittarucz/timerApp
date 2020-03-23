@@ -21,6 +21,9 @@ import {AddTaskFieldComponent} from "./components/ui-artifacts/add-task-tracking
 import {AddTaskTrackingComponent} from "./components/ui-artifacts/add-task-tracking/add-task-tracking.component";
 import { ActivityFilterFormComponent } from './components/views/activity/activity-filter-form/activity-filter-form.component';
 import { ActivityDataTableComponent } from './components/views/activity/activity-data-table/activity-data-table.component';
+import { ProjHistoryFilterFormComponent } from './components/views/project-history/proj-history-filter-form/proj-history-filter-form.component';
+import { ProjHistoryProjectComponent } from './components/views/project-history/proj-history-project/proj-history-project.component';
+
 
 export const Components = [
   AppComponent,
@@ -46,6 +49,8 @@ export const Components = [
   AddTaskFieldComponent,
   ActivityFilterFormComponent,
   ActivityDataTableComponent,
+  ProjHistoryFilterFormComponent,
+  ProjHistoryProjectComponent,
 ];
 
 
