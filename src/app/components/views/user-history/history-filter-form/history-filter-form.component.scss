@@ -1,7 +1,12 @@
 .button-add {
-  margin: 0!important;
+  margin: 3rem;
 }
 
+@media screen and (min-width: 500px){
+  .button-add {
+    margin: 0 0!important;
+  }
+}
 
 
 

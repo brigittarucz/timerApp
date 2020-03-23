@@ -19,6 +19,8 @@ import {TimerCounterComponent} from "./components/views/tracking/timer-counter/t
 import {TasksDoneComponent} from "./components/views/tracking/tasks-done/tasks-done.component";
 import {AddTaskFieldComponent} from "./components/ui-artifacts/add-task-tracking/add-task-field/add-task-field.component";
 import {AddTaskTrackingComponent} from "./components/ui-artifacts/add-task-tracking/add-task-tracking.component";
+import { ActivityFilterFormComponent } from './components/views/activity/activity-filter-form/activity-filter-form.component';
+import { ActivityDataTableComponent } from './components/views/activity/activity-data-table/activity-data-table.component';
 
 export const Components = [
   AppComponent,
@@ -41,7 +43,9 @@ export const Components = [
   TimerVisualComponent,
   ModalTrackingComponent,
   AddTaskTrackingComponent,
-  AddTaskFieldComponent
+  AddTaskFieldComponent,
+  ActivityFilterFormComponent,
+  ActivityDataTableComponent,
 ];
 
 

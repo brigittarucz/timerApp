@@ -128,7 +128,7 @@ __toggle-container is container for the toggle-button in the toggle-button.scss 
 }
 
 @media screen and (min-width: 1200px) {
-  .form-grid {
+  .form-grid__large {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-column-gap: 5rem;

@@ -12,7 +12,9 @@
           </div>
           <p class="text-4_regular">{{totalWorkedTime | millisToTime}}</p>
         </div>
-        <img class="dropdown-button__arrow" src="../../../../../assets/user-history/arrow-icon-white.png"/>
+        <button>
+          <img class="dropdown-button__arrow" src="../../../../../assets/user-history/arrow-icon-white.png"/>
+        </button>
       </div>
     </div>
 
@@ -68,11 +70,11 @@
         <button
           [ngClass]="{'btn-toggle__active': animState.btn1}"
           class="btn-toggle btn-toggle__fix"
-          type="button">Check in</button>
+          type="button">Today</button>
         <button
           [ngClass]="{'btn-toggle__active': animState.btn2}"
           class="btn-toggle right btn-toggle__fix"
-          type="button">Tasks</button>
+          type="button">Yesterday</button>
       </div>
     </div>
 
@@ -115,73 +117,6 @@
           </tr>
           </tfoot>
         </table>
-
-      </div>
-    </div>
-
-  </div>
-</div>
-
-
-<!---------------------------------------------------------------------------------->
-<!----------------------- EXAMPLE OF A DIFFERENT DATA TABLE ------------------------>
-<hr>
-
-<div class="main-container">
-  <div class="main-container__table-margin">
-
-    <div class="data-table__toggle-container">
-      <div class="btn-base-toggle align-bottom" data-toggle="buttons" (click)="onToggleButton()">
-    <span
-      [ngClass]="{'btn-switcher__animate': animState.currentAnim === 'btn-switcher__animate', 'btn-switcher__animate__reverse': animState.currentAnim === 'btn-switcher__animate__reverse'}"
-      class="btn-switcher"></span>
-        <button
-          [ngClass]="{'btn-toggle__active': animState.btn1}"
-          class="btn-toggle btn-toggle__fix"
-          type="button">Check in</button>
-        <button
-          [ngClass]="{'btn-toggle__active': animState.btn2}"
-          class="btn-toggle right btn-toggle__fix"
-          type="button">Tasks</button>
-      </div>
-    </div>
-
-    <div class="data-table">
-      <div class="data-table__content__timeline">
-
-        <div class="timeline">
-          <div class="timeline__circle">
-            <div class="timeline__content">
-
-              <div class="timeline__content__header">
-                <h3 class="text-4_semibold">Today, {{ currentDate }}</h3>
-              </div>
-              <div class="timeline__content__main">
-                <table class="table-timeline">
-                  <tbody>
-                  <tr
-                    *ngFor="let task of tasks">
-                    <td>
-                      <img class="profile-pic" src="https://icon2.cleanpng.com/20171220/qve/anonymous-mask-png-5a3a4666911942.7179111615137685505943.jpg">
-
-                      <table>
-                        <tbody>
-                          <tr class="table-timeline__nested-table">
-                            <p class="text-5_semibold">{{ task.department }}</p>
-                            <p class="text-5_regular">{{ task.client }}</p>
-                          </tr>
-                        </tbody>
-                      </table>
-
-                    </td>
-                    <td><p class="text-5_regular">{{ task.timeSpent | millisToTime }}</p></td>
-                  </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
 
       </div>
     </div>

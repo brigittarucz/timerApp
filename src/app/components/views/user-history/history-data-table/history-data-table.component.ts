@@ -9,8 +9,6 @@ import {Subscription} from "rxjs";
   styleUrls: ['./history-data-table.component.scss']
 })
 export class HistoryDataTableComponent implements OnInit, OnDestroy {
-  currentDate: string = new Date().toLocaleDateString();
-
 
   tasks: Array<TaskEntry> = [];
   currentMonthName: string = new Date().toLocaleString('default', { month: 'long' });
@@ -47,7 +45,7 @@ export class HistoryDataTableComponent implements OnInit, OnDestroy {
     this.taskDataSubscription.unsubscribe();
   }
 
-  // ************************************
+  // **************** TOGGLE BUTTON ********************
 
 
   buttonState = true;

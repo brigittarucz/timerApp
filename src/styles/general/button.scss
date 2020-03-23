@@ -65,6 +65,17 @@
 }
 
 /* ************************************* */
+/* *********** BUTTON RESET ************ */
+
+button {
+  -webkit-appearance: none;
+  cursor: pointer;
+  background-color: transparent;
+  padding: 1px 6px;
+  border: none;
+}
+
+/* ************************************* */
 /* ********** DROPDOWN BUTTON ********** */
 
 .dropdown-button {
