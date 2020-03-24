@@ -1,0 +1,38 @@
+<div class="data-table">
+  <div class="data-table__content">
+
+    <table class="table-toggle">
+      <thead>
+      <tr class="table-toggle-grid">
+        <th></th>
+        <th><h3 class="text-4_semibold uppercase">Name</h3></th>
+        <th><h3 class="text-4_semibold uppercase align-right">Option State</h3></th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr
+        class="table-toggle-grid"
+        *ngFor="let task of tasks">
+        <td>
+          <img src="../../../../../assets/delete-icon.png">
+          <img src="../../../../../assets/delete-icon.png">
+        </td>
+        <td><p class="text-5_regular">{{ task.department }}</p></td>
+        <td>
+          <div class="checkbox-toggle align-right">
+            <span class="text-5_regular hide-on-phone">Disable</span>
+            <input type="checkbox" class="checkbox-toggle__switch">
+            <span class="text-5_regular hide-on-phone">Enable</span>
+          </div>
+        </td>
+        <td>
+          <p class="text-5_semibold capitalize hide-on-phone">View Categories &nbsp;&nbsp; </p>
+          <img class="button__arrow" src="../../../../../assets/arrow-icon.png">
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
