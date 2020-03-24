@@ -80,9 +80,6 @@
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;
-}
-
-.pin {
   text-align: center;
   color: white;
 }
@@ -100,4 +97,14 @@
 .pin-3 {
   margin-left: 30.5%;
   margin-top: 6%;
+}
+
+@keyframes smoothRise {
+  from {
+    transform: translateY(0) scale(1);
+  }
+
+  to {
+    transform: translateY(-5px) scale(1.1);
+  }
 }

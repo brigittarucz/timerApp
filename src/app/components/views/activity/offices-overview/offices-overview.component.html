@@ -50,13 +50,16 @@
   <div class="map-container">
     <div class="map-grid">
 
-      <div class="pin pin-1" (click)="getOfficeUsers($event)">
+      <div class="pin pin-1" (click)="getOfficeUsers($event)"
+        [ngStyle]="isActive === 'new-york' && {'background-image':'url(../../../../../assets/activity/modelpointermap-icon-active.png)', 'animation': 'smoothRise 0.5s ease-in-out forwards'}">
         <p class="text-4_regular" id="new-york"> {{ activeNumbers[2] }}</p>
       </div>
-      <div class="pin pin-2" (click)="getOfficeUsers($event)">
+      <div class="pin pin-2" (click)="getOfficeUsers($event)"
+        [ngStyle]="isActive === 'coimbatore' && {'background-image':'url(../../../../../assets/activity/modelpointermap-icon-active.png)', 'animation': 'smoothRise 0.5s ease-in-out forwards'}">
         <p class="text-4_regular" id="coimbatore"> {{ activeNumbers[1] }} </p>
       </div>
-      <div class="pin pin-3" (click)="getOfficeUsers($event)">
+      <div class="pin pin-3" (click)="getOfficeUsers($event)"
+        [ngStyle]="isActive === 'copenhagen' && {'background-image':'url(../../../../../assets/activity/modelpointermap-icon-active.png)', 'animation': 'smoothRise 0.5s ease-in-out forwards'}">
         <p class="text-4_regular" id="copenhagen"> {{ activeNumbers[0] }} </p>
       </div>
       <div class="map-grid__img">

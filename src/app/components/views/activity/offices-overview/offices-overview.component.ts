@@ -15,6 +15,8 @@ export class OfficesOverviewComponent implements OnInit {
 
 	selectOfficeState: boolean = false;
 
+	isActive: string = ' ';
+
 	constructor(private HistoryService: UserHistoryService) {}
 
 	public isDesktop = false;
@@ -43,6 +45,7 @@ export class OfficesOverviewComponent implements OnInit {
 	getOfficeUsers(event) {
 		this.selectOfficeState = true;
 		this.activeOfficeUsers = this.HistoryService.doGetConnectedUsers(event.target.id);
+		this.isActive = event.target.id;
 	}
 
 	toggleDropdown1() {}
