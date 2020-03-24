@@ -6,7 +6,6 @@
   align-items: center;
   width: 100%;
   justify-content: center;
-  padding-bottom: 3rem;
 
   .button__arrow {
     width: 1rem;
@@ -19,38 +18,39 @@
   }
 }
 
-.dropdown-icon {
-  width: 3rem;
-  height: 2rem;
-}
 
-.filter-dropdown {
+/****************************************************/
+/*************** DROPDOWN MESSAGE *******************/
+
+.dropdown-message {
   display: inline-flex;
+  align-items: center;
+  padding-bottom: 3rem;
+
+  .dropdown-icon {
+    width: 2rem;
+    height: 1rem;
+  }
 }
 
-
-// Brigitta
-
-.div__inline * {
-  display: inline;
-}
-
-a {
-  all: unset;
-}
-
-.div__inline:hover {
-  cursor: pointer;
-}
-
-.text-4_semibold {
-  text-transform: capitalize;
-}
-
-.row-dropdown {
+.dropdown__content {
   opacity: 0;
-  height: 0rem;
+  height: 0;
 }
+
+@media screen and (min-width: 800px) {
+  .dropdown-message {
+    display: none;
+  }
+
+  .dropdown-content {
+    opacity: 1;
+    height: initial;
+  }
+}
+
+/****************************************************/
+/*************** DROPDOWN ANIMATION *****************/
 
 @keyframes increaseHeight {
   0% {
@@ -72,13 +72,3 @@ a {
   }
 }
 
-@media screen and (min-width: 800px) {
-  .div__filter {
-    display: none;
-  }
-
-  .row-dropdown {
-    opacity: 1;
-    height: initial;
-  }
-}

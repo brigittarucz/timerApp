@@ -1,5 +1,9 @@
 <div class="data-table__toggle-container">
-  <div class="btn-base-toggle align-bottom" data-toggle="buttons" (click)="onToggleButton()">
+  <div
+    class="btn-base-toggle align-bottom"
+    data-toggle="buttons"
+    (click)="onToggleButton()">
+
     <span
       [ngClass]="{'btn-switcher__animate': animState.currentAnim === 'btn-switcher__animate', 'btn-switcher__animate__reverse': animState.currentAnim === 'btn-switcher__animate__reverse'}"
       class="btn-switcher"></span>

@@ -90,7 +90,7 @@ button {
   align-items: center;
 
   &__header {
-    display: flex;
+    display: block;
 
     &__margin {
       margin-right: 2rem;
@@ -102,6 +102,14 @@ button {
     transform: rotate(270deg);
   }
 }
+
+
+@media screen and (min-width: 500px) {
+  .dropdown-button__header {
+    display: flex;
+  }
+}
+
 
 @media screen and (min-width: 800px) {
   .dropdown-button {

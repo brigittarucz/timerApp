@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 
 @Component({
 	selector: 'app-offices-overview',
@@ -10,7 +10,28 @@ export class OfficesOverviewComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  public isDesktop = false;
+  public isMobile = false;
+  ngOnInit() {
+    this.doCheckDeviceType();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.doCheckDeviceType();
+  }
+
+  doCheckDeviceType() {
+    const windowWidth = window.innerWidth;
+
+    if(windowWidth < 800) {
+      this.isDesktop = false;
+      this.isMobile = true;
+    } else {
+      this.isDesktop = true;
+      this.isMobile = false;
+    }
+  }
 
   toggleDropdown1() {}
 }

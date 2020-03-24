@@ -1,4 +1,71 @@
-.dropdown-button .text-5_regular {
-  text-transform: lowercase;
-  margin-top: 0.25rem;
+@import "../../../../../styles/general/colors";
+
+.map-container {
+  width: 100%;
+  //background: #4b87ad;
+
+  .map-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    grid-template-rows: 34vw;
+    grid-column-gap: 2rem;
+
+    &__img {
+
+      .map-img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    &__data {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      min-width: 0;
+      max-height: 100%;
+      overflow-y: scroll;
+    }
+  }
+}
+
+
+/* ********** TABLE MAP ***************** */
+
+.table-map {
+  width: 100%;
+
+  table {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+
+    th {
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      background: #fff;
+      z-index: 1;
+    }
+
+    td {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 3rem;
+      align-items: center;
+      padding: 1rem 0;
+      text-align: left;
+
+      .image-fix {
+        justify-self: end;
+      }
+    }
+  }
+}
+
+
+.font-weight-normal {
+  font-weight: normal;
 }

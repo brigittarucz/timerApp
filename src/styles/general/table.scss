@@ -117,3 +117,35 @@
     width: 9vw;
   }
 }
+
+/* ************************************* */
+/* ****** TABLE SMALL WITH USERS ******* */
+
+.table-small {
+  width: 45vw;
+  margin: auto;
+
+  tbody > tr {
+    padding: 1rem 0;
+    width: 60vw;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  th, td {
+    padding: .5rem 0;
+  }
+
+  img {
+    width: 6rem;
+  }
+}
+
+
+@media screen and (min-width: 1050px) {
+  .table-small > tbody > tr {
+    max-width: 60rem;
+  }
+}

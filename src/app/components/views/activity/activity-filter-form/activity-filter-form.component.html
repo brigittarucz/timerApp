@@ -1,24 +1,12 @@
-<div class="div__inline div__filter mb-4">
-  <p class="text-4_semibold"> Filter &nbsp;&nbsp; </p>
-  <img src="../../../../../assets/arrow-icon-down.png" class="dropdown-icon" height="10" width="15"
-       (click)="toggleDropdown()" [ngStyle]="dropdownState && {'animation': 'rotateDropdown 0.5s 1 forwards'}">
+<div class="dropdown-message">
+  <p class="text-4_semibold capitalize"> Filter &nbsp;&nbsp; </p>
+  <img class="dropdown-icon"
+       src="../../../../../assets/arrow-icon-down.png"
+       (click)="toggleDropdown()">
 </div>
 
-
-<!--<div class="filter-dropdown div__filter">-->
-<!--  <p class="text-4_semibold">Filter </p>-->
-<!--  <img src="../../../../../assets/arrow-icon-down.png" class="dropdown-icon"-->
-<!--       (click)="toggleDropdown()" [ngStyle]="dropdownState && {'animation': 'rotateDropdown 0.5s 1 forwards'}">-->
-<!--</div>-->
-
-<!--<div class="green-message">-->
-<!--  <h3>Offices overview</h3>-->
-<!--  <button>-->
-<!--    <img class="button__arrow" src="../../../../../assets/activity/arrow-icon-green.png"/>-->
-<!--  </button>-->
-<!--</div>-->
-
-<form class="form-grid">
+<form class="form-grid dropdown-content"
+      [ngStyle]="dropdownState && {'animation': 'increaseHeight 0.5s 1 forwards, increaseOpacity 0.5s 1 1s forwards'}">
 
   <div class="template-area">
     <div class="group-form">
@@ -49,41 +37,3 @@
 
 </form>
 
-
-<!--<div class="container container-margin-bottom">-->
-<!--  <div class="div__inline div__filter mb-4">-->
-<!--    <p class="text-4_semibold"> Filter &nbsp;&nbsp; </p>-->
-<!--    <img src="../../../../../assets/arrow-icon-down.png" class="dropdown-icon" height="10" width="15"-->
-<!--         (click)="toggleDropdown()" [ngStyle]="dropdownState && {'animation': 'rotateDropdown 0.5s 1 forwards'}">-->
-<!--  </div>-->
-  <form class="form-fix">
-    <div class="row row-dropdown"
-         [ngStyle]="dropdownState && {'animation': 'increaseHeight 0.5s 1 forwards, increaseOpacity 0.5s 1 1s forwards'}">
-      <div class="col-xs-12 col-lg-4">
-        <div class="form-group">
-          <label class="basic-label" for="date">Date</label>
-          <input class="basic-input text-5" type="date" id="date">
-          <div class="icon-field date-select"> </div>
-        </div>
-      </div>
-<!--      <div class="col-xs-12 col-lg-4">-->
-<!--        <div class="form-group">-->
-<!--          <label class="basic-label" for="user">User</label>-->
-<!--          <input class="basic-input text-5" type="text" id="user">-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class="col-xs-12 col-lg-4">-->
-<!--        <div class="form-group">-->
-<!--          <label class="basic-label" for="office">Office</label>-->
-<!--          <select class="basic-select text-5 basic-select" id="office">-->
-<!--            <option value="">Select an office</option>-->
-<!--            <option value="copenhagen">Copenhagen</option>-->
-<!--            <option value="coimbatore">Coimbatore</option>-->
-<!--            <option value="mysore">Mysore</option>-->
-<!--          </select>-->
-<!--          <div class="icon-field reset-select"> </div>-->
-<!--        </div>-->
-<!--      </div>-->
-    </div>
-  </form>
-<!--</div>-->

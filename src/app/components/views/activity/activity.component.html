@@ -2,14 +2,10 @@
   <h1 class="text-1_semibold text-center">Activity</h1>
 </div>
 
-<div class="main-container">
-  <div class="main-container__margin">
-
-    <div class="div__inline div__office-overview green-message">
-      <p class="text-5_semibold" (click)="changeViewMain()"> {{ officeOverviewText }} &nbsp;&nbsp;</p>
-      <img src="../../../../assets/activity/arrow-icon-green.png" height="15" width="10">
-    </div>
-
+<div class="main-container__margin margin-fix">
+  <div class="green-message">
+    <p class="text-5_semibold capitalize" (click)="changeViewMain()">{{ officeOverviewText }} &nbsp;&nbsp; </p>
+    <img class="button__arrow" src="../../../../assets/activity/arrow-icon-green.png">
   </div>
 </div>
 
@@ -28,24 +24,7 @@
 
 </ng-template>
 
-<ng-container *ngIf="officeOverview === true; else main">
+<ng-container
+  *ngIf="officeOverview === true; else main">
   <app-offices-overview></app-offices-overview>
 </ng-container>
-
-
-
-<!--<h1 class="text-1_regular text-center mt-5 mb-5 pt-5 pb-5">ACTIVITY</h1>-->
-
-<!--<div class="div__inline div__office-overview text-center m-5">-->
-<!--  <p class="text-5_semibold" (click)="changeViewMain()"> {{ officeOverviewText }} &nbsp;&nbsp;</p>-->
-<!--  <img src="../../../../assets/activity/arrow-icon-green.png" height="15" width="10">-->
-<!--</div>-->
-
-<!--<ng-template #main>-->
-<!--  <app-activity-filter-form> </app-activity-filter-form>-->
-<!--  <app-activity-table> </app-activity-table>-->
-<!--</ng-template>-->
-
-<!--<ng-container *ngIf="officeOverview === true; else main">-->
-<!--  <app-offices-overview></app-offices-overview>-->
-<!--</ng-container>-->

@@ -2,6 +2,14 @@
   text-align: center !important;
 }
 
+.capitalize{
+  text-transform: capitalize!important;
+}
+
+.uppercase{
+  text-transform: uppercase!important;
+}
+
 .text-1_regular {
   font-family: 'MontserratRegular', sans-serif;
   font-size: 3.2rem;
@@ -37,6 +45,11 @@
 }
 
 .text-3_regular {
+  font-family: 'MontserratRegular', sans-serif;
+  font-size: 2rem;
+}
+
+.text-3_semibold {
   font-family: 'MontserratRegular', sans-serif;
   font-size: 2rem;
 }

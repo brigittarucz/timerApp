@@ -11,7 +11,8 @@ export class ActivityComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   changeViewMain() {
     this.officeOverview = !this.officeOverview;
@@ -21,5 +22,6 @@ export class ActivityComponent implements OnInit {
       this.officeOverviewText = 'Offices Overview';
     }
   }
-}
 
+
+}
