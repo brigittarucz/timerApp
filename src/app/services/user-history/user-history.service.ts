@@ -1,137 +1,148 @@
 import { Injectable } from '@angular/core';
-import {TaskEntry} from "../../models/taskEntryModel";
-import {Observable, Subject} from "rxjs";
+import { TaskEntry } from '../../models/taskEntryModel';
+import { Observable, Subject } from 'rxjs';
+import { ConnectedUser } from 'src/app/models/connectedUserModel';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class UserHistoryService {
-  historyStorageMap = new Map<number, any>();
+	historyStorageMap = new Map<number, any>();
 
-  userTaskHistorySubject = new Subject<any>();
+	userTaskHistorySubject = new Subject<any>();
 
-  currentMonth = 1;
+	currentMonth = 1;
 
-  mockCheckInOut = [
+	mockCheckInOut = [];
 
-  ];
+	mockTasks1: Array<TaskEntry> = [
+		{
+			date: new Date(),
+			department: 'awdawd',
+			category: 'awd',
+			client: 'awdawd',
+			project: 'awd',
+			timeSpent: 23432443
+		},
+		{
+			date: new Date(),
+			department: 'vdfvdfv',
+			category: 'rd',
+			client: '33',
+			project: 'awd',
+			timeSpent: 233232323
+		},
+		{
+			date: new Date(),
+			department: '22',
+			category: '33',
+			client: 'aw',
+			project: 'awd',
+			timeSpent: 234232
+		},
+		{
+			date: new Date(),
+			department: 'awdaqwd',
+			category: 'a23wd',
+			client: 'awdaw23d',
+			project: 'awd',
+			timeSpent: 102232
+		}
+	];
+	mockTasks2: Array<TaskEntry> = [
+		{
+			date: new Date(),
+			department: 'awdawd',
+			category: 'awd',
+			client: 'awdawd',
+			project: 'awd',
+			timeSpent: 10232
+		},
+		{
+			date: new Date(),
+			department: 'awdawd',
+			category: 'rd',
+			client: '6sdr',
+			project: 'awd',
+			timeSpent: 10232
+		},
+		{
+			date: new Date(),
+			department: '22',
+			category: '33',
+			client: 'aw',
+			project: 'awd',
+			timeSpent: 102332
+		},
+		{
+			date: new Date(),
+			department: 'awdaqwd',
+			category: 'a23wd',
+			client: 'awdaw23d',
+			project: 'awd',
+			timeSpent: 102232
+		}
+	];
 
-  mockTasks1: Array<TaskEntry> = [
-    {
-      date: new Date(),
-      department: 'awdawd',
-      category: 'awd',
-      client: 'awdawd',
-      project: 'awd',
-      timeSpent: 23432443,
-    },
-    {
-      date: new Date(),
-      department: 'vdfvdfv',
-      category: 'rd',
-      client: '33',
-      project: 'awd',
-      timeSpent: 233232323,
-    },
-    {
-      date: new Date(),
-      department: '22',
-      category: '33',
-      client: 'aw',
-      project: 'awd',
-      timeSpent: 234232,
-    },
-    {
-      date: new Date(),
-      department: 'awdaqwd',
-      category: 'a23wd',
-      client: 'awdaw23d',
-      project: 'awd',
-      timeSpent: 102232,
-    }
-  ];
-  mockTasks2: Array<TaskEntry> = [
-    {
-      date: new Date(),
-      department: 'awdawd',
-      category: 'awd',
-      client: 'awdawd',
-      project: 'awd',
-      timeSpent: 10232,
-    },
-    {
-      date: new Date(),
-      department: 'awdawd',
-      category: 'rd',
-      client: '6sdr',
-      project: 'awd',
-      timeSpent: 10232,
-    },
-    {
-      date: new Date(),
-      department: '22',
-      category: '33',
-      client: 'aw',
-      project: 'awd',
-      timeSpent: 102332,
-    },
-    {
-      date: new Date(),
-      department: 'awdaqwd',
-      category: 'a23wd',
-      client: 'awdaw23d',
-      project: 'awd',
-      timeSpent: 102232,
-    }
-  ];
+	mockHistory = [
+		{
+			name: 'January',
+			year: 2019,
+			entries: {
+				checkInOut: [],
+				tasks: [ ...this.mockTasks1 ]
+			}
+		},
+		{
+			name: 'February',
+			year: 2019,
+			entries: {
+				checkInOut: [],
+				tasks: [ ...this.mockTasks2 ]
+			}
+		},
+		{}
+	];
 
-  mockHistory = [
-    {
-      name: 'January',
-      year: 2019,
-      entries: {
-        checkInOut: [
+	constructor() {
+		this.mockHistory.forEach((value, key) => {
+			this.historyStorageMap.set(key + 1, value);
+		});
+	}
 
-        ],
-        tasks: [
-          ...this.mockTasks1
-        ],
-      }
-    },
-    {
-      name: 'February',
-      year: 2019,
-      entries: {
-        checkInOut: [
+	mockConnectedUsers: ConnectedUser[] = [
+		{ office: 'copenhagen', name: 'Adrian G', title: 'Developer' },
+		{ office: 'copenhagen', name: 'Alex D', title: 'Technical Intern' },
+		{ office: 'copenhagen', name: 'Adrian G', title: 'Developer' },
+		{ office: 'copenhagen', name: 'Adrian G', title: 'Developer' },
+		{ office: 'copenhagen', name: 'Alex D', title: 'Technical Intern' },
+		{ office: 'copenhagen', name: 'Adrian G', title: 'Developer' },
+		{ office: 'coimbatore', name: 'Alex D', title: 'Technical Intern' },
+		{ office: 'coimbatore', name: 'Adrian G', title: 'Developer' },
+		{ office: 'coimbatore', name: 'Alex D', title: 'Technical Intern' },
+		{ office: 'new-york', name: 'Adrian G', title: 'Developer' },
+		{ office: 'new-york', name: 'Alex D', title: 'Technical Intern' }
+	];
 
-        ],
-        tasks: [
-          ...this.mockTasks2
-        ],
-      }
-    },
-    {},
-  ];
+	doGetConnectedUsers(office: string) {
+		let officeUsers: ConnectedUser[] = [];
+		this.mockConnectedUsers.forEach((user) => {
+			if (user.office === office) {
+				officeUsers.push(user);
+			}
+		});
+		return officeUsers;
+	}
 
-  constructor() {
-    this.mockHistory.forEach((value, key) => {
-      this.historyStorageMap.set(
-        key + 1,
-        value
-      )
-    })
-  }
+	doGetUserTaskHistoryForMonth(monthIndex: number) {
+		try {
+			this.userTaskHistorySubject.next(this.historyStorageMap.get(monthIndex));
+		} catch (e) {
+			console.error(e);
+		}
+	}
 
-
-  doGetUserTaskHistoryForMonth(monthIndex: number) {
-    try {
-      this.userTaskHistorySubject.next(this.historyStorageMap.get(monthIndex));
-    } catch (e) {
-      console.error(e);
-    }
-  }
-
-  doListenForUserTaskHistory(): Observable<any> {
-    return this.userTaskHistorySubject.asObservable();
-  }
+	doListenForUserTaskHistory(): Observable<any> {
+		return this.userTaskHistorySubject.asObservable();
+	}
 }

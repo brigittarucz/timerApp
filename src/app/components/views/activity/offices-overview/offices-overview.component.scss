@@ -69,3 +69,35 @@
 .font-weight-normal {
   font-weight: normal;
 }
+
+/* PINS */
+
+.pin {
+  width: 3%;
+  height: 6%;
+  background-image: url("../../../../../assets/activity/modelpointermap-icon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+}
+
+.pin {
+  text-align: center;
+  color: white;
+}
+
+.pin-1 {
+  margin-left: 14%;
+  margin-top: 10%;
+}
+
+.pin-2 {
+  margin-left: 43%;
+  margin-top: 13%;
+}
+
+.pin-3 {
+  margin-left: 30.5%;
+  margin-top: 6%;
+}

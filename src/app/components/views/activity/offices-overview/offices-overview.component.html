@@ -7,11 +7,8 @@
         <p class="text-4_regular">2 connected</p>
       </div>
       <button>
-        <img
-          class="dropdown-button__arrow"
-          src="../../../../../assets/user-history/arrow-icon-white.png"
-          (click)="toggleDropdown1()"
-          [ngStyle]="dropdownState1 && {'animation': 'rotateDropdown 0.5s 1 forwards'}"/>
+        <img class="dropdown-button__arrow" src="../../../../../assets/user-history/arrow-icon-white.png"
+          (click)="toggleDropdown1()" [ngStyle]="dropdownState1 && {'animation': 'rotateDropdown 0.5s 1 forwards'}" />
       </button>
     </div>
   </div>
@@ -21,19 +18,25 @@
 
       <table class="table-small">
         <tbody>
-        <tr>
-          <td>
-            <img class="profile-pic" src="https://icon2.cleanpng.com/20171220/qve/anonymous-mask-png-5a3a4666911942.7179111615137685505943.jpg">
-          </td>
-          <td><p class="text-5_regular">John</p></td>
-        </tr>
+          <tr>
+            <td>
+              <img class="profile-pic"
+                src="https://icon2.cleanpng.com/20171220/qve/anonymous-mask-png-5a3a4666911942.7179111615137685505943.jpg">
+            </td>
+            <td>
+              <p class="text-5_regular">John</p>
+            </td>
+          </tr>
 
-        <tr>
-          <td>
-            <img class="profile-pic" src="https://icon2.cleanpng.com/20171220/qve/anonymous-mask-png-5a3a4666911942.7179111615137685505943.jpg">
-          </td>
-          <td><p class="text-5_regular">John</p></td>
-        </tr>
+          <tr>
+            <td>
+              <img class="profile-pic"
+                src="https://icon2.cleanpng.com/20171220/qve/anonymous-mask-png-5a3a4666911942.7179111615137685505943.jpg">
+            </td>
+            <td>
+              <p class="text-5_regular">John</p>
+            </td>
+          </tr>
         </tbody>
       </table>
 
@@ -47,93 +50,41 @@
   <div class="map-container">
     <div class="map-grid">
 
+      <div class="pin pin-1" (click)="getOfficeUsers($event)">
+        <p class="text-4_regular" id="new-york"> {{ activeNumbers[2] }}</p>
+      </div>
+      <div class="pin pin-2" (click)="getOfficeUsers($event)">
+        <p class="text-4_regular" id="coimbatore"> {{ activeNumbers[1] }} </p>
+      </div>
+      <div class="pin pin-3" (click)="getOfficeUsers($event)">
+        <p class="text-4_regular" id="copenhagen"> {{ activeNumbers[0] }} </p>
+      </div>
       <div class="map-grid__img">
         <img class="map-img" src="../../../../../assets/activity/maps.png">
       </div>
 
-      <div class="map-grid__data">
+      <div class="map-grid__data" *ngIf="selectOfficeState">
         <div class="table-map">
 
           <table>
             <thead>
               <tr>
                 <th class="table-head__sticky-header">
-                  <h3 class="text-3_semibold">Copenhagen</h3>
-                  <p class="text-5_regular font-weight-normal">8 People Connected</p>
+                  <h3 class="text-3_semibold">{{selectOfficeState && activeOfficeUsers[0].office | formatCountry}}</h3>
+                  <p class="text-5_regular font-weight-normal">{{selectOfficeState && activeOfficeUsers.length}} People
+                    Connected</p>
                 </th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <img class="profile-image image-fix" src="https://icon2.cleanpng.com/20171220/qve/anonymous-mask-png-5a3a4666911942.7179111615137685505943.jpg">
-                  <div class="user">
-                    <p class="text-5_semibold">Name</p>
-                    <p class="text-5_regular">Developer</p>
-                  </div>
-                </td>
-              </tr>
+            <tbody *ngFor="let user of activeOfficeUsers">
 
               <tr>
                 <td>
-                  <img class="profile-image image-fix" src="https://icon2.cleanpng.com/20171220/qve/anonymous-mask-png-5a3a4666911942.7179111615137685505943.jpg">
+                  <img class="profile-image image-fix"
+                    src="https://icon2.cleanpng.com/20171220/qve/anonymous-mask-png-5a3a4666911942.7179111615137685505943.jpg">
                   <div class="user">
-                    <p class="text-5_semibold">Name</p>
-                    <p class="text-5_regular">Developer</p>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img class="profile-image image-fix" src="https://icon2.cleanpng.com/20171220/qve/anonymous-mask-png-5a3a4666911942.7179111615137685505943.jpg">
-                  <div class="user">
-                    <p class="text-5_semibold">Name</p>
-                    <p class="text-5_regular">Developer</p>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img class="profile-image image-fix" src="https://icon2.cleanpng.com/20171220/qve/anonymous-mask-png-5a3a4666911942.7179111615137685505943.jpg">
-                  <div class="user">
-                    <p class="text-5_semibold">Name</p>
-                    <p class="text-5_regular">Developer</p>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img class="profile-image image-fix" src="https://icon2.cleanpng.com/20171220/qve/anonymous-mask-png-5a3a4666911942.7179111615137685505943.jpg">
-                  <div class="user">
-                    <p class="text-5_semibold">Name</p>
-                    <p class="text-5_regular">Developer</p>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img class="profile-image image-fix" src="https://icon2.cleanpng.com/20171220/qve/anonymous-mask-png-5a3a4666911942.7179111615137685505943.jpg">
-                  <div class="user">
-                    <p class="text-5_semibold">Name</p>
-                    <p class="text-5_regular">Developer</p>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img class="profile-image image-fix" src="https://icon2.cleanpng.com/20171220/qve/anonymous-mask-png-5a3a4666911942.7179111615137685505943.jpg">
-                  <div class="user">
-                    <p class="text-5_semibold">Name</p>
-                    <p class="text-5_regular">Developer</p>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img class="profile-image image-fix" src="https://icon2.cleanpng.com/20171220/qve/anonymous-mask-png-5a3a4666911942.7179111615137685505943.jpg">
-                  <div class="user">
-                    <p class="text-5_semibold">Name</p>
-                    <p class="text-5_regular">Developer</p>
+                    <p class="text-5_semibold">{{user.name}}</p>
+                    <p class="text-5_regular">{{user.title}}</p>
                   </div>
                 </td>
               </tr>
