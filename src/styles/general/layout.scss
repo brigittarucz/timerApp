@@ -26,6 +26,23 @@
     padding: 0 4rem;
     margin: auto;
   }
+
+  &__subheader-margin {
+    padding: 0 4rem;
+    margin-bottom: 3rem;
+
+    &__history-navigation {
+      display: inline-flex;
+      align-items: baseline;
+      padding-bottom: 3rem;
+    }
+
+    &__subheader {
+      width: 100%;
+      display: inline-flex;
+      justify-content: space-between
+    }
+  }
 }
 
 .header-container {

@@ -1,7 +1,11 @@
+@import "../../../../../styles/general/colors";
+
+
 .button-add {
   margin: 3rem 0;
   width: 6rem;
   height: 6rem;
+  box-shadow: $soft-shadow;
 
   &__png {
     width: 3rem;
@@ -12,23 +16,6 @@
   .button-add {
     margin: 0 0!important;
   }
-}
-
-.main-container__margin-navigation {
-  width: 100%;
-  margin-bottom: 3rem;
-}
-
-.history-navigation {
-  display: inline-flex;
-  align-items: baseline;
-  padding-bottom: 3rem;
-}
-
-.container-fix {
-  width: 100%;
-  display: inline-flex;
-  justify-content: space-between
 }
 
 
