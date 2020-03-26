@@ -1,4 +1,6 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
+import { MenuStateService } from '../../../services/shared/menu-state.service';
 
 @Component({
 	selector: 'app-navigation-bar',
@@ -6,45 +8,48 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 	styleUrls: [ './navigation-bar.component.scss' ]
 })
 export class NavigationBarComponent implements OnInit {
-	toggleNav = false;
-	displayNav = 'none';
-	displayShadow = 'var(--soft-shadow)';
+	toggleProfileQuickviewState: boolean = false;
+	displayProfileQuickview: string = 'none';
+	displayShadow: string = 'var(--soft-shadow)';
+	isNavigIconClose: Subject<boolean>;
+	navState: boolean = false;
 
-	// @Input() toggleClose;
+	menuIconSrc: string = '../../../../assets/header/burgermenu-icon.png';
 
-	@Output() menuClick = new EventEmitter();
-	toggleSide = false;
+	constructor(private menuStateService: MenuStateService) {
+		this.isNavigIconClose = this.menuStateService.navbarStatus;
+		this.isNavigIconClose.subscribe((value) => {
+			this.navState = value;
+			if (this.navState) {
+				this.menuIconSrc = '../../../../assets/cross-icon.png';
+			} else {
+				this.menuIconSrc = '../../../../assets/header/burgermenu-icon.png';
+			}
+		});
+	}
 
-	constructor() {}
+	ngOnInit(): void {}
 
-	toggleNavbar() {
-		this.toggleNav = !this.toggleNav;
-		if (this.toggleNav) {
-			this.displayNav = 'block';
+	toggleProfileQuickview() {
+		this.toggleProfileQuickviewState = !this.toggleProfileQuickviewState;
+		if (this.toggleProfileQuickviewState) {
+			this.displayProfileQuickview = 'block';
 			this.displayShadow = 'none';
 			if (window.innerWidth > 800) {
 				this.displayShadow = 'var(--soft-shadow)';
 			}
 		} else {
-			this.displayNav = 'none';
+			this.displayProfileQuickview = 'none';
 			this.displayShadow = 'var(--soft-shadow)';
 		}
 	}
 
-	toggleSidebar(event) {
-		this.toggleSide = !this.toggleSide;
-		this.menuClick.emit(this.toggleSide);
-		let navigIcon = event.target;
-		if (this.toggleSide) {
-			navigIcon.setAttribute('src', '../../../../assets/cross-icon.png');
-			navigIcon.setAttribute('height', '28');
-			navigIcon.setAttribute('width', '28');
+	toggleSidebarComponent() {
+		this.menuStateService.toggleNavbarMenuIconChange();
+		if (window.innerWidth > 800) {
+			this.menuStateService.toggleSidebarDesktopVisibility();
 		} else {
-			navigIcon.setAttribute('src', '../../../../assets/header/burgermenu-icon.png');
-			navigIcon.setAttribute('width', '28');
-			navigIcon.setAttribute('height', '22');
+			this.menuStateService.toggleSidebarMobileVisibility();
 		}
 	}
-
-	ngOnInit(): void {}
 }
