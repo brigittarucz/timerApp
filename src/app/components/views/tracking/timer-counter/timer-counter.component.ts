@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
-import {CounterService} from "../../../../services/shared/counter.service";
+import { TrackingService } from '../../../../services/tracking/tracking-service.service';
 
 @Component({
 	selector: 'app-timer-counter',
@@ -13,7 +13,7 @@ export class TimerCounterComponent implements OnInit {
 	@Output() isUserCheckedIn = new EventEmitter();
 	counter: any;
 
-	constructor(private counterService: CounterService, private router: Router) {}
+	constructor(private counterService: TrackingService, private router: Router) {}
 
 	changeStatus(button) {
 		this.counterService.changeUserStatus();
@@ -33,9 +33,9 @@ export class TimerCounterComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
-		this.isUserCheckedIn.emit(this.counterService.getStartStatus());
+		this.counter = this.counterService.counterObject;
 
-		this.counter = this.counterService.counter;
+		this.isUserCheckedIn.emit(this.counterService.getStartStatus());
 
 		this.displayText = this.counterService.getButtonText();
 	}

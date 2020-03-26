@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {CounterService} from "../../../../services/shared/counter.service";
+import { TrackingService } from '../../../../services/tracking/tracking-service.service';
 
 @Component({
 	selector: 'app-timer-visual',
@@ -9,9 +9,9 @@ import {CounterService} from "../../../../services/shared/counter.service";
 export class TimerVisualComponent implements OnInit {
 	counter;
 
-	constructor(private counterService: CounterService) {}
+	constructor(private counterService: TrackingService) {}
 
 	ngOnInit(): void {
-		this.counter = this.counterService.counter;
+		this.counter = this.counterService.counterObject;
 	}
 }

@@ -1,5 +1,3 @@
-import {CounterService} from "./services/shared/counter.service";
+import { TrackingService } from './services/tracking/tracking-service.service';
 
-export const Providers = [
-  CounterService,
-];
+export const Providers = [ TrackingService ];
