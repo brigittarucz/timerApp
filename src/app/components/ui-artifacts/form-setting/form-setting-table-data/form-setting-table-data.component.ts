@@ -2,7 +2,6 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {TaskEntry} from "../../../../models/taskEntryModel";
 import {Subscription} from "rxjs";
 import {UserHistoryService} from "../../../../services/user-history/user-history.service";
-import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-form-setting-table-data',
@@ -17,7 +16,7 @@ export class FormSettingTableDataComponent implements OnInit, OnDestroy {
 
   totalWorkedTime: number = 0;
 
-  constructor(private historyService: UserHistoryService, private router: Router) {
+  constructor(private historyService: UserHistoryService) {
   }
 
   ngOnInit(): void {
@@ -44,15 +43,5 @@ export class FormSettingTableDataComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.taskDataSubscription.unsubscribe();
-  }
-
-  async doGoTo(path: string, id?: string) {
-    if (path) {
-      try {
-        await this.router.navigate([path, {id: id || null}]);
-      } catch(e) {
-
-      }
-    }
   }
 }

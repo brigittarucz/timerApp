@@ -3,7 +3,7 @@
 
     <table class="table-toggle">
       <thead>
-      <tr class="table-toggle-grid">
+      <tr class="table-toggle-grid__4fr">
         <th></th>
         <th><h3 class="text-4_semibold uppercase">Name</h3></th>
         <th class="align-right"><h3 class="text-4_semibold uppercase">Option State</h3></th>
@@ -12,13 +12,13 @@
       </thead>
       <tbody>
       <tr
-        class="table-toggle-grid"
+        class="table-toggle-grid__4fr"
         *ngFor="let task of tasks">
         <td>
           <img src="../../../../../assets/delete-icon.png">
           <img src="../../../../../assets/edit-icon.png">
         </td>
-        <td><p class="text-5_regular">{{ task.department }}</p></td>
+        <td><p class="text-5_regular">Name</p></td>
         <td class="align-right">
           <div class="checkbox-toggle align-right">
             <span class="text-6_regular mobile-hide">Disable</span>
@@ -37,16 +37,22 @@
   </div>
 </div>
 
-<!---->
 
 <hr>
+<!------------------------------------------------------------------------------->
+<!------------- Second table layout is the same as the first one ---------------->
+
+
+<hr>
+<!------------------------------------------------------------------------------->
+<!------------------------------- 3rd table layout  ----------------------------->
 
 <div class="data-table">
   <div class="data-table__content">
 
-    <table class="table-toggle2">
+    <table class="table-toggle">
       <thead>
-      <tr class="table-toggle-grid">
+      <tr class="table-toggle-grid__6fr">
         <th></th>
         <th class="type1"><h3 class="text-4_semibold uppercase">Name</h3></th>
         <th class="type2"><h3 class="text-4_semibold uppercase">Field State</h3></th>
@@ -57,7 +63,7 @@
       </thead>
       <tbody>
       <tr
-        class="table-toggle-grid"
+        class="table-toggle-grid__6fr"
         *ngFor="let task of tasks">
         <td>
           <img src="../../../../../assets/delete-icon.png">
@@ -74,9 +80,50 @@
         <td class="type3"><p class="text-5_regular">Dropdown</p></td>
         <td class="type4"><p class="text-5_regular">Before</p></td>
         <td>
-          <p class="text-5_semibold capitalize mobile-hide">View Options &nbsp;&nbsp; </p>
+          <p class="text-5_semibold capitalize tablet-hide-sm">View Options &nbsp;&nbsp; </p>
           <img class="button__arrow" src="../../../../../assets/arrow-icon.png">
         </td>
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
+<hr>
+<!------------------------------------------------------------------------------->
+<!------------------------------- 4rd table layout  ----------------------------->
+
+<div class="data-table">
+  <div class="data-table__content">
+
+    <table class="table-toggle">
+      <thead>
+      <tr class="table-toggle-grid">
+        <th></th>
+        <th><h3 class="text-4_semibold uppercase">Name</h3></th>
+        <th class="align-right"><h3 class="text-4_semibold uppercase">Option State</h3></th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr
+        class="table-toggle-grid"
+        *ngFor="let task of tasks">
+        <td>
+          <img src="../../../../../assets/delete-icon.png">
+          <img src="../../../../../assets/edit-icon.png">
+        </td>
+        <td><p class="text-5_regular">Name</p></td>
+        <td class="align-right">
+          <div class="checkbox-toggle align-right">
+            <span class="text-6_regular mobile-hide">Disable</span>
+            <input type="checkbox" class="checkbox-toggle__switch">
+            <span class="text-6_regular mobile-hide">Enable</span>
+          </div>
+        </td>
+        <td></td>
       </tr>
       </tbody>
     </table>
