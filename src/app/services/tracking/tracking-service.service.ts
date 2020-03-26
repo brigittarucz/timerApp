@@ -3,22 +3,24 @@ import { Injectable } from '@angular/core';
 @Injectable({
 	providedIn: 'root'
 })
-export class CounterService {
-	counter = {
-		sec: '00',
-		min: '00',
-		h: '00'
+export class TrackingService {
+	counterObject: { sec: number; min: number; h: number } = {
+		sec: 0,
+		min: 0,
+		h: 0
 	};
 
-	mySeconds = 0;
-	myMinutes = 0;
-	myHours = 0;
+	mySeconds: number = 0;
+	myMinutes: number = 0;
+	myHours: number = 0;
 
-	outputSeconds = '00';
-	outputMinutes = '00';
-	outputHours = '00';
+	// outputSeconds = '00';
+	// outputMinutes = '00';
+	// outputHours = '00';
 
-	counterInterval = null;
+	counterInterval: any = null;
+
+	constructor() {}
 
 	startCounter() {
 		this.counterInterval = setInterval(() => {
@@ -34,26 +36,30 @@ export class CounterService {
 			if (this.myMinutes === 60) {
 				this.myMinutes = 0;
 				this.myHours++;
-				this.outputHours = this.formatCounter(this.myHours, this.outputHours);
+				// this.outputHours = this.formatCounter(this.myHours, this.outputHours);
 			}
 
-			this.outputSeconds = this.formatCounter(this.mySeconds, this.outputSeconds);
-			this.outputMinutes = this.formatCounter(this.myMinutes, this.outputMinutes);
+			// this.outputSeconds = this.formatCounter(this.mySeconds, this.outputSeconds);
+			// this.outputMinutes = this.formatCounter(this.myMinutes, this.outputMinutes);
 
-			this.updateCounterService(this.outputSeconds, this.outputMinutes, this.outputHours);
+			this.updateCounterService(this.mySeconds, this.myMinutes, this.myHours);
 		}, 1000);
 	}
 
-	formatCounter(value, output) {
-		if (value.toString(10).charAt(1) === '') {
-			output = '0' + value;
-			return output;
-		} else {
-			return value;
-		}
+	updateCounterService(seconds, minutes, hours) {
+		this.counterObject.sec = seconds;
+		this.counterObject.min = minutes;
+		this.counterObject.h = hours;
 	}
 
-	constructor() {}
+	// formatCounter(value, output) {
+	// 	if (value.toString(10).charAt(1) === '') {
+	// 		output = '0' + value;
+	// 		return output;
+	// 	} else {
+	// 		return value;
+	// 	}
+	// }
 
 	checkedIn: any = false;
 	break: any = false;
@@ -83,24 +89,18 @@ export class CounterService {
 		return this.checkedIn;
 	}
 
-	updateCounterService(seconds, minutes, hours) {
-		this.counter.sec = seconds;
-		this.counter.min = minutes;
-		this.counter.h = hours;
-	}
-
 	getCounter() {
-		return this.counter;
+		return this.counterObject;
 	}
 
 	stopCounter() {
-		this.counter = {
-			sec: '00',
-			min: '00',
-			h: '00'
+		this.counterObject = {
+			sec: 0,
+			min: 0,
+			h: 0
 		};
 		clearInterval(this.counterInterval);
-		return this.counter;
+		return this.counterObject;
 	}
 
 	pauseCounter() {

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import {ModalTrackingComponent} from "../../ui-artifacts/modal-tracking/modal-tracking.component";
-import {CounterService} from "../../../services/shared/counter.service";
+import { ModalTrackingComponent } from '../../ui-artifacts/modal-tracking/modal-tracking.component';
+import { TrackingService } from '../../../services/tracking/tracking-service.service';
 
 @Component({
 	selector: 'app-tracking',
@@ -17,7 +17,7 @@ export class TrackingComponent implements OnInit {
 	hasAddedTask = false;
 	timer;
 
-	constructor(public matDialog: MatDialog, private router: Router, private counterService: CounterService) {
+	constructor(public matDialog: MatDialog, private router: Router, private counterService: TrackingService) {
 		if (router.getCurrentNavigation().extras.state !== undefined) {
 			// Insert user's picks here and show visual tracker
 			this.hasAddedTask = true;
@@ -44,13 +44,13 @@ export class TrackingComponent implements OnInit {
 					this.hasAddedTask = true;
 				}
 			});
-    } else {
-      try {
-        await this.router.navigate([ '/add-task' ]);
-      } catch (e) {
-        console.error(e);
-      }
-    }
+		} else {
+			try {
+				await this.router.navigate([ '/add-task' ]);
+			} catch (e) {
+				console.error(e);
+			}
+		}
 	}
 
 	ngOnInit(): void {}
