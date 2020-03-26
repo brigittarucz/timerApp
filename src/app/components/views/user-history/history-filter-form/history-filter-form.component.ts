@@ -38,4 +38,12 @@ export class HistoryFilterFormComponent implements OnInit {
 
     this.animState.play = true;
   }
+
+//  filter arrow
+
+  dropdownState: Boolean = false;
+
+  toggleDropdown() {
+    this.dropdownState = !this.dropdownState;
+  }
 }

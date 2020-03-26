@@ -1,3 +1,18 @@
+.button-add {
+  margin: 3rem 0;
+  width: 6rem;
+  height: 6rem;
+
+  &__png {
+    width: 3rem;
+  }
+}
+
+@media screen and (min-width: 500px){
+  .button-add {
+    margin: 0 0!important;
+  }
+}
 
 /****************************************************/
 /*************** DROPDOWN MESSAGE *******************/
@@ -51,5 +66,4 @@
     opacity: 1;
   }
 }
-
 

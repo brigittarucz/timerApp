@@ -12,5 +12,9 @@ export class ProjHistoryFilterFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  dropdownState: Boolean = false;
 
+  toggleDropdown() {
+    this.dropdownState = !this.dropdownState;
+  }
 }
