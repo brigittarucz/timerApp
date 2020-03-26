@@ -1,9 +1,9 @@
 <div class="container">
 
-  <button class="btn button-base button-active button-checkin" (click)="changeStatus($event)" #statusButton>
-    {{ displayText }} </button>
-  <button class="btn button-base button-active button-checkout" [disabled]="!checkedIn"
-    (click)="verifyStatusAndExit(statusButton)">
+  <button class="btn button-base button-active button-checkin" (click)="changeStatus()"
+    #checkInButton>{{checkInButtonTextContent}}</button>
+  <button class="btn button-base button-active button-checkout" [disabled]="!checkInStatus"
+    (click)="verifyStatusAndCheckOut(checkInButton)">
     Check Out
   </button>
 

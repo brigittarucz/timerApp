@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
 	providedIn: 'root'
@@ -14,13 +15,30 @@ export class TrackingService {
 	myMinutes: number = 0;
 	myHours: number = 0;
 
+	isUserCheckedIn: boolean = false;
+	userCheckInStatus: Subject<boolean> = new Subject<boolean>();
+
+	checkInButtonText: string = 'Check In';
+
 	// outputSeconds = '00';
 	// outputMinutes = '00';
 	// outputHours = '00';
 
 	counterInterval: any = null;
 
-	constructor() {}
+	constructor() {
+		this.userCheckInStatus.subscribe((value) => {
+			this.isUserCheckedIn = value;
+		});
+	}
+
+	changeCheckInStatus() {
+		this.userCheckInStatus.next(!this.isUserCheckedIn);
+	}
+
+	get userStatus(): Subject<boolean> {
+		return this.userCheckInStatus;
+	}
 
 	startCounter() {
 		this.counterInterval = setInterval(() => {
@@ -63,33 +81,32 @@ export class TrackingService {
 
 	checkedIn: any = false;
 	break: any = false;
-	buttonText: any = 'Check In';
 
-	changeUserStatus() {
-		if (!this.checkedIn) {
-			this.checkedIn = !this.checkedIn;
+	changeCheckInButtonTextContent() {
+		if (!this.isUserCheckedIn) {
+			this.isUserCheckedIn = !this.isUserCheckedIn;
 			this.startCounter();
-			this.buttonText = 'Break';
-		} else if (this.checkedIn && !this.break) {
+			this.checkInButtonText = 'Break';
+		} else if (this.isUserCheckedIn && !this.break) {
 			this.break = !this.break;
 			this.pauseCounter();
-			this.buttonText = 'Resume';
-		} else if (this.checkedIn && this.break) {
+			this.checkInButtonText = 'Resume';
+		} else if (this.isUserCheckedIn && this.break) {
 			this.break = !this.break;
 			this.startCounter();
-			this.buttonText = 'Break';
+			this.checkInButtonText = 'Break';
 		}
-	}
-
-	getButtonText() {
-		return this.buttonText;
 	}
 
 	getStartStatus() {
 		return this.checkedIn;
 	}
 
-	getCounter() {
+	get getButtonText(): string {
+		return this.checkInButtonText;
+	}
+
+	get getCounter(): { sec: number; min: number; h: number } {
 		return this.counterObject;
 	}
 
