@@ -10,6 +10,7 @@ import { FormSettingNavigationComponent } from './components/ui-artifacts/form-s
 import { UsersFilterFormComponent } from './components/views/users/users-filter-form/users-filter-form.component';
 import { UsersDataTableComponent } from './components/views/users/users-data-table/users-data-table.component';
 import { FormatCountryPipe } from './pipes/format-country.pipe';
+import { UserAccessDataTableComponent } from './components/views/user-access/user-access-data-table/user-access-data-table.component';
 
 @NgModule({
 	declarations: [
@@ -19,7 +20,8 @@ import { FormatCountryPipe } from './pipes/format-country.pipe';
 		FormSettingNavigationComponent,
 		UsersFilterFormComponent,
 		UsersDataTableComponent,
-		FormatCountryPipe
+		FormatCountryPipe,
+		UserAccessDataTableComponent
 	],
 	imports: [ ...Imports ],
 	providers: [ ...Providers ],
