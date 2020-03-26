@@ -98,6 +98,14 @@ __toggle-container is container for the toggle-button in the toggle-button.scss 
   &__content, &__content__timeline {
     padding: 0 5rem;
   }
+
+  .img-margin-right {
+    margin-right: 0.5rem;
+  }
+
+  .img-margin-left {
+    margin-left: 0.5rem;
+  }
 }
 
 @media screen and (min-width: 800px) {
