@@ -94,6 +94,13 @@ button {
 
     &__margin {
       margin-right: 2rem;
+
+      &__options {
+        img {
+          margin-left: 1.5rem;
+          width: 2rem;
+        }
+      }
     }
   }
 

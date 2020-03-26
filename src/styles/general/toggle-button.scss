@@ -85,10 +85,13 @@
 
 .checkbox-toggle {
   width: 100%;
-  max-width: 18rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media screen and (min-width: 800px) {
+    max-width: 18rem;
+  }
 
   &__switch {
     -webkit-appearance: none;

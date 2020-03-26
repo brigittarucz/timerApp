@@ -152,7 +152,7 @@
 
   th, td {
     padding: .5rem 0;
-    display: flex;
+    //display: flex;
 
     &:first-child {
       justify-content: space-between;
@@ -193,6 +193,20 @@
     .tablet-hide {
       display: none;
     }
+  }
+}
+
+/* ************************************* */
+/* *** TABLE 3fr WITH TOGGLE LAYOUT **** */
+
+.table-toggle-grid__3fr {
+  display: grid !important;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  grid-column-gap: 2rem;
+  align-items: center;
+
+  @media screen and (min-width: 900px) {
+    grid-template-columns: 1fr 1.5fr 1fr;
   }
 }
 
