@@ -1,6 +1,6 @@
 <nav class="navbar navbar-light bg-light" [style.box-shadow]="displayShadow">
-  <a class="navigation__menu-icon" (click)="toggleSidebar($event)">
-    <img src="../../../../assets/header/burgermenu-icon.png" width="28" height="22" alt="Menu Icon">
+  <a class="navigation__menu-icon" (click)="toggleSidebarComponent($event)">
+    <img src="{{menuIconSrc}}" width="28" height="22" alt="Menu Icon">
   </a>
   <a class="navbar-brand float-left navigation__logo-icon" href="#">
     <img src="../../../../assets/header/logo.png" width="150" alt="Wiredelta">
@@ -11,14 +11,11 @@
   </app-timer-counter>
 
 
-  <button class="navigation__profile-icon float-right navbar-toggler"
-  type="button"
-  (click)="toggleNavbar()"
-  >
+  <button class="navigation__profile-icon float-right navbar-toggler" type="button" (click)="toggleProfileQuickview()">
     <div class="navigation__profile-icon-container">
     </div>
   </button>
 </nav>
-<div class="collapse navbar-collapse" style="display:block;" [style.display]="displayNav">
+<div class="collapse navbar-collapse" style="display:block;" [style.display]="displayProfileQuickview">
   <app-profile-quickview> </app-profile-quickview>
 </div>

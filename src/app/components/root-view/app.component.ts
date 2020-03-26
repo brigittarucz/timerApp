@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { MenuStateService } from '../../services/shared/menu-state.service';
+import { Subject } from 'rxjs';
 
 @Component({
 	selector: 'app-root',
@@ -7,22 +9,23 @@ import { Component, Input } from '@angular/core';
 })
 export class AppComponent {
 	title = 'timer-app';
-	clickFromNav = false;
-	initialDisplay = 'none';
-	windowWidth = window.innerWidth;
 
-	constructor() {}
+	openDesktop: boolean = false;
+	openMobile: boolean = false;
+	initialDisplay: string = 'none';
+	isNavigIconClose: Subject<boolean>;
 
-	openMenu(boolVal) {
-		if (window.innerWidth < 800) {
-			this.initialDisplay = 'block';
-			this.clickFromNav = boolVal;
-		} else {
-			this.clickFromNav = boolVal;
-		}
-	}
+	constructor(private menuStateService: MenuStateService) {
+		this.isNavigIconClose = this.menuStateService.navbarStatus;
 
-	closeMenu(boolVal) {
-		this.clickFromNav = boolVal;
+		this.isNavigIconClose.subscribe((value) => {
+			// If navigation icon is close -> the menu should be opened
+			if (window.innerWidth > 800) {
+				this.openDesktop = value;
+			} else {
+				this.openMobile = value;
+				this.initialDisplay = 'block';
+			}
+		});
 	}
 }

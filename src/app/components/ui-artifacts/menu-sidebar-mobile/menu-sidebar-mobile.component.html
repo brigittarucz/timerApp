@@ -1,0 +1,60 @@
+<div class="navigation__sidebar-container">
+
+  <div class="menu">
+    <ul class="list-group menu__list-options">
+      <li class="list-group-item">
+        <p class="text-4_semibold"> User </p>
+        <ul>
+          <a [routerLink]="['/']" (click)="closeSidebar()">
+            <li class="menu-option text-5_regular align-content"> <span class="icon-sidebar pr-4 icon_tracking">
+              </span>Tracking
+            </li>
+          </a>
+          <a [routerLink]="['/user-history']" (click)="closeSidebar()">
+            <li class="menu-option text-5_regular align-content"> <span class="icon-sidebar pr-4 icon_user-history">
+              </span>User
+              History </li>
+          </a>
+          <a [routerLink]="['/activity']" (click)="closeSidebar()">
+            <li class="menu-option text-5_regular align-content"> <span class="icon-sidebar pr-4 icon_activity">
+              </span>Activity
+            </li>
+          </a>
+        </ul>
+      </li>
+      <li class="list-group-item">
+        <p class="text-4_semibold"> Projects</p>
+        <ul>
+          <a [routerLink]="['/project-history']" (click)="closeSidebar()">
+            <li class="menu-option text-5_regular align-content"> <span class="icon-sidebar pr-4 icon_project-history">
+              </span>Project History</li>
+          </a>
+        </ul>
+      </li>
+      <li class="list-group-item">
+        <p class="text-4_semibold"> Admin </p>
+        <ul>
+          <a [routerLink]="['/form-setting']" (click)="closeSidebar()">
+            <li class="menu-option text-5_regular align-content"> <span class="icon-sidebar pr-4 icon_form-setting">
+              </span>Form
+              Setting </li>
+          </a>
+          <a [routerLink]="['/users']" (click)="closeSidebar()">
+            <li class="menu-option text-5_regular align-content"> <span class="icon-sidebar pr-4 icon_users">
+              </span>Users
+            </li>
+          </a>
+          <a [routerLink]="['/clients-projects']" (click)="closeSidebar()">
+            <li class="menu-option text-5_regular align-content"> <span class="icon-sidebar pr-4 icon_clients-projects">
+              </span>Clients & Projects </li>
+          </a>
+          <a [routerLink]="['/user-access']" (click)="closeSidebar()">
+            <li class="menu-option text-5_regular align-content"> <span class="icon-sidebar pr-4 icon_user-access">
+              </span>User
+              Access </li>
+          </a>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
