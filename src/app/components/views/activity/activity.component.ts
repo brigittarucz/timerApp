@@ -1,27 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-activity',
-  templateUrl: './activity.component.html',
-  styleUrls: [ './activity.component.scss' ]
+	selector: 'app-activity',
+	templateUrl: './activity.component.html',
+	styleUrls: [ './activity.component.scss' ]
 })
 export class ActivityComponent implements OnInit {
-  officeOverviewText: string = 'Offices Overview';
-  officeOverview: boolean = false;
+	officeOverviewText: string = 'Offices Overview';
+	officeOverview: boolean = false;
 
-  constructor() {}
+	constructor() {}
 
-  ngOnInit(): void {
-  }
+	ngOnInit(): void {}
 
-  changeViewMain() {
-    this.officeOverview = !this.officeOverview;
-    if (this.officeOverview) {
-      this.officeOverviewText = 'Back To The Table';
-    } else {
-      this.officeOverviewText = 'Offices Overview';
-    }
-  }
-
-
+	changeViewMain() {
+		this.officeOverview = !this.officeOverview;
+		if (this.officeOverview) {
+			this.officeOverviewText = 'Back To The Table';
+		} else {
+			this.officeOverviewText = 'Offices Overview';
+		}
+	}
 }
