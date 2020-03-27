@@ -6,30 +6,79 @@
       <tr class="table-toggle-grid__4fr">
         <th></th>
         <th><h3 class="text-4_semibold uppercase">Name</h3></th>
-        <th class="align-right"><h3 class="text-4_semibold uppercase">Option State</h3></th>
+        <th class="align-right"><h3 class="text-4_semibold uppercase">Active</h3></th>
         <th></th>
       </tr>
       </thead>
       <tbody>
       <tr
-        class="table-toggle-grid__4fr"
+        class="table-toggle-grid__4fr row-active"
         *ngFor="let task of tasks">
-        <td>
-          <img src="../../../../../assets/edit-icon.png" alt="">
-        </td>
-        <td><p class="text-5_regular">Name</p></td>
-        <td class="align-right">
+        <td class="type1"><img src="../../../../../assets/edit-icon.png" alt=""></td>
+        <td class="type2"><p class="text-5_regular">Name</p></td>
+        <td class="type3 align-right">
           <div class="checkbox-toggle align-right">
             <span class="text-6_regular mobile-hide">Disable</span>
             <input type="checkbox" class="checkbox-toggle__switch">
             <span class="text-6_regular mobile-hide">Enable</span>
           </div>
         </td>
-        <td>
-          <div class="display-flex__right">
+        <td class="type4 display-flex__right collapsible">
+          <button class="display-flex__right" type="button">
             <p class="text-5_semibold capitalize mobile-hide">View Projects &nbsp;&nbsp; </p>
-            <img class="button__arrow__down" src="../../../../../assets/arrow-icon.png">
+            <img class="button__arrow__down" src="../../../../../assets/arrow-icon.png" alt="">
+          </button>
+        </td>
+        <td class="type5 collapsible-content">
+
+          <div class="table-inception">
+            <p class="text-2_semibold table-inception__header">Company's Projects</p>
+            <table class="table-toggle">
+              <thead>
+                <tr class="table-toggle-grid__inception tr-temp">
+                  <th></th>
+                  <th><h3 class="text-4_semibold">Name</h3></th>
+                  <th class=""><h3 class="text-4_semibold">Status</h3></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="table-toggle-grid__inception">
+                  <td><img src="../../../../../assets/edit-icon.png" alt=""></td>
+                  <td><p class="text-5_regular">Blog</p></td>
+                  <td class="">
+                    <button class="display-flex" type="button">
+                      <p class="text-5_semibold">Ongoing &nbsp;&nbsp; </p>
+                      <img class="button__arrow__down" src="../../../../../assets/arrow-icon.png" alt="">
+                    </button>
+                  </td>
+                </tr>
+
+                <tr class="table-toggle-grid__inception">
+                  <td><img src="../../../../../assets/edit-icon.png" alt=""></td>
+                  <td><p class="text-5_regular">PMI</p></td>
+                  <td class="">
+                    <button class="display-flex__right" type="button">
+                      <p class="text-5_semibold">Completed &nbsp;&nbsp; </p>
+                      <img class="button__arrow__down" src="../../../../../assets/arrow-icon.png" alt="">
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr class="table-toggle-grid__inception">
+                  <td><img src="../../../../../assets/clients-projects/save-icon.png" alt=""></td>
+                  <td><input class="table-input" type="text" placeholder="Enter a new project name "></td>
+                  <td>
+                    <select class="table-select">
+                    <option value="">Select a state</option>
+                    <option value="1">Completed</option>
+                    <option value="2">Ongoing</option></select>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
           </div>
+
         </td>
       </tr>
       </tbody>

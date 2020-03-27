@@ -6,10 +6,14 @@
 
   thead > tr {
     border-bottom: .2rem solid $grey-color-light;
+
+    th {padding: 1.5rem 0;}
   }
 
   tbody > tr {
     border-bottom: .1rem solid $grey-color-light;
+
+    td {padding: 2rem 0;}
 
     @media screen and (min-width: 800px) {
       display: table;
@@ -19,13 +23,10 @@
   }
 
   tfoot > tr {
-    //padding-top: 1rem;
     border-top: .2rem solid $grey-color-light;
   }
 
   th, td {
-    padding: 1.5rem 0;
-
     &:last-child {
       text-align: right;
     }
@@ -49,8 +50,8 @@
 
 @media screen and (min-width: 992px) {
   table {
-    tr {padding: 0;}
-    th {padding: 2rem 0;}
+    //tr {padding: 0;}
+    th {padding: 1rem 0;}
   }
 }
 
@@ -139,25 +140,31 @@
 .table-toggle {
   width: 100%;
 
-  thead > tr {
-    border-bottom: .2rem solid $grey-color-light;
+  thead {
+    .tr-temp,tr {
+      border-bottom: .2rem solid $grey-color-light!important;
+
+      th {
+        padding: 1rem 0;
+      }
+    }
   }
 
-  tbody > tr {
-    padding: 1rem 0;
-    border-bottom: .1rem solid $grey-color-light;
+  tbody {
+    tr {
+      border-bottom: .1rem solid $grey-color-light;
 
-    &:last-child {border: none;}
+      td {
+        padding: 1.5rem 0;
+      }
+
+      &:last-child {
+        border: none;
+      }
+    }
   }
 
   th, td {
-    padding: .5rem 0;
-    //display: flex;
-
-    &:first-child {
-      justify-content: space-between;
-    }
-
     &:last-child {
       justify-content: flex-end;
     }
@@ -216,8 +223,17 @@
 .table-toggle-grid__4fr {
   display: grid !important;
   grid-template-columns: 5rem 1.8fr 1.4fr 0.3fr;
+  grid-template-areas:
+    "type1 type2 type3 type4"
+    "type5 type5 type5 type5";
   grid-column-gap: 2rem;
   align-items: center;
+
+  .type1 {grid-area: type1}
+  .type2 {grid-area: type2}
+  .type3 {grid-area: type3}
+  .type4 {grid-area: type4}
+  .type5 {grid-area: type5}
 
   @media screen and (min-width: 900px) {
     grid-template-columns: 5rem repeat(3, 1fr);
