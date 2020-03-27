@@ -9,7 +9,7 @@ import { FormSettingTableDataComponent } from './components/ui-artifacts/form-se
 import { FormSettingNavigationComponent } from './components/ui-artifacts/form-setting/form-setting-navigation/form-setting-navigation.component';
 import { UsersFilterFormComponent } from './components/views/users/users-filter-form/users-filter-form.component';
 import { UsersDataTableComponent } from './components/views/users/users-data-table/users-data-table.component';
-import { FormatCountryPipe } from './pipes/format-country.pipe';
+import { StopTaskModalComponent } from './components/ui-artifacts/stop-task-modal/stop-task-modal.component';
 
 @NgModule({
 	declarations: [
@@ -19,7 +19,7 @@ import { FormatCountryPipe } from './pipes/format-country.pipe';
 		FormSettingNavigationComponent,
 		UsersFilterFormComponent,
 		UsersDataTableComponent,
-		FormatCountryPipe
+		StopTaskModalComponent
 	],
 	imports: [ ...Imports ],
 	providers: [ ...Providers ],

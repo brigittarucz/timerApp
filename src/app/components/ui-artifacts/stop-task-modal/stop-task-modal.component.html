@@ -1,0 +1,13 @@
+<p>stop-task-modal works!</p>
+<div class="modal__stop-task">
+  <h1> Stop Task </h1>
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div id="terminate-task" ngModelGroup="terminateTask">
+      <label for="description"> Description </label>
+      <input id="description" name="description" ngModel required>
+    </div>
+
+    <button [disabled]="hasDescription" type="submit"> Start </button>
+    <button> Cancel </button>
+  </form>
+</div>

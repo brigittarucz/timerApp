@@ -60,15 +60,6 @@ export class TrackingService {
 		return this.taskInProgressStatus;
 	}
 
-	// formatCounter(value, output) {
-	// 	if (value.toString(10).charAt(1) === '') {
-	// 		output = '0' + value;
-	// 		return output;
-	// 	} else {
-	// 		return value;
-	// 	}
-	// }
-
 	changeCheckInButtonTextContent() {
 		if (!this.isUserCheckedIn) {
 			this.changeCheckInStatus();
@@ -76,13 +67,21 @@ export class TrackingService {
 			this.checkInButtonText = 'Break';
 		} else if (this.isUserCheckedIn && !this.break) {
 			this.break = !this.break;
-			this.pauseCounter(this.counterIntervalCheckIn);
+			this.pauseCheckInCounter();
 			this.checkInButtonText = 'Resume';
 		} else if (this.isUserCheckedIn && this.break) {
 			this.break = !this.break;
 			this.startCounterCheckIn();
 			this.checkInButtonText = 'Break';
 		}
+	}
+
+	pauseCheckInCounter() {
+		clearInterval(this.counterIntervalCheckIn);
+	}
+
+	pauseTaskCounter() {
+		clearInterval(this.counterIntervalTask);
 	}
 
 	getStartStatus() {
@@ -131,9 +130,5 @@ export class TrackingService {
 		};
 		clearInterval(this.counterIntervalCheckIn);
 		return this.counterObjectCheckIn;
-	}
-
-	pauseCounter(counterInterval) {
-		clearInterval(counterInterval);
 	}
 }
