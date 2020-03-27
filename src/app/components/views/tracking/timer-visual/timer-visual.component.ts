@@ -4,6 +4,7 @@ import { Counter } from '../../../../models/counterModel';
 import { Router } from '@angular/router';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { StopTaskModalComponent } from '../../../ui-artifacts/stop-task-modal/stop-task-modal.component';
+import { Subject } from 'rxjs';
 
 @Component({
 	selector: 'app-timer-visual',
@@ -12,6 +13,9 @@ import { StopTaskModalComponent } from '../../../ui-artifacts/stop-task-modal/st
 })
 export class TimerVisualComponent implements OnInit {
 	counter: Counter;
+	taskStatus: Subject<boolean>;
+	dialogConfig: MatDialogConfig = new MatDialogConfig();
+	modalDialog;
 
 	constructor(private trackingService: TrackingService, public matDialog: MatDialog, private router: Router) {}
 
@@ -28,11 +32,10 @@ export class TimerVisualComponent implements OnInit {
 
 	stopTaskCounter() {
 		if (window.innerWidth > 800) {
-			const dialogConfig = new MatDialogConfig();
-			dialogConfig.disableClose = false;
-			dialogConfig.id = 'modal-component';
-			dialogConfig.width = '60%';
-			const modalDialog = this.matDialog.open(StopTaskModalComponent, dialogConfig);
+			this.dialogConfig.disableClose = false;
+			this.dialogConfig.id = 'modal-component';
+			this.dialogConfig.width = '60%';
+			this.modalDialog = this.matDialog.open(StopTaskModalComponent, this.dialogConfig);
 		} else {
 			this.router.navigate([ '/stop-task' ]);
 		}
@@ -40,5 +43,11 @@ export class TimerVisualComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.counter = this.trackingService.counterObjectTask;
+		this.taskStatus = this.trackingService.taskStatus;
+		this.taskStatus.subscribe((value) => {
+			if (!value) {
+				this.modalDialog.close();
+			}
+		});
 	}
 }

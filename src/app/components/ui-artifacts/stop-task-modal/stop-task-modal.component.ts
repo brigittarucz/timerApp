@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { TrackingService } from '../../../services/tracking/tracking-service.service';
 
 @Component({
 	selector: 'app-stop-task-modal',
@@ -7,10 +7,12 @@ import { FormsModule } from '@angular/forms';
 	styleUrls: [ './stop-task-modal.component.scss' ]
 })
 export class StopTaskModalComponent implements OnInit {
-	hasDescription;
-	onSubmit(ev) {}
-
-	constructor() {}
+	constructor(private trackingService: TrackingService) {}
 
 	ngOnInit(): void {}
+
+	onSubmit(form) {
+		console.log(form);
+		this.trackingService.changeTaskInProgressStatus(false);
+	}
 }
