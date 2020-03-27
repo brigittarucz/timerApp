@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { TrackingService } from 'src/app/services/tracking/tracking-service.service';
 
 @Component({
 	selector: 'app-add-task-tracking',
@@ -9,14 +10,21 @@ import { Router } from '@angular/router';
 })
 export class AddTaskTrackingComponent implements OnInit {
 	@ViewChild('f') signupForm: NgForm;
-	@Output() emitFormStatus = new EventEmitter();
 
-	constructor(private router: Router) {}
+	// Updated information about selection
+
+	taskParameters: { fieldLabel: string; fieldOptionsKey: string }[] = [
+		{ fieldLabel: 'department', fieldOptionsKey: 'department' }
+	];
 
 	// Current clicked tracker
 
 	currentTracker;
 	formManualValidity = 0;
+
+	constructor(private router: Router, private trackingService: TrackingService) {}
+
+	ngOnInit(): void {}
 
 	updateFormValidity() {
 		if (this.currentTracker.typeTask === 'place') {
@@ -26,26 +34,18 @@ export class AddTaskTrackingComponent implements OnInit {
 		}
 	}
 
-	// Reset the form when navigating away
-
-	resetAll(button) {
-		button.preventDefault();
+	resetForm(resetButton) {
+		resetButton.preventDefault();
 		this.removeFields(1);
-		// Emit button status
-		this.emitFormStatus.emit('notsubmitted');
+		this.trackingService.changeTaskInProgressStatus(false);
 	}
-
-	// Updated information about selection
-
-	taskParameters = [ { fieldLabel: 'department', fieldOptionsKey: 'department' } ];
 
 	onSubmit(myform: NgForm) {
 		// Add here more for when submitting
 		if (window.innerWidth < 800) {
 			this.router.navigate([ '/' ], { state: { data: { startTrack: 1 } } });
 		} else {
-			// Emit button status
-			this.emitFormStatus.emit('submitted');
+			this.trackingService.changeTaskInProgressStatus(true);
 		}
 	}
 
@@ -82,7 +82,7 @@ export class AddTaskTrackingComponent implements OnInit {
 
 	// Get from component X-button related information
 
-	regenFields = [
+	regenFields: { nameField: string; leaveFields: number | number[] }[] = [
 		{ nameField: 'department', leaveFields: 1 },
 		{ nameField: 'category', leaveFields: 2 },
 		{ nameField: 'client', leaveFields: 3 },
@@ -185,6 +185,4 @@ export class AddTaskTrackingComponent implements OnInit {
 			}
 		}
 	}
-
-	ngOnInit(): void {}
 }

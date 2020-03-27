@@ -1,34 +1,46 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { Counter } from '../../models/counterModel';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class TrackingService {
-	counterObject: { sec: number; min: number; h: number } = {
+	counterObjectCheckIn: Counter = {
 		sec: 0,
 		min: 0,
 		h: 0
 	};
 
-	mySeconds: number = 0;
-	myMinutes: number = 0;
-	myHours: number = 0;
+	counterObjectTask: Counter = {
+		sec: 0,
+		min: 0,
+		h: 0
+	};
+
+	secondsSinceCheckIn: number = 0;
+	secondsSinceTaskStart: number = 0;
 
 	isUserCheckedIn: boolean = false;
 	userCheckInStatus: Subject<boolean> = new Subject<boolean>();
 
+	isTaskInProgress: boolean = false;
+	taskInProgressStatus: Subject<boolean> = new Subject<boolean>();
+
 	checkInButtonText: string = 'Check In';
 
-	// outputSeconds = '00';
-	// outputMinutes = '00';
-	// outputHours = '00';
+	counterIntervalCheckIn: any = null;
+	counterIntervalTask: any = null;
 
-	counterInterval: any = null;
+	checkedIn: any = false;
+	break: any = false;
 
 	constructor() {
 		this.userCheckInStatus.subscribe((value) => {
 			this.isUserCheckedIn = value;
+		});
+		this.taskInProgressStatus.subscribe((value) => {
+			this.isTaskInProgress = value;
 		});
 	}
 
@@ -36,38 +48,16 @@ export class TrackingService {
 		this.userCheckInStatus.next(!this.isUserCheckedIn);
 	}
 
+	changeTaskInProgressStatus(booleanInput: boolean) {
+		this.taskInProgressStatus.next(booleanInput);
+	}
+
 	get userStatus(): Subject<boolean> {
 		return this.userCheckInStatus;
 	}
 
-	startCounter() {
-		this.counterInterval = setInterval(() => {
-			this.mySeconds++;
-			if (this.mySeconds === 59) {
-				this.mySeconds = 0;
-				this.myMinutes++;
-				if (this.myMinutes === 60) {
-					this.myMinutes = 0;
-					this.myHours++;
-				}
-			}
-			if (this.myMinutes === 60) {
-				this.myMinutes = 0;
-				this.myHours++;
-				// this.outputHours = this.formatCounter(this.myHours, this.outputHours);
-			}
-
-			// this.outputSeconds = this.formatCounter(this.mySeconds, this.outputSeconds);
-			// this.outputMinutes = this.formatCounter(this.myMinutes, this.outputMinutes);
-
-			this.updateCounterService(this.mySeconds, this.myMinutes, this.myHours);
-		}, 1000);
-	}
-
-	updateCounterService(seconds, minutes, hours) {
-		this.counterObject.sec = seconds;
-		this.counterObject.min = minutes;
-		this.counterObject.h = hours;
+	get taskStatus(): Subject<boolean> {
+		return this.taskInProgressStatus;
 	}
 
 	// formatCounter(value, output) {
@@ -79,21 +69,18 @@ export class TrackingService {
 	// 	}
 	// }
 
-	checkedIn: any = false;
-	break: any = false;
-
 	changeCheckInButtonTextContent() {
 		if (!this.isUserCheckedIn) {
-			this.isUserCheckedIn = !this.isUserCheckedIn;
-			this.startCounter();
+			this.changeCheckInStatus();
+			this.startCounterCheckIn();
 			this.checkInButtonText = 'Break';
 		} else if (this.isUserCheckedIn && !this.break) {
 			this.break = !this.break;
-			this.pauseCounter();
+			this.pauseCounter(this.counterIntervalCheckIn);
 			this.checkInButtonText = 'Resume';
 		} else if (this.isUserCheckedIn && this.break) {
 			this.break = !this.break;
-			this.startCounter();
+			this.startCounterCheckIn();
 			this.checkInButtonText = 'Break';
 		}
 	}
@@ -106,21 +93,47 @@ export class TrackingService {
 		return this.checkInButtonText;
 	}
 
-	get getCounter(): { sec: number; min: number; h: number } {
-		return this.counterObject;
+	get getCounter(): Counter {
+		return this.counterObjectCheckIn;
+	}
+
+	startCounterCheckIn() {
+		this.counterIntervalCheckIn = setInterval(() => {
+			this.secondsSinceCheckIn++;
+			this.updateCounterService(this.counterObjectCheckIn, this.secondsSinceCheckIn);
+		}, 1000);
+	}
+
+	startCounterTask() {
+		this.counterIntervalTask = setInterval(() => {
+			this.secondsSinceTaskStart++;
+			this.updateCounterService(this.counterObjectTask, this.secondsSinceTaskStart);
+		}, 1000);
+	}
+
+	updateCounterService(counterObject, totalSeconds) {
+		let hours = totalSeconds / 3600;
+		let remains = totalSeconds % 3600;
+		let minutes = remains / 60;
+		let seconds = remains % 60;
+
+		counterObject.sec = Math.round(seconds);
+		counterObject.min = Math.floor(minutes);
+		counterObject.h = Math.floor(hours);
+		console.log(counterObject);
 	}
 
 	stopCounter() {
-		this.counterObject = {
+		this.counterObjectCheckIn = {
 			sec: 0,
 			min: 0,
 			h: 0
 		};
-		clearInterval(this.counterInterval);
-		return this.counterObject;
+		clearInterval(this.counterIntervalCheckIn);
+		return this.counterObjectCheckIn;
 	}
 
-	pauseCounter() {
-		clearInterval(this.counterInterval);
+	pauseCounter(counterInterval) {
+		clearInterval(counterInterval);
 	}
 }

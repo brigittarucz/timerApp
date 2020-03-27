@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TrackingService } from '../../../../services/tracking/tracking-service.service';
+import { Counter } from '../../../../models/counterModel';
 
 @Component({
 	selector: 'app-timer-visual',
@@ -7,11 +8,11 @@ import { TrackingService } from '../../../../services/tracking/tracking-service.
 	styleUrls: [ './timer-visual.component.scss' ]
 })
 export class TimerVisualComponent implements OnInit {
-	counter;
+	counter: Counter;
 
-	constructor(private counterService: TrackingService) {}
+	constructor(private trackingService: TrackingService) {}
 
 	ngOnInit(): void {
-		this.counter = this.counterService.counterObject;
+		this.counter = this.trackingService.counterObjectTask;
 	}
 }

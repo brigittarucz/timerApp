@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { TrackingService } from '../../../../services/tracking/tracking-service.service';
 import { Subject } from 'rxjs';
+import { Counter } from '../../../../models/counterModel';
 
 @Component({
 	selector: 'app-timer-counter',
@@ -11,8 +12,7 @@ import { Subject } from 'rxjs';
 export class TimerCounterComponent implements OnInit {
 	checkInButtonTextContent: string;
 	checkInStatus: boolean = false;
-	// @Output() isUserCheckedIn = new EventEmitter();
-	counter: any;
+	counter: Counter;
 
 	isUserCheckedIn: Subject<boolean>;
 
@@ -24,15 +24,9 @@ export class TimerCounterComponent implements OnInit {
 	}
 
 	changeStatus() {
-		if (!this.checkInStatus) {
-			this.trackingService.changeCheckInStatus();
-		}
 		this.trackingService.changeCheckInButtonTextContent();
 		this.counter = this.trackingService.getCounter;
 		this.checkInButtonTextContent = this.trackingService.getButtonText;
-		// this.checkInStatus = this.trackingService.getStartStatus();
-
-		// this.isUserCheckedIn.emit(true);
 	}
 
 	verifyStatusAndCheckOut(status) {
@@ -42,15 +36,14 @@ export class TimerCounterComponent implements OnInit {
 		if (status.textContent === 'Break' || status.textContent === 'Resume') {
 			console.log('Please stop current working task!');
 		} else {
-			this.trackingService.changeCheckInStatus();
+			// Subscribe to the task observable in order to change check in status
+			// this.trackingService.changeCheckInStatus();
 		}
 	}
 
 	ngOnInit(): void {
-		this.counter = this.trackingService.counterObject;
-
-		// this.isUserCheckedIn.emit(this.trackingService.getStartStatus());
-
+		this.counter = this.trackingService.counterObjectCheckIn;
 		this.checkInButtonTextContent = this.trackingService.getButtonText;
+		// this.isUserCheckedIn.emit(this.trackingService.getStartStatus());
 	}
 }

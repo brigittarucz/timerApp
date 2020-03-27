@@ -13,6 +13,10 @@ export class AddTaskFieldComponent implements OnInit {
 
 	valueSelect = 'null';
 
+	constructor() {}
+
+	ngOnInit(): void {}
+
 	showNextField() {
 		let key = {
 			typeTask: this.labelRef.nativeElement.innerHTML,
@@ -173,8 +177,4 @@ export class AddTaskFieldComponent implements OnInit {
 		training: [ 'courses', 'assignments' ],
 		mode: [ 'Estimations', 'Lead', 'MM', 'Research', 'RM' ]
 	};
-
-	constructor() {}
-
-	ngOnInit(): void {}
 }

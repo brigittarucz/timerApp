@@ -3,6 +3,7 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ModalTrackingComponent } from '../../ui-artifacts/modal-tracking/modal-tracking.component';
 import { TrackingService } from '../../../services/tracking/tracking-service.service';
+import { Subject } from 'rxjs';
 
 @Component({
 	selector: 'app-tracking',
@@ -12,16 +13,24 @@ import { TrackingService } from '../../../services/tracking/tracking-service.ser
 export class TrackingComponent implements OnInit {
 	// Undone: Check out, stop and pause on visual timer, task history, visual timer's own counter service
 
-	modalHeight = '250px';
-	checkedIn = false;
-	hasAddedTask = false;
-	timer;
+	hasAddedTask: boolean = false;
 
-	constructor(public matDialog: MatDialog, private router: Router, private counterService: TrackingService) {
+	checkInStatus: boolean = false;
+	isUserCheckedIn: Subject<boolean>;
+
+	taskInProgressStatus: boolean = false;
+	isTaskInProgress: Subject<boolean>;
+
+	constructor(public matDialog: MatDialog, private router: Router, private trackingService: TrackingService) {
 		if (router.getCurrentNavigation().extras.state !== undefined) {
 			// Insert user's picks here and show visual tracker
 			this.hasAddedTask = true;
 		}
+		this.isUserCheckedIn = this.trackingService.userStatus;
+		this.isUserCheckedIn.subscribe((value) => {
+			this.checkInStatus = value;
+		});
+		this.isTaskInProgress = this.trackingService.taskStatus;
 	}
 
 	async openModal() {
@@ -32,16 +41,18 @@ export class TrackingComponent implements OnInit {
 			// if the user clicks outside the modal, it closes
 			dialogConfig.disableClose = false;
 			dialogConfig.id = 'modal-component';
-			// add 72.5px on each new field
 			dialogConfig.width = '60%';
-
+			console.log(this.taskInProgressStatus);
 			const modalDialog = this.matDialog.open(ModalTrackingComponent, dialogConfig);
-			modalDialog.componentInstance.emitService.subscribe((emittedValue) => {
-				if (emittedValue === 'submitted' || emittedValue === 'notsubmitted') {
+
+			this.isTaskInProgress.subscribe((value) => {
+				this.taskInProgressStatus = value;
+				if (this.taskInProgressStatus === true) {
 					modalDialog.close();
-				}
-				if (emittedValue === 'submitted') {
+					this.trackingService.startCounterTask();
 					this.hasAddedTask = true;
+				} else {
+					modalDialog.close();
 				}
 			});
 		} else {
@@ -57,8 +68,8 @@ export class TrackingComponent implements OnInit {
 
 	viewState(state) {
 		// configure which timer to show
-		this.checkedIn = this.counterService.getStartStatus();
-		if (this.checkedIn && this.hasAddedTask) {
+		this.checkInStatus = this.trackingService.getStartStatus();
+		if (this.checkInStatus && this.hasAddedTask) {
 			// show timer
 		}
 	}
