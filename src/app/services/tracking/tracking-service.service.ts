@@ -119,7 +119,7 @@ export class TrackingService {
 		counterObject.sec = Math.round(seconds);
 		counterObject.min = Math.floor(minutes);
 		counterObject.h = Math.floor(hours);
-		console.log(counterObject);
+		// console.log(counterObject);
 	}
 
 	stopCounter() {
@@ -130,5 +130,15 @@ export class TrackingService {
 		};
 		clearInterval(this.counterIntervalCheckIn);
 		return this.counterObjectCheckIn;
+	}
+
+	stopCounterTask() {
+		this.counterObjectTask = {
+			sec: 0,
+			min: 0,
+			h: 0
+		};
+		clearInterval(this.counterIntervalTask);
+		return this.counterObjectTask;
 	}
 }

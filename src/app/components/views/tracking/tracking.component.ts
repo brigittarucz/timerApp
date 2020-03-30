@@ -31,6 +31,9 @@ export class TrackingComponent implements OnInit {
 			this.checkInStatus = value;
 		});
 		this.isTaskInProgress = this.trackingService.taskStatus;
+		this.isTaskInProgress.subscribe((value) => {
+			this.hasAddedTask = value;
+		});
 	}
 
 	async openModal() {

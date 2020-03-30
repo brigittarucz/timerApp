@@ -47,6 +47,8 @@ export class TimerVisualComponent implements OnInit {
 		this.taskStatus.subscribe((value) => {
 			if (!value) {
 				this.modalDialog.close();
+				this.trackingService.stopCounterTask();
+				this.counter = this.trackingService.counterObjectTask;
 			}
 		});
 	}

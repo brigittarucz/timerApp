@@ -12,7 +12,6 @@ export class StopTaskModalComponent implements OnInit {
 	ngOnInit(): void {}
 
 	onSubmit(form) {
-		console.log(form);
 		this.trackingService.changeTaskInProgressStatus(false);
 	}
 }
