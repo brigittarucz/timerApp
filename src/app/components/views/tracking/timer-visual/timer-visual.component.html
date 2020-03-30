@@ -3,29 +3,29 @@
     <div class="row">
       <div class="col-4">
         <h3 class="text-4_semibold"> Task </h3>
-        <p class="text-5_regular current__working-task"> Analytics > Process </p>
+        <p class="text-5_regular current__working-task"> {{mockStats[0].task}} </p>
       </div>
       <div class="col-4">
         <h3 class="text-4_semibold"> Today </h3>
-        <p class="text-5_regular current__working-day"> 6 h 25 </p>
+        <p class="text-5_regular current__working-day"> {{mockStats[0].today | secondsConverter}} </p>
       </div>
       <div class="col-4">
         <h3 class="text-4_semibold"> Week </h3>
-        <p class="text-5_regular current__working-week"> 27 h 20 </p>
+        <p class="text-5_regular current__working-week"> {{mockStats[0].week | secondsConverter }} </p>
       </div>
     </div>
     <div class="row mt-5">
       <div class="col-4">
         <h3 class="text-4_semibold"> Project </h3>
-        <p class="text-5_regular current__working-project"> Wiredelta > Timer </p>
+        <p class="text-5_regular current__working-project"> {{mockStats[0].project }} </p>
       </div>
       <div class="col-4">
         <h3 class="text-4_semibold"> Month </h3>
-        <p class="text-5_regular current__working-month"> 76 h 37 </p>
+        <p class="text-5_regular current__working-month"> {{mockStats[0].month | secondsConverter}} </p>
       </div>
       <div class="col-4">
         <h3 class="text-4_semibold"> Year </h3>
-        <p class="text-5_regular current__working-year"> 76 h 37 </p>
+        <p class="text-5_regular current__working-year"> {{mockStats[0].year | secondsConverter}} </p>
       </div>
     </div>
   </div>

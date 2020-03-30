@@ -1,23 +1,44 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { TrackingService } from '../../../../services/tracking/tracking-service.service';
 import { Counter } from '../../../../models/counterModel';
 import { Router } from '@angular/router';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { StopTaskModalComponent } from '../../../ui-artifacts/stop-task-modal/stop-task-modal.component';
-import { Subject } from 'rxjs';
+import { Subject, Subscription } from 'rxjs';
+import { mockStatistics } from '../../../../models/mockData';
+import { TrackingStats } from 'src/app/models/statsModel';
 
 @Component({
 	selector: 'app-timer-visual',
 	templateUrl: './timer-visual.component.html',
 	styleUrls: [ './timer-visual.component.scss' ]
 })
-export class TimerVisualComponent implements OnInit {
+export class TimerVisualComponent implements OnInit, OnDestroy {
 	counter: Counter;
 	taskStatus: Subject<boolean>;
 	dialogConfig: MatDialogConfig = new MatDialogConfig();
 	modalDialog;
+	taskStatusSubscription: Subscription;
+	mockStats: TrackingStats[] = [
+		{
+			task: '',
+			project: '',
+			today: 0,
+			month: 0,
+			week: 0,
+			year: 0
+		}
+	];
 
-	constructor(private trackingService: TrackingService, public matDialog: MatDialog, private router: Router) {}
+	constructor(private trackingService: TrackingService, public matDialog: MatDialog, private router: Router) {
+		this.provideStatistics().then((resolve) => {
+			this.mockStats = resolve;
+		});
+	}
+
+	async provideStatistics() {
+		return mockStatistics;
+	}
 
 	switchTaskCounterState(btn) {
 		let btnStr = btn.target.outerHTML;
@@ -44,12 +65,16 @@ export class TimerVisualComponent implements OnInit {
 	ngOnInit(): void {
 		this.counter = this.trackingService.counterObjectTask;
 		this.taskStatus = this.trackingService.taskStatus;
-		this.taskStatus.subscribe((value) => {
+		this.taskStatusSubscription = this.taskStatus.subscribe((value) => {
 			if (!value) {
 				this.modalDialog.close();
 				this.trackingService.stopCounterTask();
 				this.counter = this.trackingService.counterObjectTask;
 			}
 		});
+	}
+
+	ngOnDestroy(): void {
+		this.taskStatusSubscription.unsubscribe();
 	}
 }

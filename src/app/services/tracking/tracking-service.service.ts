@@ -76,6 +76,11 @@ export class TrackingService {
 		}
 	}
 
+	checkUserOut() {
+		this.checkInButtonText = 'Check In';
+		this.stopCounter();
+	}
+
 	pauseCheckInCounter() {
 		clearInterval(this.counterIntervalCheckIn);
 	}

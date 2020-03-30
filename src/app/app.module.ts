@@ -10,6 +10,7 @@ import { FormSettingNavigationComponent } from './components/ui-artifacts/form-s
 import { UsersFilterFormComponent } from './components/views/users/users-filter-form/users-filter-form.component';
 import { UsersDataTableComponent } from './components/views/users/users-data-table/users-data-table.component';
 import { StopTaskModalComponent } from './components/ui-artifacts/stop-task-modal/stop-task-modal.component';
+import { SecondsConverterPipe } from './pipes/seconds-converter.pipe';
 
 @NgModule({
 	declarations: [
@@ -19,7 +20,8 @@ import { StopTaskModalComponent } from './components/ui-artifacts/stop-task-moda
 		FormSettingNavigationComponent,
 		UsersFilterFormComponent,
 		UsersDataTableComponent,
-		StopTaskModalComponent
+		StopTaskModalComponent,
+		SecondsConverterPipe
 	],
 	imports: [ ...Imports ],
 	providers: [ ...Providers ],
