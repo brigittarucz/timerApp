@@ -16,6 +16,10 @@ export class ClientsProjectsDataTableComponent implements OnInit, OnDestroy {
 
   totalWorkedTime: number = 0;
 
+  stateContainer = {
+    rowId: null,
+  };
+
   constructor(private historyService: UserHistoryService) {
   }
 
@@ -43,5 +47,44 @@ export class ClientsProjectsDataTableComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.taskDataSubscription.unsubscribe();
+  }
+
+//  SHOW DROPDOWN - TABLE INCEPTION
+
+  doToggleCollapsible(rowIndex) {
+    const rowContent = document.getElementById(`dropDown-${rowIndex}`);
+    const row = document.getElementById(`rowInception-${rowIndex}`);
+    if(row && rowContent) {
+      if(this.stateContainer.rowId === rowIndex) {
+        this.doClose(rowIndex);
+        return;
+      }
+      this.doCloseOpenRow();
+
+      row.classList.add('row-active');
+      row.classList.remove('row-inactive');
+      rowContent.classList.add('open');
+
+      this.stateContainer.rowId = rowIndex;
+    }
+  }
+
+  doCloseOpenRow() {
+    if(this.stateContainer.rowId || this.stateContainer.rowId === 0) {
+      this.doClose(this.stateContainer.rowId);
+    }
+  }
+
+  doClose(rowId) {
+    const rowContent = document.getElementById(`dropDown-${rowId}`);
+    const row = document.getElementById(`rowInception-${rowId}`);
+
+    if(row && rowContent) {
+      row.classList.remove('row-active');
+      row.classList.add('row-inactive');
+      rowContent.classList.remove('open');
+
+      this.stateContainer.rowId = null;
+    }
   }
 }

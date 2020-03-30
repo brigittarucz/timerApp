@@ -12,8 +12,9 @@
       </thead>
       <tbody>
       <tr
-        class="table-toggle-grid__4fr row-active"
-        *ngFor="let task of tasks">
+        class="table-toggle-grid__4fr row-inactive"
+        *ngFor="let task of tasks; let i = index"
+         id="rowInception-{{i}}">
         <td class="type1"><img src="../../../../../assets/edit-icon.png" alt=""></td>
         <td class="type2"><p class="text-5_regular">Name</p></td>
         <td class="type3 align-right">
@@ -23,14 +24,18 @@
             <span class="text-6_regular mobile-hide">Enable</span>
           </div>
         </td>
-        <td class="type4 display-flex__right collapsible">
-          <button class="display-flex__right" type="button">
+        <td class="type4 display-flex__right">
+          <button
+            (click)="doToggleCollapsible(i)"
+            class="display-flex__right"
+            type="button">
             <p class="text-5_semibold capitalize mobile-hide">View Projects &nbsp;&nbsp; </p>
             <img class="button__arrow__down" src="../../../../../assets/arrow-icon.png" alt="">
           </button>
         </td>
-        <td class="type5 collapsible-content">
-
+        <td
+          id="dropDown-{{i}}"
+          class="type5 collapsible-content">
           <div class="table-inception">
             <p class="text-2_semibold table-inception__header">Company's Projects</p>
             <table class="table-toggle">
@@ -46,7 +51,7 @@
                   <td><img src="../../../../../assets/edit-icon.png" alt=""></td>
                   <td><p class="text-5_regular">Blog</p></td>
                   <td class="">
-                    <button class="display-flex" type="button">
+                    <button class="display-flex temp-padding-fix" type="button">
                       <p class="text-5_semibold">Ongoing &nbsp;&nbsp; </p>
                       <img class="button__arrow__down" src="../../../../../assets/arrow-icon.png" alt="">
                     </button>
@@ -57,7 +62,7 @@
                   <td><img src="../../../../../assets/edit-icon.png" alt=""></td>
                   <td><p class="text-5_regular">PMI</p></td>
                   <td class="">
-                    <button class="display-flex__right" type="button">
+                    <button class="display-flex__right temp-padding-fix" type="button">
                       <p class="text-5_semibold">Completed &nbsp;&nbsp; </p>
                       <img class="button__arrow__down" src="../../../../../assets/arrow-icon.png" alt="">
                     </button>
@@ -67,7 +72,7 @@
               <tfoot>
                 <tr class="table-toggle-grid__inception">
                   <td><img src="../../../../../assets/clients-projects/save-icon.png" alt=""></td>
-                  <td><input class="table-input" type="text" placeholder="Enter a new project name "></td>
+                  <td><input class="table-input" type="text" placeholder="New project name"></td>
                   <td>
                     <select class="table-select">
                     <option value="">Select a state</option>
