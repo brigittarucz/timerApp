@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TrackingService } from 'src/app/services/tracking/tracking-service.service';
@@ -109,6 +109,7 @@ export class AddTaskTrackingComponent implements OnInit {
 
 	updateFields(obj) {
 		this.currentTracker = obj;
+		console.log(obj);
 		console.log(this.taskParameters);
 		if (this.taskParameters.length === 1) {
 			this.generateNewInstance('category', obj.typeKey);

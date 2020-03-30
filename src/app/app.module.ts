@@ -11,6 +11,7 @@ import { UsersFilterFormComponent } from './components/views/users/users-filter-
 import { UsersDataTableComponent } from './components/views/users/users-data-table/users-data-table.component';
 import { StopTaskModalComponent } from './components/ui-artifacts/stop-task-modal/stop-task-modal.component';
 import { SecondsConverterPipe } from './pipes/seconds-converter.pipe';
+import { TaskOptionFormatterPipe } from './pipes/task-option-formatter.pipe';
 
 @NgModule({
 	declarations: [
@@ -21,7 +22,8 @@ import { SecondsConverterPipe } from './pipes/seconds-converter.pipe';
 		UsersFilterFormComponent,
 		UsersDataTableComponent,
 		StopTaskModalComponent,
-		SecondsConverterPipe
+		SecondsConverterPipe,
+		TaskOptionFormatterPipe
 	],
 	imports: [ ...Imports ],
 	providers: [ ...Providers ],

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output, ViewChild } from '@angular/core';
+import { mockFieldOptions } from '../../../../models/mockData';
 
 @Component({
 	selector: 'app-add-task-field',
@@ -15,7 +16,15 @@ export class AddTaskFieldComponent implements OnInit {
 
 	constructor() {}
 
-	ngOnInit(): void {}
+	ngOnInit(): void {
+		// this.populateOptions().then((resolve) => {
+		// 	this.arrOptions = resolve;
+		// });
+	}
+
+	// async populateOptions() {
+	// 	return mockFieldOptions;
+	// }
 
 	showNextField() {
 		let key = {
