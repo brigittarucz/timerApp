@@ -15,9 +15,9 @@
 
     td {padding: 2rem 0;}
 
-    @media screen and (min-width: 800px) {
-      display: table;
-    }
+    //@media screen and (min-width: 800px) {
+    //  display: table;
+    //}
 
     &:last-child {border: none;}
   }
@@ -55,6 +55,24 @@
   }
 }
 
+/* ************************************* */
+/* ************** TABLE 2fr ************ */
+
+.table1-grid__2fr {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-column-gap: 2rem;
+  align-items: center;
+
+  @media screen and (min-width: 400px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (min-width: 900px) {
+    grid-template-columns: repeat(8, 1fr);
+    display: table-row;
+  }
+}
 
 /* ************************************* */
 /* ***** TABLE WITH TIMELINE LAYOUT **** */
