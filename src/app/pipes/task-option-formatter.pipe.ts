@@ -13,13 +13,14 @@ export class TaskOptionFormatterPipe implements PipeTransform {
 			} else {
 				let firstLetterUppercase = firstLetter.toUpperCase();
 				if (value.indexOf('0') !== -1) {
-					value.replace('0', ' ');
+					value = value.replace('0', ' ');
 					return firstLetterUppercase + value.substring(1, value.length);
 				} else {
 					return firstLetterUppercase + value.substring(1, value.length);
 				}
 			}
+		} else {
+			return value;
 		}
-		return null;
 	}
 }

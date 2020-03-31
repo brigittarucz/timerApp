@@ -4,7 +4,8 @@
     [name]="taskParameter.fieldLabel" ngModel required #tempRefNg="ngModel" #tempRef [(ngModel)]="valueSelect"
     (change)="showNextField()">
     <option value="null" disabled="disabled"> Select a {{ taskParameter.fieldLabel }} </option>
-    <option *ngFor="let oSption of arrOptions[taskParameter.fieldOptionsKey]" [value]="option">{{option}}</option>
+    <option *ngFor="let option of arrOptions[taskParameter.fieldOptionsKey]" [value]="option">
+      {{option | taskOptionFormatter}}</option>
   </select>
   <div class="reset__select" *ngIf="tempRefNg.touched && tempRef.selectedIndex" (click)="resetValue(tempRef)">
   </div>
