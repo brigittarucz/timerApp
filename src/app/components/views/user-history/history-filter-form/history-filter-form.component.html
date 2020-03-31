@@ -77,18 +77,20 @@
   </div>
 
   <div class="template-area">
-    <div class="btn-base-toggle align-bottom" data-toggle="buttons" (click)="onToggleButton()">
-          <span
-            [ngClass]="{'btn-switcher__animate': animState.currentAnim === 'btn-switcher__animate', 'btn-switcher__animate__reverse': animState.currentAnim === 'btn-switcher__animate__reverse'}"
-            class="btn-switcher"></span>
-      <button
-        [ngClass]="{'btn-toggle__active': animState.btn1}"
-        class="btn-toggle btn-toggle__fix"
-        type="button">Check in</button>
-      <button
-        [ngClass]="{'btn-toggle__active': animState.btn2}"
-        class="btn-toggle right btn-toggle__fix"
-        type="button">Tasks</button>
+    <div class="group-form padding-fix">
+      <div class="btn-base-toggle align-bottom" data-toggle="buttons" (click)="onToggleButton()">
+        <span
+          [ngClass]="{'btn-switcher__animate': animState.currentAnim === 'btn-switcher__animate', 'btn-switcher__animate__reverse': animState.currentAnim === 'btn-switcher__animate__reverse'}"
+          class="btn-switcher"></span>
+        <button
+          [ngClass]="{'btn-toggle__active': animState.btn1}"
+          class="btn-toggle btn-toggle__fix"
+          type="button">Check in</button>
+        <button
+          [ngClass]="{'btn-toggle__active': animState.btn2}"
+          class="btn-toggle right btn-toggle__fix"
+          type="button">Tasks</button>
+      </div>
     </div>
   </div>
 </form>

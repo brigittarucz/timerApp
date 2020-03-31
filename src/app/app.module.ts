@@ -12,6 +12,10 @@ import { UsersDataTableComponent } from './components/views/users/users-data-tab
 import { StopTaskModalComponent } from './components/ui-artifacts/stop-task-modal/stop-task-modal.component';
 import { SecondsConverterPipe } from './pipes/seconds-converter.pipe';
 import { TaskOptionFormatterPipe } from './pipes/task-option-formatter.pipe';
+import { FormatCountryPipe } from './pipes/format-country.pipe';
+import { UserAccessDataTableComponent } from './components/views/user-access/user-access-data-table/user-access-data-table.component';
+import { ClientsProjectsFilterFormComponent } from './components/views/clients-projects/clients-projects-filter-form/clients-projects-filter-form.component';
+import { ClientsProjectsDataTableComponent } from './components/views/clients-projects/clients-projects-data-table/clients-projects-data-table.component';
 
 @NgModule({
 	declarations: [
@@ -23,7 +27,11 @@ import { TaskOptionFormatterPipe } from './pipes/task-option-formatter.pipe';
 		UsersDataTableComponent,
 		StopTaskModalComponent,
 		SecondsConverterPipe,
-		TaskOptionFormatterPipe
+		TaskOptionFormatterPipe,
+		FormatCountryPipe,
+		UserAccessDataTableComponent,
+		ClientsProjectsFilterFormComponent,
+		ClientsProjectsDataTableComponent
 	],
 	imports: [ ...Imports ],
 	providers: [ ...Providers ],

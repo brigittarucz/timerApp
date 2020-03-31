@@ -73,6 +73,7 @@ button {
   background-color: transparent;
   padding: 1px 6px;
   border: none;
+  color: var(--gray-color);
 }
 
 /* ************************************* */
@@ -94,6 +95,13 @@ button {
 
     &__margin {
       margin-right: 2rem;
+
+      &__options {
+        img {
+          margin-left: 1.5rem;
+          width: 2rem;
+        }
+      }
     }
   }
 
@@ -114,5 +122,17 @@ button {
 @media screen and (min-width: 800px) {
   .dropdown-button {
     border-radius: 10px;
+  }
+}
+
+/* ************************************* */
+/* ********* BUTTON ARROW PNG ********** */
+
+.button__arrow {
+  width: 1rem;
+
+  &__down {
+    width: 1rem!important;
+    transform: rotate(90deg);
   }
 }

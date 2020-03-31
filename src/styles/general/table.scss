@@ -6,26 +6,27 @@
 
   thead > tr {
     border-bottom: .2rem solid $grey-color-light;
+
+    th {padding: 1.5rem 0;}
   }
 
   tbody > tr {
     border-bottom: .1rem solid $grey-color-light;
 
-    @media screen and (min-width: 800px) {
-      display: table;
-    }
+    td {padding: 2rem 0;}
+
+    //@media screen and (min-width: 800px) {
+    //  display: table;
+    //}
 
     &:last-child {border: none;}
   }
 
   tfoot > tr {
-    //padding-top: 1rem;
     border-top: .2rem solid $grey-color-light;
   }
 
   th, td {
-    padding: 1.5rem 0;
-
     &:last-child {
       text-align: right;
     }
@@ -49,11 +50,29 @@
 
 @media screen and (min-width: 992px) {
   table {
-    tr {padding: 0;}
-    th {padding: 2rem 0;}
+    //tr {padding: 0;}
+    th {padding: 1rem 0;}
   }
 }
 
+/* ************************************* */
+/* ************** TABLE 2fr ************ */
+
+.table1-grid__2fr {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-column-gap: 2rem;
+  align-items: center;
+
+  @media screen and (min-width: 400px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (min-width: 900px) {
+    grid-template-columns: repeat(8, 1fr);
+    display: table-row;
+  }
+}
 
 /* ************************************* */
 /* ***** TABLE WITH TIMELINE LAYOUT **** */
@@ -139,25 +158,31 @@
 .table-toggle {
   width: 100%;
 
-  thead > tr {
-    border-bottom: .2rem solid $grey-color-light;
+  thead {
+    .tr-temp,tr {
+      border-bottom: .2rem solid $grey-color-light!important;
+
+      th {
+        padding: 1rem 0;
+      }
+    }
   }
 
-  tbody > tr {
-    padding: 1rem 0;
-    border-bottom: .1rem solid $grey-color-light;
+  tbody {
+    tr {
+      border-bottom: .1rem solid $grey-color-light;
 
-    &:last-child {border: none;}
+      td {
+        padding: 1.5rem 0;
+      }
+
+      &:last-child {
+        border: none;
+      }
+    }
   }
 
   th, td {
-    padding: .5rem 0;
-    display: flex;
-
-    &:first-child {
-      justify-content: space-between;
-    }
-
     &:last-child {
       justify-content: flex-end;
     }
@@ -197,13 +222,36 @@
 }
 
 /* ************************************* */
+/* *** TABLE 3fr WITH TOGGLE LAYOUT **** */
+
+.table-toggle-grid__3fr {
+  display: grid !important;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  grid-column-gap: 2rem;
+  align-items: center;
+
+  @media screen and (min-width: 900px) {
+    grid-template-columns: 1fr 1.5fr 1fr;
+  }
+}
+
+/* ************************************* */
 /* *** TABLE 4fr WITH TOGGLE LAYOUT **** */
 
 .table-toggle-grid__4fr {
   display: grid !important;
   grid-template-columns: 5rem 1.8fr 1.4fr 0.3fr;
+  grid-template-areas:
+    "type1 type2 type3 type4"
+    "type5 type5 type5 type5";
   grid-column-gap: 2rem;
   align-items: center;
+
+  .type1 {grid-area: type1}
+  .type2 {grid-area: type2}
+  .type3 {grid-area: type3}
+  .type4 {grid-area: type4}
+  .type5 {grid-area: type5}
 
   @media screen and (min-width: 900px) {
     grid-template-columns: 5rem repeat(3, 1fr);

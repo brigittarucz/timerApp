@@ -1,0 +1,47 @@
+<div class="dropdown-message">
+  <p class="text-4_semibold capitalize"> Filter &nbsp;&nbsp; </p>
+  <img class="dropdown-icon"
+       src="../../../../../assets/arrow-icon-down.png"
+       (click)="toggleDropdown()">
+</div>
+
+<form class="form-grid dropdown-content"
+      [ngStyle]="dropdownState && {'animation': 'increaseHeight 0.5s 1 forwards, increaseOpacity 0.5s 1 1s forwards'}">
+
+  <div class="template-area">
+    <div class="group-form">
+      <label class="basic-label" for="client">Client</label>
+      <select class="basic-select text-5" id="client">
+        <option value="">All clients</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="template-area">
+    <div class="group-form">
+      <label  class="basic-label" for="project">Project</label>
+      <select class="basic-select text-5" id="project">
+        <option value="">All projects</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="template-area">
+    <div class="group-form">
+      <label  class="basic-label" for="status">Status</label>
+      <select class="basic-select text-5" id="status">
+        <option value="">All status</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+    </div>
+  </div>
+
+</form>
