@@ -1,6 +1,6 @@
-<div>
-  <label [for]="taskParameter.fieldLabel" class="text-5_semibold" #labelRef>{{taskParameter.fieldLabel}}</label>
-  <select [id]="taskParameter.fieldLabel" class="form-control text-5_regular select__generic"
+<div class="div__add-task">
+  <label [for]="taskParameter.fieldLabel" class="basic-label" #labelRef>{{taskParameter.fieldLabel}}</label>
+  <select [id]="taskParameter.fieldLabel" class="form-control text-5_regular basic-select"
     [name]="taskParameter.fieldLabel" ngModel required #tempRefNg="ngModel" #tempRef [(ngModel)]="valueSelect"
     (change)="showNextField()">
     <option value="null" disabled="disabled"> Select a {{ taskParameter.fieldLabel }} </option>

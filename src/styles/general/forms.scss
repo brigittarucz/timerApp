@@ -3,9 +3,9 @@ input {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  border-top-style: none!important;
-  border-right-style: none!important;
-  border-left-style: none!important;
+  border-top-style: none !important;
+  border-right-style: none !important;
+  border-left-style: none !important;
 }
 
 select {
@@ -28,7 +28,7 @@ select {
   background-color: #fff;
   background-clip: padding-box;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  border-bottom: .1rem solid grey;
+  border-bottom: .2rem solid var(--grey-color);
 
   &:focus {
     color: $grey-color;
@@ -48,7 +48,8 @@ select {
   background-color: #fff;
   background-clip: padding-box;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  border-bottom: .1rem solid grey;
+  border: 0;
+  border-bottom: .2rem solid var(--grey-color);
 
   &:focus {
     color: $grey-color;
@@ -58,7 +59,8 @@ select {
 .basic-label {
   font-family: 'MontserratSemiBold', sans-serif;
   font-size: 1.8rem;
-  color: var(--blue-color)
+  color: var(--blue-color);
+  text-transform: capitalize;
 }
 
 .group-form {

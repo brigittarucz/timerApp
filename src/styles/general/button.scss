@@ -39,6 +39,11 @@
   border-radius: 60px !important;
 }
 
+.button-active:disabled {
+  background-color: var(--light-mint-color) !important;
+  opacity: 1 !important;
+}
+
 .button-add:disabled {
   background-color: var(--pine-green-color);
 }
@@ -132,7 +137,7 @@ button {
   width: 1rem;
 
   &__down {
-    width: 1rem!important;
+    width: 1rem !important;
     transform: rotate(90deg);
   }
 }
