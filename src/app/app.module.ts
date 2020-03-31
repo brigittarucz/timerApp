@@ -16,6 +16,7 @@ import { FormatCountryPipe } from './pipes/format-country.pipe';
 import { UserAccessDataTableComponent } from './components/views/user-access/user-access-data-table/user-access-data-table.component';
 import { ClientsProjectsFilterFormComponent } from './components/views/clients-projects/clients-projects-filter-form/clients-projects-filter-form.component';
 import { ClientsProjectsDataTableComponent } from './components/views/clients-projects/clients-projects-data-table/clients-projects-data-table.component';
+import { LoginComponent } from './components/views/login/login.component';
 
 @NgModule({
 	declarations: [
@@ -31,7 +32,8 @@ import { ClientsProjectsDataTableComponent } from './components/views/clients-pr
 		FormatCountryPipe,
 		UserAccessDataTableComponent,
 		ClientsProjectsFilterFormComponent,
-		ClientsProjectsDataTableComponent
+		ClientsProjectsDataTableComponent,
+		LoginComponent
 	],
 	imports: [ ...Imports ],
 	providers: [ ...Providers ],

@@ -1,0 +1,124 @@
+@import "../../../../styles/general/colors";
+
+.login {
+  background-image: url("../../../../assets/login/banner-login.png");
+  //background-size: 100%;
+  background-size: 85rem;;
+  background-repeat: no-repeat;
+  width: 100vw;
+  background-position: top left;
+
+  @media screen and (min-width: 800px) {
+    background-size: calc(100vw + 13rem);
+  }
+
+  @media screen and (min-width: 1200px) {
+    background-size: 140rem;
+  }
+
+  .login-header {
+    display: flex;
+    align-items: baseline;
+    padding: 6rem;
+    margin: auto;
+    width: fit-content;
+    color: #fff;
+
+    @media screen and (min-width: 500px) {
+      margin: 0;
+    }
+
+    .wd-logo-white {
+      width: 13rem;
+    }
+  }
+
+  .login-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "login";
+    grid-column-gap: 6rem;
+  }
+
+  .login-grid__stats {
+    grid-area: stats;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    padding: 0 4rem;
+
+    @media screen and (max-width: 800px) {
+      display: none;
+    }
+
+    &__container {
+      text-align: center;
+
+      .icon-field {
+        width: 7rem;
+      }
+
+      .stats-icon {
+        padding: 1rem 0;
+
+        // icon img fix sizes
+        &__projects {width: 7rem;}
+        &__clients {width: 9rem;}
+        &__hours {width: 6rem;}
+      }
+    }
+  }
+
+  .login-grid__login {
+    grid-area: login;
+    text-align: center;
+
+    .form-header {
+      text-align: center;
+      padding-bottom: 5rem;
+      color: transparent;
+
+      @media screen and (min-width: 800px) {
+        color: $grey-color;
+      }
+    }
+  }
+
+  @media screen and (min-width: 800px) {
+    .login-grid {
+      grid-template-columns: 1.5fr 1fr;
+      grid-template-areas: "stats login";
+    }
+  }
+}
+
+.login-button {
+  padding: 1rem 3rem;
+  background: #4FDABC;
+  color: #fff;
+  border-radius: 1rem;
+  box-shadow: $soft-shadow;
+}
+
+.google-button {
+  padding: 1rem 3rem;
+  border-radius: 1rem;
+  box-shadow: $soft-shadow;
+  background: $white-color;
+  color: $grey-color;
+}
+
+.p-padding-fix {
+  padding: 2rem;
+}
+
+// Overrides
+input {
+  width: 100%;
+}
+
+.group-form {
+  text-align: left;
+  max-width: 43rem;
+  margin: auto auto 3rem auto;
+}
