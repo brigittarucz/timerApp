@@ -1,8 +1,6 @@
 <div class="dropdown-message">
   <p class="text-4_semibold capitalize"> Filter &nbsp;&nbsp; </p>
-  <img class="dropdown-icon"
-       src="../../../../../assets/arrow-icon-down.png"
-       (click)="toggleDropdown()">
+  <img class="dropdown-icon" src="../../../../../assets/arrow-icon-down.png" (click)="toggleDropdown()">
 </div>
 
 <form class="form-grid form-grid__large dropdown-content">
@@ -21,7 +19,7 @@
 
   <div class="template-area">
     <div class="group-form">
-      <label  class="basic-label" for="client">Client</label>
+      <label class="basic-label" for="client">Client</label>
       <select class="basic-select text-5" id="client">
         <option value="">Select a client</option>
         <option value="1">1</option>
@@ -82,19 +80,15 @@
         <span
           [ngClass]="{'btn-switcher__animate': animState.currentAnim === 'btn-switcher__animate', 'btn-switcher__animate__reverse': animState.currentAnim === 'btn-switcher__animate__reverse'}"
           class="btn-switcher"></span>
-        <button
-          [ngClass]="{'btn-toggle__active': animState.btn1}"
-          class="btn-toggle btn-toggle__fix"
+        <button [ngClass]="{'btn-toggle__active': animState.btn1}" class="btn-toggle btn-toggle__fix"
           type="button">Check in</button>
-        <button
-          [ngClass]="{'btn-toggle__active': animState.btn2}"
-          class="btn-toggle right btn-toggle__fix"
+        <button [ngClass]="{'btn-toggle__active': animState.btn2}" class="btn-toggle right btn-toggle__fix"
           type="button">Tasks</button>
       </div>
     </div>
   </div>
 </form>
 
-<button  class="button-add float-right">
+<button class="button-add float-right" (click)="openModal()">
   <img class="button-add__png" src="../../../../../assets/user-history/add-icon-white.png">
 </button>

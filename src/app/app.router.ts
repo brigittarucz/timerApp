@@ -7,8 +7,9 @@ import { UsersComponent } from './components/views/users/users.component';
 import { ClientsProjectsComponent } from './components/views/clients-projects/clients-projects.component';
 import { UserAccessComponent } from './components/views/user-access/user-access.component';
 import { AddTaskTrackingComponent } from './components/ui-artifacts/add-task-tracking/add-task-tracking.component';
-import { StopTaskModalComponent } from './components/ui-artifacts/stop-task-modal/stop-task-modal.component';
+import { StopTaskTrackingModalComponent } from './components/ui-artifacts/stop-task-tracking-modal/stop-task-tracking-modal.component';
 import { Routes } from '@angular/router';
+import { AddTaskUserHistoryModalComponent } from './components/ui-artifacts/add-task-user-history-modal/add-task-user-history-modal.component';
 
 export const RouterPaths: Routes = [
 	{ path: '', component: TrackingComponent },
@@ -20,5 +21,6 @@ export const RouterPaths: Routes = [
 	{ path: 'clients-projects', component: ClientsProjectsComponent },
 	{ path: 'user-access', component: UserAccessComponent },
 	{ path: 'add-task', component: AddTaskTrackingComponent },
-	{ path: 'stop-task', component: StopTaskModalComponent }
+	{ path: 'stop-task', component: StopTaskTrackingModalComponent },
+	{ path: 'add-task-user-history', component: AddTaskUserHistoryModalComponent }
 ];

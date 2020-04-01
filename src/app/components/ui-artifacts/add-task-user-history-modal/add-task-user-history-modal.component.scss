@@ -1,0 +1,36 @@
+.modal-grid-field div {
+  width: 100%;
+  //   width: 80%;
+  //   margin-left: 10%;
+}
+
+.modal-grid-field:nth-last-child(-n+2) {
+  width: 35%;
+  display: inline-block;
+  margin-left: 10%;
+}
+
+// .modal-grid-field:nth-last-child(-n+1) {
+//   // margin-left: 25%;
+// }
+
+.modal-grid-field {
+  width: 80%;
+  margin: auto;
+}
+
+@media screen and (min-width: 800px) {
+  .modal-grid-field {
+    width: 100%;
+  }
+
+  .modal-grid-field:nth-last-child(-n+2) {
+    width: 40%;
+    margin-left: 0%;
+  }
+
+  .modal-grid-field:nth-last-child(-n+1) {
+    margin-left: 20%;
+  }
+
+}

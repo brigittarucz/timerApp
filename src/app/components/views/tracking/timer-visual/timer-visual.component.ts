@@ -3,7 +3,7 @@ import { TrackingService } from '../../../../services/tracking/tracking-service.
 import { Counter } from '../../../../models/counterModel';
 import { Router } from '@angular/router';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { StopTaskModalComponent } from '../../../ui-artifacts/stop-task-modal/stop-task-modal.component';
+import { StopTaskTrackingModalComponent } from '../../../ui-artifacts/stop-task-tracking-modal/stop-task-tracking-modal.component';
 import { Subject, Subscription } from 'rxjs';
 import { mockStatistics } from '../../../../models/mockData';
 import { TrackingStats } from 'src/app/models/statsModel';
@@ -56,7 +56,7 @@ export class TimerVisualComponent implements OnInit, OnDestroy {
 			this.dialogConfig.disableClose = false;
 			this.dialogConfig.id = 'modal-component';
 			this.dialogConfig.width = '60%';
-			this.modalDialog = this.matDialog.open(StopTaskModalComponent, this.dialogConfig);
+			this.modalDialog = this.matDialog.open(StopTaskTrackingModalComponent, this.dialogConfig);
 		} else {
 			this.router.navigate([ '/stop-task' ]);
 		}

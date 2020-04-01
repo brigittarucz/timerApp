@@ -28,7 +28,7 @@ select {
   background-color: #fff;
   background-clip: padding-box;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  border-bottom: .2rem solid var(--grey-color);
+  border-bottom: .1rem solid var(--grey-color);
 
   &:focus {
     color: $grey-color;
@@ -49,7 +49,7 @@ select {
   background-clip: padding-box;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   border: 0;
-  border-bottom: .2rem solid var(--grey-color);
+  border-bottom: .1rem solid var(--grey-color);
 
   &:focus {
     color: $grey-color;

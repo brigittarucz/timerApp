@@ -3,10 +3,10 @@ import { TrackingService } from '../../../services/tracking/tracking-service.ser
 
 @Component({
 	selector: 'app-stop-task-modal',
-	templateUrl: './stop-task-modal.component.html',
-	styleUrls: [ './stop-task-modal.component.scss' ]
+	templateUrl: './stop-task-tracking-modal.component.html',
+	styleUrls: [ './stop-task-tracking-modal.component.scss' ]
 })
-export class StopTaskModalComponent implements OnInit {
+export class StopTaskTrackingModalComponent implements OnInit {
 	constructor(private trackingService: TrackingService) {}
 
 	ngOnInit(): void {}

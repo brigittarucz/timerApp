@@ -3,8 +3,8 @@
   <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="container-modal">
     <div id="terminate-task" ngModelGroup="terminateTask" class="margin-bottom-xl">
       <label for="description" class="basic-label"> Description </label>
-      <input id="description" #hasDescription="ngModel" minlength="4" class="basic-input" name="description" ngModel
-        required>
+      <input id="description" type="text" #hasDescription="ngModel" minlength="4" class="basic-input" name="description"
+        placeholder="Enter a Task Description" ngModel required>
     </div>
 
     <div class="modal-grid-btn">

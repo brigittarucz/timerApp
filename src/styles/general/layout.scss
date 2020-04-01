@@ -176,10 +176,13 @@ __toggle-container is container for the toggle-button in the toggle-button.scss 
   margin: 0 auto;
 }
 
-// On the Field Component
+// On the Field Component/Container
 .modal-grid-field {
   display: flex;
   flex: 0 0 83.3%;
+  // To each div as needed + margins
+  // margin: auto;
+  // width: 80%;
 }
 
 // On the Button Container

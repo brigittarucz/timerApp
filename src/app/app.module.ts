@@ -9,13 +9,15 @@ import { FormSettingTableDataComponent } from './components/ui-artifacts/form-se
 import { FormSettingNavigationComponent } from './components/ui-artifacts/form-setting/form-setting-navigation/form-setting-navigation.component';
 import { UsersFilterFormComponent } from './components/views/users/users-filter-form/users-filter-form.component';
 import { UsersDataTableComponent } from './components/views/users/users-data-table/users-data-table.component';
-import { StopTaskModalComponent } from './components/ui-artifacts/stop-task-modal/stop-task-modal.component';
+import { StopTaskTrackingModalComponent } from './components/ui-artifacts/stop-task-tracking-modal/stop-task-tracking-modal.component';
 import { SecondsConverterPipe } from './pipes/seconds-converter.pipe';
 import { TaskOptionFormatterPipe } from './pipes/task-option-formatter.pipe';
 import { FormatCountryPipe } from './pipes/format-country.pipe';
 import { UserAccessDataTableComponent } from './components/views/user-access/user-access-data-table/user-access-data-table.component';
 import { ClientsProjectsFilterFormComponent } from './components/views/clients-projects/clients-projects-filter-form/clients-projects-filter-form.component';
 import { ClientsProjectsDataTableComponent } from './components/views/clients-projects/clients-projects-data-table/clients-projects-data-table.component';
+import { AddTaskUserHistoryModalComponent } from './components/ui-artifacts/add-task-user-history-modal/add-task-user-history-modal.component';
+import { StopBeforeCheckoutModalComponent } from './components/ui-artifacts/stop-before-checkout-modal/stop-before-checkout-modal.component';
 
 @NgModule({
 	declarations: [
@@ -25,13 +27,15 @@ import { ClientsProjectsDataTableComponent } from './components/views/clients-pr
 		FormSettingNavigationComponent,
 		UsersFilterFormComponent,
 		UsersDataTableComponent,
-		StopTaskModalComponent,
+		StopTaskTrackingModalComponent,
 		SecondsConverterPipe,
 		TaskOptionFormatterPipe,
 		FormatCountryPipe,
 		UserAccessDataTableComponent,
 		ClientsProjectsFilterFormComponent,
-		ClientsProjectsDataTableComponent
+		ClientsProjectsDataTableComponent,
+		AddTaskUserHistoryModalComponent,
+		StopBeforeCheckoutModalComponent
 	],
 	imports: [ ...Imports ],
 	providers: [ ...Providers ],

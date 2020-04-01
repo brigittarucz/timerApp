@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { TrackingService } from '../../../../services/tracking/tracking-service.service';
 import { Subject, Subscription } from 'rxjs';
 import { Counter } from '../../../../models/counterModel';
+import { StopBeforeCheckoutModalComponent } from '../../../ui-artifacts/stop-before-checkout-modal/stop-before-checkout-modal.component';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
 @Component({
 	selector: 'app-timer-counter',
@@ -16,7 +18,7 @@ export class TimerCounterComponent implements OnInit, OnDestroy {
 	checkInSubscription: Subscription;
 	isUserCheckedIn: Subject<boolean>;
 
-	constructor(private trackingService: TrackingService, private router: Router) {
+	constructor(public matDialog: MatDialog, private trackingService: TrackingService, private router: Router) {
 		this.isUserCheckedIn = this.trackingService.userStatus;
 		this.checkInSubscription = this.isUserCheckedIn.subscribe((value) => {
 			this.checkInStatus = value;
@@ -34,7 +36,13 @@ export class TimerCounterComponent implements OnInit, OnDestroy {
 		// Modify this to be connected with the task tracking
 		console.log(status.textContent);
 		if (this.trackingService.isTaskInProgress) {
-			console.log('Please stop current working task!');
+			const dialogConfig = new MatDialogConfig();
+
+			// if the user clicks outside the modal, it closes
+			dialogConfig.disableClose = false;
+			dialogConfig.id = 'modal-component';
+			dialogConfig.width = '40%';
+			const modalDialog = this.matDialog.open(StopBeforeCheckoutModalComponent, dialogConfig);
 		} else {
 			// Subscribe to the task observable in order to change check in status
 			this.trackingService.changeCheckInStatus();
