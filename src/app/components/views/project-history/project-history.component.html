@@ -11,14 +11,15 @@
 <div class="main-container">
 
   <div class="green-message">
-    <h3>Please select a project first!</h3>
+    <h3 class="text-3_medium">Please select a client</h3>
   </div>
 
-  <div class="main-container__subheader-margin">
+  <!-- <div class="main-container__subheader-margin">
     <h2 class="text-2_semibold">Selected projects</h2>
-  </div>
+  </div> -->
 
-  <div class="main-container__table-margin">
+  <div class="main-container__table-margin"
+    [ngStyle]="clientChangeValue === 'none' ? {'display': 'none'} : {'display': 'block'}">
     <app-proj-history-project></app-proj-history-project>
   </div>
 </div>

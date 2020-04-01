@@ -18,6 +18,7 @@ import { ClientsProjectsFilterFormComponent } from './components/views/clients-p
 import { ClientsProjectsDataTableComponent } from './components/views/clients-projects/clients-projects-data-table/clients-projects-data-table.component';
 import { AddTaskUserHistoryModalComponent } from './components/ui-artifacts/add-task-user-history-modal/add-task-user-history-modal.component';
 import { StopBeforeCheckoutModalComponent } from './components/ui-artifacts/stop-before-checkout-modal/stop-before-checkout-modal.component';
+import { MinutesToTimePipe } from './pipes/minutes-to-time.pipe';
 
 @NgModule({
 	declarations: [
@@ -35,7 +36,8 @@ import { StopBeforeCheckoutModalComponent } from './components/ui-artifacts/stop
 		ClientsProjectsFilterFormComponent,
 		ClientsProjectsDataTableComponent,
 		AddTaskUserHistoryModalComponent,
-		StopBeforeCheckoutModalComponent
+		StopBeforeCheckoutModalComponent,
+		MinutesToTimePipe
 	],
 	imports: [ ...Imports ],
 	providers: [ ...Providers ],
