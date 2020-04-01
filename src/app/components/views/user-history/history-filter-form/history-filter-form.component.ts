@@ -57,7 +57,7 @@ export class HistoryFilterFormComponent implements OnInit {
 			// if the user clicks outside the modal, it closes
 			dialogConfig.disableClose = false;
 			dialogConfig.id = 'modal-component';
-			dialogConfig.width = '60%';
+			dialogConfig.width = '50%';
 			const modalDialog = this.matDialog.open(AddTaskUserHistoryModalComponent, dialogConfig);
 		} else {
 			this.router.navigate([ '/add-task-user-history' ]);

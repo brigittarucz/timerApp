@@ -204,7 +204,9 @@ __toggle-container is container for the toggle-button in the toggle-button.scss 
 
   .modal-grid-btn {
     position: absolute;
-    margin-left: calc(100% - 96vw);
+    left: 0;
+    right: 0;
+    margin: auto;
     box-shadow: none;
   }
 
