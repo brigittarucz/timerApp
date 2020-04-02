@@ -7,6 +7,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatDialogModule} from "@angular/material/dialog";
 import {FormsModule} from "@angular/forms";
 
+
 export const Imports = [
   BrowserModule,
   RouterModule.forRoot(RouterPaths),
@@ -14,5 +15,5 @@ export const Imports = [
   MatButtonToggleModule,
   MatDialogModule,
   MatButtonModule,
-  FormsModule
+  FormsModule,
 ];

@@ -2,7 +2,6 @@
 
 .login {
   background-image: url("../../../../assets/login/banner-login.png");
-  //background-size: 100%;
   background-size: 85rem;;
   background-repeat: no-repeat;
   width: 100vw;
@@ -18,11 +17,11 @@
 
   .login-header {
     display: flex;
-    align-items: baseline;
     padding: 6rem;
     margin: auto;
     width: fit-content;
     color: #fff;
+    align-items: flex-end;
 
     @media screen and (min-width: 500px) {
       margin: 0;
@@ -30,6 +29,10 @@
 
     .wd-logo-white {
       width: 13rem;
+    }
+
+    h1 {
+      line-height: .5;
     }
   }
 
@@ -75,11 +78,12 @@
 
     .form-header {
       text-align: center;
-      padding-bottom: 5rem;
+      padding-bottom: 11rem;
       color: transparent;
 
       @media screen and (min-width: 800px) {
         color: $grey-color;
+        padding-bottom: 5rem;
       }
     }
   }
@@ -121,4 +125,18 @@ input {
   text-align: left;
   max-width: 43rem;
   margin: auto auto 3rem auto;
+}
+
+
+// particles animation
+#background-animation {
+  width: 100vw;
+  height: 35vh;
+  max-height: 580px;
+  position: absolute;
+
+  @media screen and (min-width: 500px) {
+    width: 70vw;
+    height: 64vh;
+  }
 }
