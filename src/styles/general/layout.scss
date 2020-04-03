@@ -180,9 +180,15 @@ __toggle-container is container for the toggle-button in the toggle-button.scss 
 .modal-grid-field {
   display: flex;
   flex: 0 0 83.3%;
+  width: 90%;
+  margin: auto;
   // To each div as needed + margins
   // margin: auto;
   // width: 80%;
+}
+
+.modal-grid-field div:not(.reset__select) {
+  width: 100%;
 }
 
 // On the Button Container
@@ -190,29 +196,34 @@ __toggle-container is container for the toggle-button in the toggle-button.scss 
   display: flex;
   flex: 0 0 25%;
   justify-content: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 2rem;
 }
 
 // On the Button
-.modal-btn {
-  display: inline-block;
-  width: 30vw;
-  margin: 0.5rem 2rem;
-}
+// .modal-btn {
+//   display: inline-block;
+//   margin: 0.5rem 2rem;
+// }
 
 .modal-grid-btn button {
-  width: 15vw;
+  width: 20rem;
+  display: inline-block;
+  margin: 0.5rem 2rem;
 }
 
 @media screen and (min-width: 800px) {
 
-  .modal-grid-btn {
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: auto;
-    box-shadow: none;
+  .modal-grid-field {
+    width: 100%;
   }
 
-
+  .modal-grid-btn {
+    bottom: unset;
+    box-shadow: none;
+  }
 
 }

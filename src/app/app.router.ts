@@ -10,6 +10,9 @@ import { AddTaskTrackingComponent } from './components/ui-artifacts/add-task-tra
 import { StopTaskTrackingModalComponent } from './components/ui-artifacts/stop-task-tracking-modal/stop-task-tracking-modal.component';
 import { Routes } from '@angular/router';
 import { AddTaskUserHistoryModalComponent } from './components/ui-artifacts/add-task-user-history-modal/add-task-user-history-modal.component';
+import { TaskFormModalComponent } from './components/ui-artifacts/task-form-modal/task-form-modal.component';
+import { ClientsProjectsModalComponent } from './components/ui-artifacts/clients-projects-modal/clients-projects-modal.component';
+import { UserAccessModalComponent } from './components/ui-artifacts/user-access-modal/user-access-modal.component';
 
 export const RouterPaths: Routes = [
 	{ path: '', component: TrackingComponent },
@@ -22,5 +25,8 @@ export const RouterPaths: Routes = [
 	{ path: 'user-access', component: UserAccessComponent },
 	{ path: 'add-task', component: AddTaskTrackingComponent },
 	{ path: 'stop-task', component: StopTaskTrackingModalComponent },
-	{ path: 'add-task-user-history', component: AddTaskUserHistoryModalComponent }
+	{ path: 'add-task-user-history', component: AddTaskUserHistoryModalComponent },
+	{ path: 'add-task-form-setting', component: TaskFormModalComponent },
+	{ path: 'add-dep-clients-projects', component: ClientsProjectsModalComponent },
+	{ path: 'add-pos-user-access', component: UserAccessModalComponent }
 ];

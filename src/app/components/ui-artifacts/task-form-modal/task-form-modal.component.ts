@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskFormSettingService } from 'src/app/services/task-form-setting/task-form-setting.service';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-task-form-modal',
@@ -7,7 +8,7 @@ import { TaskFormSettingService } from 'src/app/services/task-form-setting/task-
 	styleUrls: [ './task-form-modal.component.scss' ]
 })
 export class TaskFormModalComponent implements OnInit {
-	constructor(private taskFormSettingService: TaskFormSettingService) {}
+	constructor(private taskFormSettingService: TaskFormSettingService, private router: Router) {}
 
 	ngOnInit(): void {}
 
@@ -17,5 +18,8 @@ export class TaskFormModalComponent implements OnInit {
 
 	changeModalState() {
 		this.taskFormSettingService.setModalState(false);
+		if (window.innerWidth < 800) {
+			this.router.navigate([ '/form-setting' ]);
+		}
 	}
 }

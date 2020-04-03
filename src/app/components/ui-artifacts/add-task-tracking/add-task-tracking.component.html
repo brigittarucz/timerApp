@@ -7,10 +7,10 @@
       (eliminateSelect)="getClickedField($event)" [taskParameter]="taskParameters[i]"> </app-add-task-field>
     <div class="margin-top-l">
       <div class="form__control-buttons modal-grid-btn">
-        <button [disabled]="!formManualValidity" class="btn button-base button-active modal-btn" type="submit">
+        <button [disabled]="!formManualValidity" class="btn button-base button-active" type="submit">
           Start
         </button>
-        <button class="btn button-base button-cancel modal-btn" (click)="resetForm($event)" routerLink="/">
+        <button class="btn button-base button-cancel" (click)="resetForm($event)" routerLink="/">
           Cancel
         </button>
       </div>

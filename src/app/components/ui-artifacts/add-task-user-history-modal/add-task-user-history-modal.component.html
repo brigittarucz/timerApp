@@ -28,9 +28,10 @@
     </div>
   </div>
   <div class="modal-grid-btn">
-    <button class="btn button-base button-active modal-btn" [disabled]="f.invalid" type="submit" mat-dialog-close>
+    <button class="btn button-base button-active" [disabled]="f.invalid" type="submit" mat-dialog-close
+      (click)="navigatePage()">
       Add
     </button>
-    <button class="btn button-base button-cancel modal-btn" mat-dialog-close> Cancel </button>
+    <button class="btn button-base button-cancel" mat-dialog-close (click)="navigatePage()"> Cancel </button>
   </div>
 </form>
