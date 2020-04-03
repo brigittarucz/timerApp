@@ -15,7 +15,7 @@ export class ProjHistoryProjectComponent implements OnInit, OnDestroy {
 	currentMonthName: string = new Date().toLocaleString('default', { month: 'long' });
 	taskDataSubscription: Subscription;
 	mockData;
-	currentlyPickedClient = [
+	currentlyPickedClient: any = [
 		{ client: 'undefined', activities: [ { activity: 'undefined', minutes: 0, entries: 0 } ] }
 	];
 	clientChangeSubject: Subject<string>;
@@ -34,6 +34,7 @@ export class ProjHistoryProjectComponent implements OnInit, OnDestroy {
 			this.mockData.forEach((element) => {
 				if (element.client === value) {
 					this.currentlyPickedClient = element;
+					console.log(element);
 				}
 				return;
 			});

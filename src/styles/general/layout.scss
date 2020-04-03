@@ -199,6 +199,9 @@ __toggle-container is container for the toggle-button in the toggle-button.scss 
   margin: 0.5rem 2rem;
 }
 
+.modal-grid-btn button {
+  width: 15vw;
+}
 
 @media screen and (min-width: 800px) {
 
@@ -210,8 +213,6 @@ __toggle-container is container for the toggle-button in the toggle-button.scss 
     box-shadow: none;
   }
 
-  .modal-grid-btn button {
-    width: 20vw;
-  }
+
 
 }

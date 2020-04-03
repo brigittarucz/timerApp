@@ -1,47 +1,57 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {TaskEntry} from "../../../../models/taskEntryModel";
-import {Subscription} from "rxjs";
-import {UserHistoryService} from "../../../../services/user-history/user-history.service";
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { TaskEntry } from '../../../../models/taskEntryModel';
+import { Subscription, Subject } from 'rxjs';
+import { UserHistoryService } from '../../../../services/user-history/user-history.service';
+import { TaskFormSettingService } from 'src/app/services/task-form-setting/task-form-setting.service';
 
 @Component({
-  selector: 'app-form-setting-table-data',
-  templateUrl: './form-setting-table-data.component.html',
-  styleUrls: ['./form-setting-table-data.component.scss']
+	selector: 'app-form-setting-table-data',
+	templateUrl: './form-setting-table-data.component.html',
+	styleUrls: [ './form-setting-table-data.component.scss' ]
 })
 export class FormSettingTableDataComponent implements OnInit, OnDestroy {
+	tasks: Array<TaskEntry> = [];
+	currentMonthName: string = new Date().toLocaleString('default', { month: 'long' });
+	taskDataSubscription: Subscription;
 
-  tasks: Array<TaskEntry> = [];
-  currentMonthName: string = new Date().toLocaleString('default', { month: 'long' });
-  taskDataSubscription: Subscription;
+	totalWorkedTime: number = 0;
 
-  totalWorkedTime: number = 0;
+	triggerAnimation: boolean = false;
 
-  constructor(private historyService: UserHistoryService) {
-  }
+	modalClickSubject: Subject<boolean>;
+	modalClickSubscription: Subscription;
 
-  ngOnInit(): void {
-    this.doGetTableData();
-  }
+	constructor(private historyService: UserHistoryService, private taskFormSettingService: TaskFormSettingService) {}
 
-  private doCountTotalWorkedTime() {
-    this.totalWorkedTime = this.tasks.reduce((a, b) => a + (b.timeSpent || 0), 0);
-  }
+	ngOnInit(): void {
+		this.doGetTableData();
+		this.modalClickSubject = this.taskFormSettingService.isModalOpenChange;
+		this.modalClickSubscription = this.modalClickSubject.subscribe((value) => {
+			this.triggerAnimation = value;
+		});
+	}
 
-  private doGetTableData() {
-    this.taskDataSubscription = this.historyService.doListenForUserTaskHistory().subscribe(res => {
-      if(res) {
-        const { entries, name } = res;
-        this.tasks = entries.tasks;
-        this.currentMonthName = name;
+	private doCountTotalWorkedTime() {
+		this.totalWorkedTime = this.tasks.reduce((a, b) => a + (b.timeSpent || 0), 0);
+	}
 
-        this.doCountTotalWorkedTime()
-      }
-    });
+	private doGetTableData() {
+		this.taskDataSubscription = this.historyService.doListenForUserTaskHistory().subscribe((res) => {
+			if (res) {
+				const { entries, name } = res;
+				this.tasks = entries.tasks;
+				this.currentMonthName = name;
 
-    this.historyService.doGetUserTaskHistoryForMonth(1);
-  }
+				this.doCountTotalWorkedTime();
+			}
+		});
 
-  ngOnDestroy(): void {
-    this.taskDataSubscription.unsubscribe();
-  }
+		this.historyService.doGetUserTaskHistoryForMonth(1);
+	}
+
+	ngOnDestroy(): void {
+		this.taskDataSubscription.unsubscribe();
+
+		this.modalClickSubscription.unsubscribe();
+	}
 }

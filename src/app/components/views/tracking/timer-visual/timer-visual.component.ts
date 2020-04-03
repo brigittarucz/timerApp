@@ -53,9 +53,9 @@ export class TimerVisualComponent implements OnInit, OnDestroy {
 
 	stopTaskCounter() {
 		if (window.innerWidth > 800) {
-			this.dialogConfig.disableClose = false;
+			this.dialogConfig.disableClose = true;
 			this.dialogConfig.id = 'modal-component';
-			this.dialogConfig.width = '60%';
+			this.dialogConfig.width = '50%';
 			this.modalDialog = this.matDialog.open(StopTaskTrackingModalComponent, this.dialogConfig);
 		} else {
 			this.router.navigate([ '/stop-task' ]);

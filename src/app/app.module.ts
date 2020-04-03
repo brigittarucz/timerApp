@@ -19,6 +19,9 @@ import { ClientsProjectsDataTableComponent } from './components/views/clients-pr
 import { AddTaskUserHistoryModalComponent } from './components/ui-artifacts/add-task-user-history-modal/add-task-user-history-modal.component';
 import { StopBeforeCheckoutModalComponent } from './components/ui-artifacts/stop-before-checkout-modal/stop-before-checkout-modal.component';
 import { MinutesToTimePipe } from './pipes/minutes-to-time.pipe';
+import { TaskFormModalComponent } from './components/ui-artifacts/task-form-modal/task-form-modal.component';
+import { ClientsProjectsModalComponent } from './components/ui-artifacts/clients-projects-modal/clients-projects-modal.component';
+import { UserAccessModalComponent } from './components/ui-artifacts/user-access-modal/user-access-modal.component';
 
 @NgModule({
 	declarations: [
@@ -37,7 +40,10 @@ import { MinutesToTimePipe } from './pipes/minutes-to-time.pipe';
 		ClientsProjectsDataTableComponent,
 		AddTaskUserHistoryModalComponent,
 		StopBeforeCheckoutModalComponent,
-		MinutesToTimePipe
+		MinutesToTimePipe,
+		TaskFormModalComponent,
+		ClientsProjectsModalComponent,
+		UserAccessModalComponent
 	],
 	imports: [ ...Imports ],
 	providers: [ ...Providers ],
