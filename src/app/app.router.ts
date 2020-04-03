@@ -2,7 +2,7 @@ import { TrackingComponent } from './components/views/tracking/tracking.componen
 import { UserHistoryComponent } from './components/views/user-history/user-history.component';
 import { ActivityComponent } from './components/views/activity/activity.component';
 import { ProjectHistoryComponent } from './components/views/project-history/project-history.component';
-import { FormSettingComponent } from './components/ui-artifacts/form-setting/form-setting.component';
+import { FormSettingComponent } from './components/views/form-setting/form-setting.component';
 import { UsersComponent } from './components/views/users/users.component';
 import { ClientsProjectsComponent } from './components/views/clients-projects/clients-projects.component';
 import { UserAccessComponent } from './components/views/user-access/user-access.component';
