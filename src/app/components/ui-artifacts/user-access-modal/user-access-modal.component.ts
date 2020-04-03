@@ -16,4 +16,8 @@ export class UserAccessModalComponent implements OnInit {
 			this.router.navigate([ '/user-access' ]);
 		}
 	}
+
+	onSubmit(form) {
+		console.log(form);
+	}
 }

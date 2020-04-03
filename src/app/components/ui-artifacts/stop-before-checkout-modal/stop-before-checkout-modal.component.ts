@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-stop-before-checkout-modal',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: [ './stop-before-checkout-modal.component.scss' ]
 })
 export class StopBeforeCheckoutModalComponent implements OnInit {
-	constructor() {}
+	constructor(private router: Router) {}
 
 	ngOnInit(): void {}
 }

@@ -23,7 +23,7 @@ export class TrackingComponent implements OnInit {
 
 	constructor(public matDialog: MatDialog, private router: Router, private trackingService: TrackingService) {
 		if (router.getCurrentNavigation().extras.state !== undefined) {
-			// Insert user's picks here and show visual tracker
+			this.checkInStatus = true;
 			this.hasAddedTask = true;
 		}
 		this.isUserCheckedIn = this.trackingService.userStatus;
