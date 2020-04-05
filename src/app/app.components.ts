@@ -39,6 +39,7 @@ import {ClientsProjectsDataTableComponent} from "./components/views/clients-proj
 import {LoginComponent} from "./components/views/login/login.component";
 import {AddTaskUserHistoryModalComponent} from "./components/ui-artifacts/add-task-user-history-modal/add-task-user-history-modal.component";
 import {StopBeforeCheckoutModalComponent} from "./components/ui-artifacts/stop-before-checkout-modal/stop-before-checkout-modal.component";
+import {SelectOptionsComponent} from "./components/ui-artifacts/select-options/select-options.component";
 
 export const Components = [
 	AppComponent,
@@ -82,6 +83,7 @@ export const Components = [
   LoginComponent,
   AddTaskUserHistoryModalComponent,
   StopBeforeCheckoutModalComponent,
+  SelectOptionsComponent,
 ];
 
 export const EntryComponents = [ ModalTrackingComponent ];
