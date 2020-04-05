@@ -8,77 +8,41 @@
 <form class="form-grid dropdown-content"
       [ngStyle]="dropdownState && {'animation': 'increaseHeight 0.5s 1 forwards, increaseOpacity 0.5s 1 1s forwards'}">
 
-  <div class="template-area">
-      <div class="group-form">
-        <label class="basic-label" for="department">Department</label>
-        <select class="basic-select text-5" id="department">
-          <option value="">All departments</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-        </select>
-      </div>
-    </div>
+  <app-select-options
+    [labelText]="'Department'"
+    [placeholderText]="'All departments'"
+    [options]="testOptions">
+  </app-select-options>
 
-    <div class="template-area">
-      <div class="group-form">
-        <label  class="basic-label" for="position">Position</label>
-        <select class="basic-select text-5" id="position">
-          <option value="">All positions</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-        </select>
-      </div>
-    </div>
+  <app-select-options
+    [labelText]="'Position'"
+    [placeholderText]="'All positions'"
+    [options]="testOptions">
+  </app-select-options>
 
-    <div class="template-area">
-      <div class="group-form">
-        <label  class="basic-label" for="city">City</label>
-        <select class="basic-select text-5" id="city">
-          <option value="">All cities</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-        </select>
-      </div>
-    </div>
+  <app-select-options
+    [labelText]="'City'"
+    [placeholderText]="'All cities'"
+    [options]="testOptions">
+  </app-select-options>
 
-    <div class="template-area">
-      <div class="group-form">
-        <label  class="basic-label" for="access">Access</label>
-        <select class="basic-select text-5" id="access">
-          <option value="">All access</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-        </select>
-      </div>
-    </div>
+  <app-select-options
+    [labelText]="'Access'"
+    [placeholderText]="'All access'"
+    [options]="testOptions">
+  </app-select-options>
 
-    <div class="template-area">
-      <div class="group-form">
-        <label class="basic-label" for="status">Status</label>
-        <select class="basic-select text-5" id="status">
-          <option value="">All status</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-        </select>
-      </div>
-    </div>
+  <app-select-options
+    [labelText]="'Status'"
+    [placeholderText]="'All status'"
+    [options]="testOptions">
+  </app-select-options>
 
-    <div class="template-area">
-      <div class="group-form">
-        <label class="basic-label" for="area">Area</label>
-        <select class="basic-select text-5" id="area">
-          <option value="">All areas</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-        </select>
-      </div>
-    </div>
+  <app-select-options
+    [labelText]="'Area'"
+    [placeholderText]="'All areas'"
+    [options]="testOptions">
+  </app-select-options>
 
 </form>
 

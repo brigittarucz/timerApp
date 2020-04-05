@@ -3,7 +3,7 @@
   <img class="dropdown-icon" src="../../../../../assets/arrow-icon-down.png" (click)="toggleDropdown()">
 </div>
 
-<form class="form-grid form-grid__large dropdown-content">
+<form class="form-grid form-grid__large dropdown-content" autocomplete="off">
 
   <div class="template-area">
     <div class="group-form">
@@ -19,17 +19,11 @@
     </div>
   </div>
 
-  <div class="template-area">
-    <div class="group-form">
-      <label class="basic-label" for="department">Department</label>
-      <select class="basic-select text-5" id="department">
-        <option value="">Select a department</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-      </select>
-    </div>
-  </div>
+  <app-select-options
+    [labelText]="'Department'"
+    [placeholderText]="'Select a department'"
+    [options]="testOptions">
+  </app-select-options>
 
   <div class="template-area">
     <div class="group-form">
@@ -38,41 +32,23 @@
     </div>
   </div>
 
-  <div class="template-area">
-    <div class="group-form">
-      <label class="basic-label" for="email">Email</label>
-      <select class="basic-select text-5" id="email">
-        <option value="">Select an email</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-      </select>
-    </div>
-  </div>
+  <app-select-options
+    [labelText]="'Email'"
+    [placeholderText]="'Select an email'"
+    [options]="testOptions">
+  </app-select-options>
 
-  <div class="template-area">
-    <div class="group-form">
-      <label class="basic-label" for="project">Project</label>
-      <select class="basic-select text-5" id="project">
-        <option value="">Select a project</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-      </select>
-    </div>
-  </div>
+  <app-select-options
+    [labelText]="'Project'"
+    [placeholderText]="'Select a project'"
+    [options]="testOptions">
+  </app-select-options>
 
-  <div class="template-area">
-    <div class="group-form">
-      <label class="basic-label" for="category">Category</label>
-      <select class="basic-select text-5" id="category">
-        <option value="">Select a category</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-      </select>
-    </div>
-  </div>
+  <app-select-options
+    [labelText]="'Category'"
+    [placeholderText]="'Select a category'"
+    [options]="testOptions">
+  </app-select-options>
 
   <div class="template-area">
     <div class="group-form">

@@ -6,6 +6,19 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: [ './activity-filter-form.component.scss' ]
 })
 export class ActivityFilterFormComponent implements OnInit {
+
+  // Mock up of Select option fields
+  testOptions = [
+    {name: 'Wiredelta'},
+    {name: 'PMI'},
+    {name: 'Sennheiser'},
+    {name: 'Super long name of a client'},
+    {name: 'Pepsi'},
+    {name: 'Bobs burgers'},
+    {name: 'Adobe'},
+    {name: 'Moms Spaghetti'}
+  ];
+
   constructor() {}
 
   dropdownState: Boolean = false;

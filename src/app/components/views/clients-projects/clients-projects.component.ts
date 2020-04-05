@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 	styleUrls: [ './clients-projects.component.scss' ]
 })
 export class ClientsProjectsComponent implements OnInit {
+
+
 	constructor(public matDialog: MatDialog, private router: Router) {}
 
 	ngOnInit(): void {}

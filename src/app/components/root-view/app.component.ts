@@ -16,7 +16,7 @@ export class AppComponent {
 	isNavigIconClose: Subject<boolean>;
 
 
-	isLoginVisible = true;
+	isLoginVisible = false;
 
 	constructor(private menuStateService: MenuStateService) {
 		this.isNavigIconClose = this.menuStateService.navbarStatus;

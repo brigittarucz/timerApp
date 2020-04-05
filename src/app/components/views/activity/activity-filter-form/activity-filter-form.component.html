@@ -15,25 +15,17 @@
     </div>
   </div>
 
-  <div class="template-area">
-    <div class="group-form">
-      <label class="basic-label" for="user">User</label>
-      <input class="basic-select text-5" id="user" placeholder="Enter a username">
-    </div>
-  </div>
+  <app-select-options
+    [labelText]="'User'"
+    [placeholderText]="'Select an user'"
+    [options]="testOptions">
+  </app-select-options>
 
-  <div class="template-area">
-    <div class="group-form">
-      <label class="basic-label" for="office">Office</label>
-      <select class="basic-select text-5" id="office">
-        <option value="">Select an Office</option>
-        <option value="copenhagen">Copenhagen</option>
-        <option value="coimbatore">Coimbatore</option>
-        <option value="mysore">Mysore</option>
-      </select>
-      <div class="icon-field reset-select"> </div>
-    </div>
-  </div>
+  <app-select-options
+    [labelText]="'Office'"
+    [placeholderText]="'Select an office'"
+    [options]="testOptions">
+  </app-select-options>
 
 </form>
 
