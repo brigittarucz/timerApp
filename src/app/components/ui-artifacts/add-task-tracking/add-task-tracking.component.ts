@@ -42,10 +42,9 @@ export class AddTaskTrackingComponent implements OnInit {
 
 	onSubmit(myform: NgForm) {
 		// Add here more for when submitting
+		this.trackingService.changeTaskInProgressStatus(true);
 		if (window.innerWidth < 800) {
 			this.router.navigate([ '/' ], { state: { data: { startTrack: 1 } } });
-		} else {
-			this.trackingService.changeTaskInProgressStatus(true);
 		}
 	}
 

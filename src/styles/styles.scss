@@ -29,8 +29,7 @@ body {
   color: var(--grey-color);
 }
 
-*:focus
-{
+*:focus {
   outline: none;
 }
 
@@ -99,4 +98,22 @@ mat-dialog-container#modal-component {
   text-transform: uppercase;
   box-shadow: var(--soft-shadow);
   background-color: var(--light-mint-color) !important;
+}
+
+// Margin general classes
+
+.margin-xl {
+  margin: 3rem;
+}
+
+.margin-bottom-xl {
+  margin-bottom: 3rem;
+}
+
+.margin-bottom-l {
+  margin-bottom: 1.5rem;
+}
+
+.margin-top-l {
+  margin-top: 1.5rem;
 }

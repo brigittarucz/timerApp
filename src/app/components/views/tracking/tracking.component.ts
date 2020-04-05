@@ -23,7 +23,7 @@ export class TrackingComponent implements OnInit {
 
 	constructor(public matDialog: MatDialog, private router: Router, private trackingService: TrackingService) {
 		if (router.getCurrentNavigation().extras.state !== undefined) {
-			// Insert user's picks here and show visual tracker
+			this.checkInStatus = true;
 			this.hasAddedTask = true;
 		}
 		this.isUserCheckedIn = this.trackingService.userStatus;
@@ -42,9 +42,9 @@ export class TrackingComponent implements OnInit {
 			const dialogConfig = new MatDialogConfig();
 
 			// if the user clicks outside the modal, it closes
-			dialogConfig.disableClose = false;
+			dialogConfig.disableClose = true;
 			dialogConfig.id = 'modal-component';
-			dialogConfig.width = '60%';
+			dialogConfig.width = '50%';
 			console.log(this.taskInProgressStatus);
 			const modalDialog = this.matDialog.open(ModalTrackingComponent, dialogConfig);
 

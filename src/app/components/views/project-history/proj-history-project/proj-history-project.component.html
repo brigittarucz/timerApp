@@ -1,46 +1,71 @@
-<div class="data-table__dropdown-container">
-  <div class="dropdown-button">
-    <div class="dropdown-button__header">
-      <p class="text-4_medium">{{currentMonthName.toUpperCase()}} &nbsp;&nbsp; </p>
-      <p class="text-4_regular">{{totalWorkedTime | millisToTime}}</p>
+<div *ngFor="let activityObj of currentlyPickedClient.activities">
+  <div class="data-table__dropdown-container">
+    <div class="dropdown-button">
+      <div class="dropdown-button__header">
+        <p class="text-4_medium">{{activityObj.activity}} &nbsp;&nbsp; | &nbsp;&nbsp; </p>
+        <p class="text-4_regular">{{activityObj.minutes | minutesToTime}}</p>
+      </div>
+      <button>
+        <img class="dropdown-button__arrow" src="../../../../../assets/user-history/arrow-icon-white.png" />
+      </button>
     </div>
-    <button>
-      <img class="dropdown-button__arrow" src="../../../../../assets/user-history/arrow-icon-white.png"/>
-    </button>
   </div>
-</div>
 
-<div class="data-table">
-  <div class="data-table__content">
+  <div class="data-table">
+    <div class="data-table__content">
 
-    <table class="table1">
-      <thead>
-      <tr class="table1-grid">
-        <th><h3 class="text-4_semibold">Date</h3></th>
-        <th><h3 class="text-4_semibold">Department</h3></th>
-        <th><h3 class="text-4_semibold">Category</h3></th>
-        <th><h3 class="text-4_semibold">Client</h3></th>
-        <th><h3 class="text-4_semibold">Email</h3></th>
-        <th><h3 class="text-4_semibold">Time Spent</h3></th>
-        <th></th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr
-        class="table1-grid"
-        *ngFor="let task of tasks">
-        <td><p class="text-5_regular">{{ task.client }}</p></td>
-        <td><p class="text-5_regular">{{ task.department }}</p></td>
-        <td><p class="text-5_regular">{{ task.category }}</p></td>
-        <td><p class="text-5_regular">{{ task.client }}</p></td>
-        <td><p class="text-5_regular">{{ task.project }}</p></td>
-        <td><p class="text-5_regular">{{ task.timeSpent | millisToTime }}</p></td>
-        <td>
-          <img src="../../../../../assets/delete-icon.png">
-        </td>
-      </tr>
-      </tbody>
-    </table>
+      <table class="table1">
+        <thead>
+          <tr class="table1-grid">
+            <th>
+              <h3 class="text-4_semibold">Date</h3>
+            </th>
+            <th>
+              <h3 class="text-4_semibold">Department</h3>
+            </th>
+            <th>
+              <h3 class="text-4_semibold">Category</h3>
+            </th>
+            <th>
+              <h3 class="text-4_semibold">Client</h3>
+            </th>
+            <th>
+              <h3 class="text-4_semibold">Email</h3>
+            </th>
+            <th>
+              <h3 class="text-4_semibold">Time Spent</h3>
+            </th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table1-grid" *ngFor="let task of tasks">
+            <td>
+              <p class="text-5_regular">{{ task.client }}</p>
+            </td>
+            <td>
+              <p class="text-5_regular">{{ task.department }}</p>
+            </td>
+            <td>
+              <p class="text-5_regular">{{ task.category }}</p>
+            </td>
+            <td>
+              <p class="text-5_regular">{{ task.client }}</p>
+            </td>
+            <td>
+              <p class="text-5_regular">{{ task.project }}</p>
+            </td>
+            <td>
+              <p class="text-5_regular">{{ task.timeSpent | millisToTime }}</p>
+            </td>
+            <td>
+              <img src="../../../../../assets/delete-icon.png">
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
+    </div>
   </div>
+
 </div>

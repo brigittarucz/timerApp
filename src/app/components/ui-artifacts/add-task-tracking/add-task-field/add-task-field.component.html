@@ -1,12 +1,14 @@
-<div>
-  <label [for]="taskParameter.fieldLabel" class="text-5_semibold" #labelRef>{{taskParameter.fieldLabel}}</label>
-  <select [id]="taskParameter.fieldLabel" class="form-control text-5_regular select__generic"
-    [name]="taskParameter.fieldLabel" ngModel required #tempRefNg="ngModel" #tempRef [(ngModel)]="valueSelect"
-    (change)="showNextField()">
-    <option value="null" disabled="disabled"> Select a {{ taskParameter.fieldLabel }} </option>
-    <option *ngFor="let option of arrOptions[taskParameter.fieldOptionsKey]" [value]="option">
-      {{option | taskOptionFormatter}}</option>
-  </select>
-  <div class="reset__select" *ngIf="tempRefNg.touched && tempRef.selectedIndex" (click)="resetValue(tempRef)">
+<div class="modal-grid-field">
+  <div>
+    <label [for]="taskParameter.fieldLabel" class="basic-label" #labelRef>{{taskParameter.fieldLabel}}</label>
+    <select [id]="taskParameter.fieldLabel" class="form-control text-5_regular basic-select"
+      [name]="taskParameter.fieldLabel" ngModel required #tempRefNg="ngModel" #tempRef [(ngModel)]="valueSelect"
+      (change)="showNextField()">
+      <option value="null" disabled="disabled"> Select a {{ taskParameter.fieldLabel }} </option>
+      <option *ngFor="let option of arrOptions[taskParameter.fieldOptionsKey]" [value]="option">
+        {{option | taskOptionFormatter}}</option>
+    </select>
+    <div class="reset__select" *ngIf="tempRefNg.touched && tempRef.selectedIndex" (click)="resetValue(tempRef)">
+    </div>
   </div>
 </div>

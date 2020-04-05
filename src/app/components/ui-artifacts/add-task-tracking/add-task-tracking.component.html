@@ -1,16 +1,16 @@
-<h1 class="text-2_regular text-center m-5"> New Task </h1>
-<form (ngSubmit)="onSubmit(f)" #f="ngForm" class="container form__add-task" (change)="updateFormValidity()">
-  <div id="user-data" ngModelGroup="userData" #userData="ngModelGroup" class="row">
+<h1 class="text-2_regular modal-title margin-xl"> New Task </h1>
+<form (ngSubmit)="onSubmit(f)" #f="ngForm" class="container-modal form__add-task" (change)="updateFormValidity()">
+  <div id="user-data" ngModelGroup="userData" #userData="ngModelGroup">
 
-    <app-add-task-field class="form-group col-10 offset-1 mb-4" *ngFor="let taskParam of taskParameters; let i = index"
-      (changeSelect)="updateFields($event)" (eliminateSelect)="getClickedField($event)"
-      [taskParameter]="taskParameters[i]"> </app-add-task-field>
-    <div class="container mt-4">
-      <div class="form__control-buttons row justify-content-center">
-        <button [disabled]="!formManualValidity" class="btn button-base button-active col-4 col-lg-2" type="submit">
+    <app-add-task-field class="form-group modal-grid-field margin-bottom-l"
+      *ngFor="let taskParam of taskParameters; let i = index" (changeSelect)="updateFields($event)"
+      (eliminateSelect)="getClickedField($event)" [taskParameter]="taskParameters[i]"> </app-add-task-field>
+    <div class="margin-top-l">
+      <div class="form__control-buttons modal-grid-btn">
+        <button [disabled]="!formManualValidity" class="btn button-base button-active" type="submit">
           Start
         </button>
-        <button class="btn button-base button-cancel col-4 col-lg-2 " (click)="resetForm($event)" routerLink="/">
+        <button class="btn button-base button-cancel" (click)="resetForm($event)" routerLink="/">
           Cancel
         </button>
       </div>

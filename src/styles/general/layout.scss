@@ -95,7 +95,8 @@ __toggle-container is container for the toggle-button in the toggle-button.scss 
     z-index: 2;
   }
 
-  &__content, &__content__timeline {
+  &__content,
+  &__content__timeline {
     padding: 0 5rem;
   }
 
@@ -161,3 +162,68 @@ __toggle-container is container for the toggle-button in the toggle-button.scss 
 }
 
 
+/* ************************************* */
+/* ************* MODAL LAYOUT *********** */
+
+// On the H1
+.modal-title {
+  text-align: center;
+}
+
+// On the Modal Form
+.container-modal {
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+// On the Field Component/Container
+.modal-grid-field {
+  display: flex;
+  flex: 0 0 83.3%;
+  width: 90%;
+  margin: auto;
+  // To each div as needed + margins
+  // margin: auto;
+  // width: 80%;
+}
+
+.modal-grid-field div:not(.reset__select) {
+  width: 100%;
+}
+
+// On the Button Container
+.modal-grid-btn {
+  display: flex;
+  flex: 0 0 25%;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 2rem;
+}
+
+// On the Button
+// .modal-btn {
+//   display: inline-block;
+//   margin: 0.5rem 2rem;
+// }
+
+.modal-grid-btn button {
+  width: 20rem;
+  display: inline-block;
+  margin: 0.5rem 2rem;
+}
+
+@media screen and (min-width: 800px) {
+
+  .modal-grid-field {
+    width: 100%;
+  }
+
+  .modal-grid-btn {
+    bottom: unset;
+    box-shadow: none;
+  }
+
+}

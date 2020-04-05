@@ -1,6 +1,6 @@
 <app-timer-counter (isUserCheckedIn)="viewState($event)" class="app__timer-controller"> </app-timer-counter>
 
-<h1 class="text-1_regular text-center mt-5 mb-5 pt-5 pb-5"> Tracking </h1>
+<h1 class="text-1_semibold text-center mt-5 mb-5 pb-5"> Tracking </h1>
 
 <ng-template #notask>
   <div class="div__tracking-notask">
@@ -17,6 +17,5 @@
 
 
 <app-timer-visual *ngIf="checkInStatus && hasAddedTask else notask"> </app-timer-visual>
-<h3 class="text-3_medium" style="text-align: center"> Tasks Done </h3>
 
 <app-tasks-done></app-tasks-done>

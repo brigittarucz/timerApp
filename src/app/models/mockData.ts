@@ -164,3 +164,27 @@ export const mockFieldOptions = {
 	training: [ 'courses', 'assignments' ],
 	mode: [ 'Estimations', 'Lead', 'MM', 'Research', 'RM' ]
 };
+
+export const mockProjHistory: {
+	client: string;
+	activities: { activity: string; minutes: number; entries: number }[];
+}[] = [
+	{
+		client: 'wiredelta',
+		activities: [
+			{ activity: 'test', minutes: 3902, entries: 20 },
+			{ activity: 'hosting', minutes: 3902, entries: 20 },
+			{ activity: 'blog', minutes: 3902, entries: 20 },
+			{ activity: 'marketing', minutes: 3902, entries: 20 },
+			{ activity: 'timer', minutes: 3902, entries: 20 },
+			{ activity: 'libraries', minutes: 3902, entries: 20 },
+			{ activity: 'mylo', minutes: 3902, entries: 20 },
+			{ activity: 'client', minutes: 3902, entries: 20 },
+			{ activity: 'corporate', minutes: 3902, entries: 20 }
+		]
+	},
+	{
+		client: 'blockshipping',
+		activities: [ { activity: 'web', minutes: 9021, entries: 15 } ]
+	}
+];

@@ -1,0 +1,20 @@
+<h1 class="text-2_regular modal-title margin-xl"> Add Position </h1>
+<form (ngSubmit)="onSubmit(f)" #f="ngForm" class="container-modal">
+  <div id="add-user-history-task" ngModelGroup="addTask" class="margin-bottom-l">
+    <div class="modal-grid-field">
+      <div class="margin-bottom-l margin-top-l">
+        <label for="department" class="basic-label"> Position Name </label>
+        <input name="department" type="text" class="basic-input" ngModel required minlength="2"
+          placeholder="Enter a new position name">
+      </div>
+    </div>
+    <div class="modal-grid-btn margin-top-l">
+      <button class="btn button-base button-active" [disabled]="f.invalid" type="submit" mat-dialog-close
+        (click)="navigateModal()">
+        Confirm
+      </button>
+      <button class="btn button-base button-cancel" mat-dialog-close (click)="navigateModal()"> Cancel
+      </button>
+    </div>
+  </div>
+</form>
