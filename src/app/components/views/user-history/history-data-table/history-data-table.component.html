@@ -21,25 +21,29 @@
     <table class="table1">
       <thead>
       <tr class="table1-grid">
+        <th><h3 class="text-4_semibold">Date</h3></th>
         <th><h3 class="text-4_semibold">Department</h3></th>
         <th><h3 class="text-4_semibold">Category</h3></th>
         <th><h3 class="text-4_semibold">Client</h3></th>
         <th><h3 class="text-4_semibold">Project</h3></th>
         <th><h3 class="text-4_semibold">Time Spent</h3></th>
-        <th></th>
+        <th class="row-mobile-hide"></th>
       </tr>
       </thead>
       <tbody>
       <tr
         class="table1-grid"
         *ngFor="let task of tasks">
+        <td><p class="text-5_regular">{{ task.timeSpent | millisToTime }}</p></td>
         <td><p class="text-5_regular">{{ task.department }}</p></td>
         <td><p class="text-5_regular">{{ task.category }}</p></td>
         <td><p class="text-5_regular">{{ task.client }}</p></td>
         <td><p class="text-5_regular">{{ task.project }}</p></td>
         <td><p class="text-5_regular">{{ task.timeSpent | millisToTime }}</p></td>
         <td>
-          <img src="../../../../../assets/tracking/restart-icon.png">
+          <img class="img-margin-left" src="../../../../../assets/user-history/refresh-icon.png" alt="">
+          <img class="img-margin-left" src="../../../../../assets/user-history/edit-icon.png" alt="">
+          <img class="img-margin-left" src="../../../../../assets/delete-icon.png" alt="">
         </td>
       </tr>
       </tbody>
