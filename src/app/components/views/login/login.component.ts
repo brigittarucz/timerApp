@@ -1,5 +1,4 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
-// import * as ParticlesJS from 'src/assets/js/particlesjs.js'
 declare const particlesJS;
 import {ParticlesJSConfig} from "./particle-js-config";
 

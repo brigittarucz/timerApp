@@ -19,18 +19,15 @@
     </div>
   </div>
 
-  <app-select-options
+  <app-select-options class="group-form__disabled"
     [labelText]="'Department'"
     [placeholderText]="'Select a department'"
     [options]="testOptions">
   </app-select-options>
 
-  <div class="template-area">
-    <div class="group-form">
-      <label class="basic-label" for="startDate">Start Date</label>
-      <input class="basic-input text-5" type="date" id="startDate">
-    </div>
-  </div>
+  <app-input-datepicker
+    [labelText]="'Start date'">
+  </app-input-datepicker>
 
   <app-select-options
     [labelText]="'Email'"
@@ -50,11 +47,8 @@
     [options]="testOptions">
   </app-select-options>
 
-  <div class="template-area">
-    <div class="group-form">
-      <label class="basic-label" for="endDate">End Date</label>
-      <input class="basic-input text-5" type="date" id="endDate">
-    </div>
-  </div>
+  <app-input-datepicker
+    [labelText]="'End date'">
+  </app-input-datepicker>
 
 </form>

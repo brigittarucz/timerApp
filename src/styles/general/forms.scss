@@ -64,7 +64,11 @@ select {
 
 .group-form {
   margin-bottom: 1rem;
-  min-height: 9rem !important;
+  min-height: 9rem;
   width: 100%;
   position: relative;
+
+  &__disabled {
+    opacity: .5;
+  }
 }

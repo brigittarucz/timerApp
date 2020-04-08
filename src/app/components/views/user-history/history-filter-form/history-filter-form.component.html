@@ -17,19 +17,15 @@
     [options]="testOptions">
   </app-select-options>
 
-  <div class="template-area">
-    <div class="group-form">
-      <label class="basic-label" for="startDate">Start Date</label>
-      <input class="basic-input text-5" type="date" id="startDate">
-    </div>
-  </div>
+  <app-input-datepicker
+    [labelText]="'Start date'">
+  </app-input-datepicker>
 
-  <div class="template-area">
-    <div class="group-form">
-      <label class="basic-label" for="year">Year</label>
-      <input class="basic-input text-5" type="number" id="year" placeholder="Select a year">
-    </div>
-  </div>
+  <app-select-options
+    [labelText]="'Year'"
+    [placeholderText]="'Select a year'"
+    [options]="testOptions">
+  </app-select-options>
 
   <app-select-options
     [labelText]="'Category'"
@@ -43,12 +39,9 @@
     [options]="testOptions">
   </app-select-options>
 
-  <div class="template-area">
-    <div class="group-form">
-      <label class="basic-label" for="endDate">End Date</label>
-      <input class="basic-input text-5" type="date" id="endDate">
-    </div>
-  </div>
+  <app-input-datepicker
+    [labelText]="'End date'">
+  </app-input-datepicker>
 
   <div class="template-area">
     <div class="group-form padding-fix">

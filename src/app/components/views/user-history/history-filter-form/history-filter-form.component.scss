@@ -1,3 +1,7 @@
+@import "../../../../../styles/general/colors";
+@import "../../../../../styles/overrides/mat-override";
+
+
 .button-add {
   margin: 3rem 0;
   width: 6rem;
@@ -71,4 +75,3 @@
     opacity: 1;
   }
 }
-
