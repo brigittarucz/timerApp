@@ -24,6 +24,10 @@
 
   tfoot > tr {
     border-top: .2rem solid $grey-color-light;
+
+    td {
+      padding-top: 2rem;
+    }
   }
 
   th, td {

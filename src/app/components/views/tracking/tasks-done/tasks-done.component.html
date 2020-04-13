@@ -1,63 +1,63 @@
-<div class="main-container">
+<div class="data-table__toggle-container">
+  <div
+    class="btn-base-toggle align-bottom"
+    data-toggle="buttons"
+    (click)="onToggleButton()">
 
-  <div class="main-container__margin">
-    <h2 class="text-2_semibold"> Tasks Done </h2>
-    <!-- <div class="group-form padding-fix"> -->
-    <div class="data-table__toggle-container">
-      <div class="btn-base-toggle align-bottom" data-toggle="buttons" (click)="onToggleButton()">
-        <span
-          [ngClass]="{'btn-switcher__animate': animState.currentAnim === 'btn-switcher__animate', 'btn-switcher__animate__reverse': animState.currentAnim === 'btn-switcher__animate__reverse'}"
-          class="btn-switcher"></span>
-        <button [ngClass]="{'btn-toggle__active': animState.btn1}" class="btn-toggle btn-toggle__fix"
-          type="button">Check
-          in</button>
-        <button [ngClass]="{'btn-toggle__active': animState.btn2}" class="btn-toggle right btn-toggle__fix"
-          type="button">Tasks</button>
-      </div>
-      <!-- </div> -->
-    </div>
-    <div class="data-table">
-      <div class="row">
-        <div class="col-4 col-lg-5 d-lg-flex justify-content-around">
-          <h3 class="text-5_semibold"> Department </h3>
-          <h3 class="text-5_semibold"> Category </h3>
-        </div>
-        <div class="col-4 col-lg-4 d-lg-flex justify-content-around">
-          <h3 class="text-5_semibold "> Client </h3>
-          <h3 class="text-5_semibold "> Project </h3>
-        </div>
-        <div class="col-4 col-lg-3">
-          <h3 class="text-5_semibold "> Time Spent </h3>
-        </div>
-      </div>
-      <hr>
-      <div *ngFor="let session of sessions">
-        <div *ngIf="session.date.slice(0,10) === pickedDate.slice(0,10)">
-          <div class="row mt-4 mb-4">
-            <div class="col-4 col-lg-5 d-lg-flex justify-content-around">
-              <p class="text-5_regular"> {{ session.department }} </p>
-              <p class="text-5_regular"> {{ session.category }} </p>
-            </div>
-            <div class="col-4  col-lg-4 d-lg-flex justify-content-around">
-              <p class="text-5_regular"> {{ session.client }} </p>
-              <p class="text-5_regular"> {{ session.project }} </p>
-            </div>
-            <div class="col-4  col-lg-3 d-lg-flex justify-content-around">
-              <p class="text-5_regular"> {{ session.time }} </p>
-              <img src="../../../assets/tracking/restart-icon.png" width="22" height="22" class="ml-5">
-            </div>
-          </div>
-          <hr>
-        </div>
-      </div>
-      <div class="row justify-content-end mt-4 mb-4">
-        <div class="col-4">
-          <p class="text-5_semibold"> Total </p>
-        </div>
-        <div class="col-4">
-          <p class="text-5_regular"> 00 : 00 : 00 </p>
-        </div>
-      </div>
-    </div>
+    <span
+      [ngClass]="{'btn-switcher__animate': animState.currentAnim === 'btn-switcher__animate', 'btn-switcher__animate__reverse': animState.currentAnim === 'btn-switcher__animate__reverse'}"
+      class="btn-switcher"></span>
+    <button
+      [ngClass]="{'btn-toggle__active': animState.btn1}"
+      class="btn-toggle btn-toggle__fix"
+      type="button">Check in</button>
+    <button
+      [ngClass]="{'btn-toggle__active': animState.btn2}"
+      class="btn-toggle right btn-toggle__fix"
+      type="button">Tasks</button>
   </div>
 </div>
+
+<div class="data-table">
+  <div class="data-table__content">
+
+    <table class="table1">
+      <thead>
+      <tr class="table1-grid">
+        <th><h3 class="text-4_semibold">Department</h3></th>
+        <th><h3 class="text-4_semibold">Category</h3></th>
+        <th><h3 class="text-4_semibold">Client</h3></th>
+        <th><h3 class="text-4_semibold">Project</h3></th>
+        <th><h3 class="text-4_semibold">Time Spent</h3></th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr
+        class="table1-grid"
+        *ngFor="let session of sessions">
+        <td><p class="text-5_regular">{{ session.department }}</p></td>
+        <td><p class="text-5_regular">{{ session.category }}</p></td>
+        <td><p class="text-5_regular">{{ session.client }}</p></td>
+        <td><p class="text-5_regular">{{ session.project }}</p></td>
+        <td><p class="text-5_regular">{{ session.time }}</p></td>
+        <td>
+          <img src="../../../../../assets/tracking/restart-icon.png" alt="">
+        </td>
+      </tr>
+      </tbody>
+      <tfoot>
+      <tr class="table1-grid">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><h3 class="text-4_semibold">Total</h3></td>
+        <td><h3 class="text-4_semibold">00 : 00 : 00</h3></td>
+        <td></td>
+      </tr>
+      </tfoot>
+    </table>
+
+  </div>
+</div>
+
