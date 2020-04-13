@@ -1,8 +1,7 @@
 <app-timer-counter (isUserCheckedIn)="viewState($event)" class="app__timer-controller"> </app-timer-counter>
 
-<!--<h1 class="text-1_semibold text-center mt-5 mb-5 pb-5"> Tracking </h1>-->
 <div class="header-container">
-  <h1 class="text-1_semibold text-center">Tracking</h1>
+  <h1 class="text-1_semibold">Tracking</h1>
 </div>
 
 <ng-template #notask>
@@ -13,7 +12,7 @@
     <div class="div__tracking-begin pt-3 pb-5">
       <p class="text-5_regular p-3 div__tracking-notasktext" style="text-align:center;"> No task in progress </p>
       <button mat-raised-button (click)="openModal()" [disabled]="!checkInStatus" class="button-add">
-        <img src="../../../../assets/tracking/add-icon-white.png" width="30"> </button>
+        <img src="../../../../assets/tracking/add-icon-white.png" width="30" alt=""> </button>
     </div>
   </div>
 </ng-template>
@@ -23,6 +22,9 @@
 
 <div class="main-container">
   <div class="main-container__table-margin">
+    <div class="header-container">
+      <h2 class="text-2_semibold">Tasks Done</h2>
+    </div>
     <app-tasks-done></app-tasks-done>
   </div>
 </div>
