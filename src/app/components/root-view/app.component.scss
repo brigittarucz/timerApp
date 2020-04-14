@@ -24,7 +24,7 @@
 @keyframes moveOutOfView {
   from {
     width: 100%;
-    margin-left: 0%;
+    margin-left: 0;
   }
 
   to {
@@ -65,9 +65,9 @@
   main {
     position: absolute;
     display: inline-block;
-    margin-top: 100px;
-    margin-left: 100px;
-    width: calc(100% - 100px);
+    margin-top: 10rem;
+    margin-left: 10rem;
+    width: calc(100% - 10rem);
     z-index: -1;
   }
 

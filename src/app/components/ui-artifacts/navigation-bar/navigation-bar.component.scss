@@ -1,63 +1,62 @@
-.navbar {
-  z-index: 15;
-}
+@import "../../../../styles/general/colors";
 
-.navigation__profile-icon-container {
-  width: 48px;
-  height: 48px;
-  background-color: aquamarine;
-  border-radius: 32px;
-  border: 1px solid black;
-}
-
-.navigation__profile-icon-container:hover {
-  cursor: pointer;
-}
-
-.navigation__menu-icon:hover {
-  cursor: pointer;
-}
-
-.navigation__profile-icon {
-  all: unset;
-}
-
-hr {
+.navigation {
+  background-color: $white-color;
+  box-shadow: $soft-shadow;
   width: 100%;
+  height: 7rem;
+  position: fixed;
+  z-index: 15;
+
+  &__main {
+    height: inherit;
+    margin-left: 10rem;
+    width: calc(100% - 10rem);
+
+    &__container {
+      height: inherit;
+      max-width: 85vw;
+      margin: auto;
+
+      &__padding {
+        height: inherit;
+        width: 100%;
+        padding: 0 4rem;
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    &__group {
+      display: flex;
+    }
+
+    .navigation-logo {
+      visibility: hidden;
+
+      @media screen and (min-width: 500px) {
+        visibility: visible;
+      }
+
+      &__icon {
+        width: 15rem;
+      }
+    }
+  }
+
+  .timer-counter {
+    max-width: 50rem;
+    display: none;
+
+    @media screen and (min-width: 800px) {
+      display: inline-flex;
+    }
+  }
 }
 
-.navigation__logo-icon {
-  display: none;
-}
-
-.navbar-collapse {
-  overflow-x: hidden;
-  box-shadow: var(--soft-shadow);
-}
-
-.time-controller {
-  display: none;
-}
-
-@media screen and (min-width: 800px) {
-  .navigation__logo-icon {
-    display: block;
-    margin-left: -70%;
-  }
-
-  .navigation__menu-icon {
-    margin-left: 10px;
-  }
-
-  .navigation__profile-icon {
-    margin-right: 10px;
-  }
-
-  .navbar-collapse {
-    box-shadow: none;
-  }
-
-  .time-controller {
-    display: block;
-  }
+.burger-menu {
+  position: absolute;
+  left: 2rem;
+  top: 2rem;
 }

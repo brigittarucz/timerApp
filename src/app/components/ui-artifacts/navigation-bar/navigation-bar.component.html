@@ -1,21 +1,27 @@
-<nav class="navbar navbar-light bg-light" [style.box-shadow]="displayShadow">
-  <a class="navigation__menu-icon" (click)="toggleSidebarComponent()">
+<nav class="navigation">
+  <a class="burger-menu" (click)="toggleSidebarComponent()">
     <img src="{{menuIconSrc}}" width="28" height="22" alt="Menu Icon">
   </a>
-  <a class="navbar-brand float-left navigation__logo-icon" href="#">
-    <img src="../../../../assets/header/logo.png" width="150" alt="Wiredelta">
-  </a>
 
+  <div class="navigation__main">
+    <div class="navigation__main__container">
+      <div class="navigation__main__container__padding">
+        <a class="navigation-logo" href="#">
+          <img class="navigation-logo__icon" src="../../../../assets/header/logo.png" alt="Wiredelta">
+        </a>
+        <div class="navigation__main__group">
+          <app-timer-counter class="timer-counter"></app-timer-counter>
 
-  <app-timer-counter style="margin-left: 80%;" class="time-controller">
-  </app-timer-counter>
-
-
-  <button class="navigation__profile-icon float-right navbar-toggler" type="button" (click)="toggleProfileQuickview()">
-    <div class="navigation__profile-icon-container">
+          <button class="navbar-toggler" type="button" (click)="toggleProfileQuickview()">
+            <img class="profile-image" src="https://icon2.cleanpng.com/20171220/qve/anonymous-mask-png-5a3a4666911942.7179111615137685505943.jpg" alt="profile-img">
+          </button>
+        </div>
+      </div>
     </div>
-  </button>
+  </div>
+
+  <div class="collapse navbar-collapse" style="display:block;" [style.display]="displayProfileQuickview">
+    <app-profile-quickview> </app-profile-quickview>
+  </div>
 </nav>
-<div class="collapse navbar-collapse" style="display:block;" [style.display]="displayProfileQuickview">
-  <app-profile-quickview> </app-profile-quickview>
-</div>
+

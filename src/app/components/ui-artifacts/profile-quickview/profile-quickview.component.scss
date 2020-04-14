@@ -1,56 +1,73 @@
-.navbar-nav {
+@import "../../../../styles/general/colors";
+
+.profile-preview {
   width: 100%;
   background-color: var(--white-color);
   position: absolute;
   z-index: 10;
-}
+  box-shadow: $soft-shadow;
 
-.navigation__profile-controls div {
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 32px;
-  height: 32px;
-  display: inline-block;
-  margin: 5px;
-}
-
-.navigation__profile-image {
-  width: 90px;
-  height: 90px;
-  background-color: aquamarine;
-  border-radius: 160px;
-  border: 1px solid black;
-}
-
-.navigation__profile-edit {
-  background-image: url(../../../../assets/edit-icon.png);
-}
-
-.navigation__profile-logout {
-  background-image: url(../../../../assets/logout-icon.png);
-}
-
-.navigation__profile-image {
-  display: none;
-}
-
-/* min-width for desktop to be later on changed  */
-
-@media screen and (min-width: 600px) {
-  .navbar-nav {
-    width: 380px;
-    background-color: var(--white-color);
-    margin-left: calc(100% - 380px);
-    padding: 10px;
-    margin-bottom: 10px;
-    box-shadow: var(--soft-shadow);
-    position: absolute;
-    overflow-x: hidden;
+  @media screen and (min-width: 600px) {
+    width: 50rem;
+    right: 0;
   }
 
-  .navigation__profile-image {
+  &__body {
+    padding: 2rem 0;
+    border-bottom: .1rem solid $grey-color-light;
+    width: 85%;
+    margin: auto;
+
+    @media screen and (min-width: 600px) {
+      display: flex;
+      justify-content: space-between;
+      margin: auto;
+    }
+
+    .profile-prev-general {
+      width: 100%;
+
+      @media screen and (min-width: 600px) {
+        width: 60%;
+      }
+
+      &__icons {
+        display: flex;
+        justify-content: center;
+
+        @media screen and (min-width: 600px) {
+          justify-content: left;
+        }
+      }
+
+      p {
+        text-align: center;
+
+        @media screen and (min-width: 600px) {
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  &__footer {
+    width: 85%;
+    margin: auto;
+    padding: 2rem;
+  }
+}
+
+.profile-image {
+  width: 12rem;
+  height: inherit;
+  display: none;
+
+  @media screen and (min-width: 600px) {
     display: block;
   }
+}
 
+.profile-prev-icon {
+  width: 6rem;
+  padding: 1rem;
 }
