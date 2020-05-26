@@ -9,18 +9,18 @@ import { Router } from '@angular/router';
 	styleUrls: [ './history-filter-form.component.scss' ]
 })
 export class HistoryFilterFormComponent implements OnInit {
-  // Mock up of Select option fields
-  testOptions = [
-    {name: 'Wiredelta'},
-    {name: 'PMI'},
-    {name: 'Sennheiser'},
-    {name: 'Super long name of a client'},
-    {name: 'Pepsi'},
-    {name: 'Bobs burgers'},
-    {name: 'Adobe'},
-    {name: 'Moms Spaghetti'}
-  ];
-  //
+	// Mock up of Select option fields
+	testOptions = [
+		{ name: 'Wiredelta' },
+		{ name: 'Adobe' },
+		{ name: 'Forbes' },
+		{ name: 'Microsoft' },
+		{ name: 'Selligent Marketing Cloud' },
+		{ name: 'Mc Donalds' },
+		{ name: 'KFC' },
+		{ name: 'Agricultural Bank of China' }
+	];
+	//
 
 	buttonState = true;
 

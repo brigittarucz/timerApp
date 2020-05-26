@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { MenuStateService } from '../../services/shared/menu-state.service';
 import { Subject } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-root',
@@ -15,10 +16,9 @@ export class AppComponent {
 	initialDisplay: string = 'none';
 	isNavigIconClose: Subject<boolean>;
 
+	isLoginVisible = true;
 
-	isLoginVisible = false;
-
-	constructor(private menuStateService: MenuStateService) {
+	constructor(private menuStateService: MenuStateService, private route: Router) {
 		this.isNavigIconClose = this.menuStateService.navbarStatus;
 
 		this.isNavigIconClose.subscribe((value) => {
@@ -30,5 +30,12 @@ export class AppComponent {
 				this.initialDisplay = 'block';
 			}
 		});
+	}
+
+	changeView(data) {
+		if (data === 'true') {
+			this.isLoginVisible = false;
+			this.route.navigate([ 'user-history' ]);
+		}
 	}
 }

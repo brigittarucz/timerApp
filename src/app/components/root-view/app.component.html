@@ -1,4 +1,3 @@
-
 <div *ngIf="!isLoginVisible; else loginView">
   <header>
     <app-navigation-bar class="navigation-bar">
@@ -7,7 +6,7 @@
   <aside>
     <div class="sidebar-mobile">
       <app-menu-sidebar-mobile [ngClass]="openMobile === true ? 'sidebar-animation-open' : 'sidebar-animation-close'"
-                               [style.display]="initialDisplay">
+        [style.display]="initialDisplay">
       </app-menu-sidebar-mobile>
     </div>
     <div class="sidebar-desktop">
@@ -20,5 +19,5 @@
 </div>
 
 <ng-template #loginView>
-  <app-login></app-login>
+  <app-login (open)="changeView($event)"></app-login>
 </ng-template>

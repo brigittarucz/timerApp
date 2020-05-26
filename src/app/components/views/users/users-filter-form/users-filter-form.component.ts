@@ -1,29 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-users-filter-form',
-  templateUrl: './users-filter-form.component.html',
-  styleUrls: ['./users-filter-form.component.scss']
+	selector: 'app-users-filter-form',
+	templateUrl: './users-filter-form.component.html',
+	styleUrls: [ './users-filter-form.component.scss' ]
 })
 export class UsersFilterFormComponent implements OnInit {
-  constructor() {}
+	constructor() {}
 
-  testOptions = [
-    {name: 'Wiredelta'},
-    {name: 'PMI'},
-    {name: 'Sennheiser'},
-    {name: 'Super long name of a client'},
-    {name: 'Pepsi'},
-    {name: 'Bobs burgers'},
-    {name: 'Adobe'},
-    {name: 'Moms Spaghetti'}
-  ];
+	testOptions = [
+		{ name: 'Wiredelta' },
+		{ name: 'Adobe' },
+		{ name: 'Forbes' },
+		{ name: 'Microsoft' },
+		{ name: 'Selligent Marketing Cloud' },
+		{ name: 'Mc Donalds' },
+		{ name: 'KFC' },
+		{ name: 'Agricultural Bank of China' }
+	];
 
-  dropdownState: Boolean = false;
+	dropdownState: Boolean = false;
 
-  toggleDropdown() {
-    this.dropdownState = !this.dropdownState;
-  }
+	toggleDropdown() {
+		this.dropdownState = !this.dropdownState;
+	}
 
-  ngOnInit(): void {}
+	ngOnInit(): void {}
 }

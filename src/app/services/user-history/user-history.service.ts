@@ -18,69 +18,69 @@ export class UserHistoryService {
 	mockTasks1: Array<TaskEntry> = [
 		{
 			date: new Date(),
-			department: 'awdawd',
-			category: 'awd',
-			client: 'awdawd',
-			project: 'awd',
+			department: 'SEO',
+			category: 'category',
+			client: 'client',
+			project: 'project',
 			timeSpent: 23432443
 		},
 		{
 			date: new Date(),
-			department: 'vdfvdfv',
-			category: 'rd',
-			client: '33',
-			project: 'awd',
+			department: 'Analytics',
+			category: 'category',
+			client: 'client',
+			project: 'project',
 			timeSpent: 233232323
 		},
 		{
 			date: new Date(),
-			department: '22',
-			category: '33',
-			client: 'aw',
-			project: 'awd',
+			department: 'Development',
+			category: 'category',
+			client: 'client',
+			project: 'project',
 			timeSpent: 234232
 		},
 		{
 			date: new Date(),
-			department: 'awdaqwd',
-			category: 'a23wd',
-			client: 'awdaw23d',
-			project: 'awd',
+			department: 'Finance',
+			category: 'category',
+			client: 'client',
+			project: 'project',
 			timeSpent: 102232
 		}
 	];
 	mockTasks2: Array<TaskEntry> = [
 		{
 			date: new Date(),
-			department: 'awdawd',
-			category: 'awd',
-			client: 'awdawd',
-			project: 'awd',
-			timeSpent: 10232
-		},
-		{
-			date: new Date(),
-			department: 'awdawd',
-			category: 'rd',
-			client: '6sdr',
-			project: 'awd',
-			timeSpent: 10232
-		},
-		{
-			date: new Date(),
-			department: '22',
-			category: '33',
-			client: 'aw',
-			project: 'awd',
-			timeSpent: 102332
-		},
-		{
-			date: new Date(),
-			department: 'awdaqwd',
-			category: 'a23wd',
-			client: 'awdaw23d',
-			project: 'awd',
+			department: 'Finance',
+			category: 'category',
+			client: 'client',
+			project: 'project',
 			timeSpent: 102232
+		},
+		{
+			date: new Date(),
+			department: 'Development',
+			category: 'category',
+			client: 'client',
+			project: 'project',
+			timeSpent: 234232
+		},
+		{
+			date: new Date(),
+			department: 'Analytics',
+			category: 'category',
+			client: 'client',
+			project: 'project',
+			timeSpent: 233232323
+		},
+		{
+			date: new Date(),
+			department: 'SEO',
+			category: 'category',
+			client: 'client',
+			project: 'project',
+			timeSpent: 23432443
 		}
 	];
 
@@ -111,17 +111,17 @@ export class UserHistoryService {
 	}
 
 	mockConnectedUsers: ConnectedUser[] = [
-		{ office: 'copenhagen', name: 'Adrian G', title: 'Developer' },
-		{ office: 'copenhagen', name: 'Alex D', title: 'Technical Intern' },
-		{ office: 'copenhagen', name: 'Adrian G', title: 'Developer' },
-		{ office: 'copenhagen', name: 'Adrian G', title: 'Developer' },
-		{ office: 'copenhagen', name: 'Alex D', title: 'Technical Intern' },
-		{ office: 'copenhagen', name: 'Adrian G', title: 'Developer' },
-		{ office: 'coimbatore', name: 'Alex D', title: 'Technical Intern' },
-		{ office: 'coimbatore', name: 'Adrian G', title: 'Developer' },
-		{ office: 'coimbatore', name: 'Alex D', title: 'Technical Intern' },
-		{ office: 'new-york', name: 'Adrian G', title: 'Developer' },
-		{ office: 'new-york', name: 'Alex D', title: 'Technical Intern' }
+		{ office: 'copenhagen', name: 'Damian G', title: 'Developer' },
+		{ office: 'copenhagen', name: 'Sarah T', title: 'Technical Intern' },
+		{ office: 'copenhagen', name: 'Damian G', title: 'Developer' },
+		{ office: 'copenhagen', name: 'Damian G', title: 'Developer' },
+		{ office: 'copenhagen', name: 'Sarah T', title: 'Technical Intern' },
+		{ office: 'copenhagen', name: 'Damian G', title: 'Developer' },
+		{ office: 'budapest', name: 'Sarah T', title: 'Technical Intern' },
+		{ office: 'budapest', name: 'Damian G', title: 'Developer' },
+		{ office: 'budapest', name: 'Sarah T', title: 'Technical Intern' },
+		{ office: 'new-york', name: 'Damian G', title: 'Developer' },
+		{ office: 'new-york', name: 'Sarah T', title: 'Technical Intern' }
 	];
 
 	doGetConnectedUsers(office: string) {

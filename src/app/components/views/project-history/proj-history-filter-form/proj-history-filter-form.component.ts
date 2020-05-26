@@ -8,18 +8,17 @@ import { ProjectHistoryService } from '../../../../services/project-history/proj
 	styleUrls: [ './proj-history-filter-form.component.scss' ]
 })
 export class ProjHistoryFilterFormComponent implements OnInit {
-
-  // Mock up data for select options
-  testOptions = [
-    {name: 'Wiredelta'},
-    {name: 'PMI'},
-    {name: 'Sennheiser'},
-    {name: 'Super long name of a client'},
-    {name: 'Pepsi'},
-    {name: 'Bobs burgers'},
-    {name: 'Adobe'},
-    {name: 'Moms Spaghetti'}
-  ];
+	// Mock up data for select options
+	testOptions = [
+		{ name: 'Wiredelta' },
+		{ name: 'Adobe' },
+		{ name: 'Forbes' },
+		{ name: 'Microsoft' },
+		{ name: 'Selligent Marketing Cloud' },
+		{ name: 'Mc Donalds' },
+		{ name: 'KFC' },
+		{ name: 'Agricultural Bank of China' }
+	];
 
 	mockClientsData: string[];
 	clientSelected: string;

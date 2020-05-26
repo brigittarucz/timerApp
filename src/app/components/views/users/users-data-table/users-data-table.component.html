@@ -3,35 +3,57 @@
 
     <table class="table1">
       <thead>
-      <tr class="table1-grid__2fr">
-        <th><h3 class="text-4_semibold">Name</h3></th>
-        <th><h3 class="text-4_semibold">Department</h3></th>
-        <th class="row-mobile-hide"><h3 class="text-4_semibold">Position</h3></th>
-        <th class="row-mobile-hide"><h3 class="text-4_semibold">Status</h3></th>
-        <th><h3 class="text-4_semibold">Phone</h3></th>
-        <th><h3 class="text-4_semibold">Email</h3></th>
-        <th class="row-mobile-hide"></th>
-        <th class="row-mobile-hide"></th>
-      </tr>
+        <tr class="table1-grid__2fr">
+          <th>
+            <h3 class="text-4_semibold">Name</h3>
+          </th>
+          <th>
+            <h3 class="text-4_semibold">Department</h3>
+          </th>
+          <th class="row-mobile-hide">
+            <h3 class="text-4_semibold">Position</h3>
+          </th>
+          <th class="row-mobile-hide">
+            <h3 class="text-4_semibold">Status</h3>
+          </th>
+          <th>
+            <h3 class="text-4_semibold">Phone</h3>
+          </th>
+          <th>
+            <h3 class="text-4_semibold">Email</h3>
+          </th>
+          <th class="row-mobile-hide"></th>
+          <th class="row-mobile-hide"></th>
+        </tr>
       </thead>
       <tbody>
-      <tr
-        class="table1-grid__2fr"
-        *ngFor="let task of tasks">
-        <td><p class="text-5_semibold">Mr Amigo</p></td>
-        <td><p class="text-5_regular">Development</p></td>
-        <td class="row-mobile-hide"><p class="text-5_regular">Technical Intern</p></td>
-        <td class="row-mobile-hide"><p class="text-5_regular">Active</p></td>
-        <td><p class="text-5_regular">66666666</p></td>
-        <td><p class="text-5_regular">mramigo@howin.com</p></td>
-        <td class="row-mobile-hide__sm"></td>
-        <td>
-          <img class="img-margin-left" src="../../../../../assets/users/adduser-icon.png" alt="">
-          <img class="img-margin-left" src="../../../../../assets/users/sync-icon.png" alt="">
-          <img class="img-margin-left" src="../../../../../assets/edit-icon.png" alt="">
-          <img class="img-margin-left" src="../../../../../assets/delete-icon.png" alt="">
-        </td>
-      </tr>
+        <tr class="table1-grid__2fr" *ngFor="let task of tasks">
+          <td>
+            <p class="text-5_semibold">Stephenson Andres</p>
+          </td>
+          <td>
+            <p class="text-5_regular">Development</p>
+          </td>
+          <td class="row-mobile-hide">
+            <p class="text-5_regular">Technical Intern</p>
+          </td>
+          <td class="row-mobile-hide">
+            <p class="text-5_regular">Active</p>
+          </td>
+          <td>
+            <p class="text-5_regular">+54 12938122</p>
+          </td>
+          <td>
+            <p class="text-5_regular">stephenson.andres@howin.com</p>
+          </td>
+          <td class="row-mobile-hide__sm"></td>
+          <td>
+            <img class="img-margin-left" src="../../../../../assets/users/adduser-icon.png" alt="">
+            <img class="img-margin-left" src="../../../../../assets/users/sync-icon.png" alt="">
+            <img class="img-margin-left" src="../../../../../assets/edit-icon.png" alt="">
+            <img class="img-margin-left" src="../../../../../assets/delete-icon.png" alt="">
+          </td>
+        </tr>
       </tbody>
     </table>
 
