@@ -1,0 +1,303 @@
+/* ************************************* */
+/* *********** TABLE 1 LAYOUT ********** */
+
+.table1 {
+  width: 100%;
+
+  thead > tr {
+    border-bottom: .2rem solid $grey-color-light;
+
+    th {padding: 1.5rem 0;}
+  }
+
+  tbody > tr {
+    border-bottom: .1rem solid $grey-color-light;
+
+    td {padding: 2rem 0;}
+
+    //@media screen and (min-width: 800px) {
+    //  display: table;
+    //}
+
+    &:last-child {border: none;}
+  }
+
+  tfoot > tr {
+    border-top: .2rem solid $grey-color-light;
+
+    td {
+      padding-top: 2rem;
+    }
+  }
+
+  th, td {
+    &:last-child {
+      text-align: right;
+    }
+  }
+
+  .table1-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 1rem;
+
+    @media screen and (min-width: 800px) {
+      display: table-row!important;
+    }
+  }
+
+  img {width: 2rem;}
+  h3 {text-transform: uppercase;}
+}
+
+
+@media screen and (min-width: 992px) {
+  table {
+    //tr {padding: 0;}
+    th {padding: 1rem 0;}
+  }
+}
+
+/* ************************************* */
+/* ************** TABLE 2fr ************ */
+
+.table1-grid__2fr {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-column-gap: 2rem;
+  align-items: center;
+
+  @media screen and (min-width: 400px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (min-width: 900px) {
+    grid-template-columns: repeat(8, 1fr);
+    display: table-row;
+  }
+}
+
+/* ************************************* */
+/* ***** TABLE WITH TIMELINE LAYOUT **** */
+
+.table-timeline {
+  position: relative;
+  width: 100%;
+  padding: 1rem 5rem;
+  justify-content: space-between;
+
+  tr {
+    border-bottom: .1rem solid $grey-color-light;
+
+    &:last-child {
+      border: none;
+    }
+
+    td {
+      display: inline-flex;
+      align-items: center;
+      padding: 2rem;
+
+      &:last-child {
+        float: right;
+      }
+
+      .profile-pic {
+        width: 6rem;
+        padding-right: 2rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .table-timeline__nested-table {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 11vw;
+  }
+
+  .table-timeline__nested-table> p {
+    width: 9vw;
+  }
+}
+
+/* ************************************* */
+/* ****** TABLE SMALL WITH USERS ******* */
+
+.table-small {
+  width: 45vw;
+  margin: auto;
+
+  tbody > tr {
+    padding: 1rem 0;
+    width: 60vw;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  th, td {
+    padding: .5rem 0;
+  }
+
+  img {
+    width: 6rem;
+  }
+}
+
+
+@media screen and (min-width: 1050px) {
+  .table-small > tbody > tr {
+    max-width: 60rem;
+  }
+}
+
+
+/* ************************************* */
+/* ****** TABLE WITH TOGGLE LAYOUT ***** */
+
+.table-toggle {
+  width: 100%;
+
+  thead {
+    .tr-temp,tr {
+      border-bottom: .2rem solid $grey-color-light!important;
+
+      th {
+        padding: 1rem 0;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      border-bottom: .1rem solid $grey-color-light;
+
+      td {
+        padding: 1.5rem 0;
+      }
+
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+
+  th, td {
+    &:last-child {
+      justify-content: flex-end;
+    }
+  }
+
+  .table-toggle-grid {
+    display: grid !important;
+    grid-template-columns: 5rem 1.8fr 1fr;
+    grid-column-gap: 2rem;
+    align-items: center;
+
+    @media screen and (min-width: 900px) {
+      grid-template-columns: 5rem repeat(2, 1fr) 1.5fr 0;
+    }
+  }
+
+  img {
+    width: 2rem;
+  }
+
+  @media (max-width: 900px) {
+    .mobile-hide {
+      display: none;
+    }
+
+    .align-right {
+      text-align: end;
+      justify-content: flex-end!important;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .tablet-hide {
+      display: none;
+    }
+  }
+}
+
+/* ************************************* */
+/* *** TABLE 3fr WITH TOGGLE LAYOUT **** */
+
+.table-toggle-grid__3fr {
+  display: grid !important;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  grid-column-gap: 2rem;
+  align-items: center;
+
+  @media screen and (min-width: 900px) {
+    grid-template-columns: 1fr 1.5fr 1fr;
+  }
+}
+
+/* ************************************* */
+/* *** TABLE 4fr WITH TOGGLE LAYOUT **** */
+
+.table-toggle-grid__4fr {
+  display: grid !important;
+  grid-template-columns: 5rem 1.8fr 1.4fr 0.3fr;
+  grid-template-areas:
+    "type1 type2 type3 type4"
+    "type5 type5 type5 type5";
+  grid-column-gap: 2rem;
+  align-items: center;
+
+  .type1 {grid-area: type1}
+  .type2 {grid-area: type2}
+  .type3 {grid-area: type3}
+  .type4 {grid-area: type4}
+  .type5 {grid-area: type5}
+
+  @media screen and (min-width: 900px) {
+    grid-template-columns: 5rem repeat(3, 1fr);
+  }
+}
+
+/* ************************************* */
+/* *** TABLE 6fr WITH TOGGLE LAYOUT **** */
+
+
+.table-toggle-grid__6fr {
+  display: grid !important;
+  grid-template-columns: 5rem 1.5fr 1.5fr 1rem;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    ". type1 type2 ."
+    ". type3 type4 .";
+  grid-column-gap: 2rem;
+  align-items: center;
+
+  .type1 {grid-area: type1}
+  .type2 {grid-area: type2}
+  .type3 {grid-area: type3}
+  .type4 {grid-area: type4}
+
+
+  @media screen and (min-width: 900px) {
+    grid-template-columns: 5rem 1fr 1fr repeat(2, 1fr) 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:". type1 type2 type3 type4 .";
+  }
+
+  @media screen and (min-width: 1200px) {
+    grid-template-columns: 5rem 1fr 1.5fr repeat(2, 1fr) 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:". type1 type2 type3 type4 .";
+  }
+
+  @media (max-width: 1020px) {
+    .tablet-hide-sm {
+      display: none;
+    }
+  }
+}
+

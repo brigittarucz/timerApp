@@ -1,0 +1,111 @@
+<!----------------------------------------------------->
+<!-------------------- User setup --------------------->
+
+<div class="data-table__dropdown-container">
+  <div class="dropdown-button">
+    <div class="dropdown-button__header">
+      <div class="dropdown-button__header__margin">
+        <p class="text-4_medium">Admin</p>
+      </div>
+    </div>
+    <button>
+      <img class="dropdown-button__arrow" src="../../../../../assets/user-history/arrow-icon-white.png"/>
+    </button>
+  </div>
+</div>
+
+<div class="data-table">
+  <div class="data-table__content">
+
+    <table class="table-toggle">
+      <thead>
+      <tr class="table-toggle-grid__3fr">
+        <th><h3 class="text-4_semibold uppercase">Name</h3></th>
+        <th><h3 class="text-4_semibold uppercase">View</h3></th>
+        <th class="align-right"><h3 class="text-4_semibold uppercase">Action</h3></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr
+        class="table-toggle-grid__3fr"
+        *ngFor="let task of tasks">
+        <td><p class="text-5_regular">Name</p></td>
+        <td>
+          <div class="checkbox-toggle">
+            <span class="text-6_regular mobile-hide">Disable</span>
+            <input type="checkbox" class="checkbox-toggle__switch">
+            <span class="text-6_regular mobile-hide">Enable</span>
+          </div>
+        </td>
+        <td class="align-right">
+          <div class="checkbox-toggle align-right">
+            <span class="text-6_regular mobile-hide">Disable</span>
+            <input type="checkbox" class="checkbox-toggle__switch">
+            <span class="text-6_regular mobile-hide">Enable</span>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
+<!----------------------------------------------------->
+<!-------------------- User setup --------------------->
+
+
+<div class="data-table__dropdown-container">
+  <div class="dropdown-button">
+    <div class="dropdown-button__header">
+      <div class="dropdown-button__header__margin">
+        <p class="text-4_medium">Developer</p>
+      </div>
+    </div>
+   <div class="dropdown-button__header__margin__options">
+     <img class="" src="../../../../../assets/user-access/edit-icon-white.png"/>
+     <img class="" src="../../../../../assets/user-access/delete-icon-white.png"/>
+     <button>
+       <img class="dropdown-button__arrow" src="../../../../../assets/user-history/arrow-icon-white.png"/>
+     </button>
+   </div>
+  </div>
+</div>
+
+<div class="data-table">
+  <div class="data-table__content">
+
+    <table class="table-toggle">
+      <thead>
+      <tr class="table-toggle-grid__3fr">
+        <th><h3 class="text-4_semibold uppercase">Name</h3></th>
+        <th><h3 class="text-4_semibold uppercase">View</h3></th>
+        <th class="align-right"><h3 class="text-4_semibold uppercase">Action</h3></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr
+        class="table-toggle-grid__3fr"
+        *ngFor="let task of tasks">
+        <td><p class="text-5_regular">Name</p></td>
+        <td>
+          <div class="checkbox-toggle">
+            <span class="text-6_regular mobile-hide">Disable</span>
+            <input type="checkbox" class="checkbox-toggle__switch">
+            <span class="text-6_regular mobile-hide">Enable</span>
+          </div>
+        </td>
+        <td class="align-right">
+          <div class="checkbox-toggle align-right">
+            <span class="text-6_regular mobile-hide">Disable</span>
+            <input type="checkbox" class="checkbox-toggle__switch">
+            <span class="text-6_regular mobile-hide">Enable</span>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>

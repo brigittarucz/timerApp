@@ -1,0 +1,28 @@
+.div__tracking-notask {
+  margin-bottom: 60px;
+}
+
+.div__tracking-begin {
+  position: relative;
+  box-shadow: var(--soft-shadow);
+}
+
+.button-add {
+  margin-left: calc(50% - 20px);
+  position: absolute;
+}
+
+@media screen and (min-width: 800px) {
+  .div__tracking-begin {
+    box-shadow: 0 5px 5px -5px #d1cfcf, 0 -5px 5px -5px #d1cfcf;
+  }
+
+  .div__tracking-notasktext {
+    margin: 30px;
+  }
+
+  .app__timer-controller {
+    display: none;
+  }
+
+}

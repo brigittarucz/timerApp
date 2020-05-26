@@ -1,0 +1,64 @@
+<div class="data-table__toggle-container">
+  <div class="btn-base-toggle align-bottom" data-toggle="buttons" (click)="onToggleButton()">
+    <span
+      [ngClass]="{'btn-switcher__animate': animState.currentAnim === 'btn-switcher__animate', 'btn-switcher__animate__reverse': animState.currentAnim === 'btn-switcher__animate__reverse'}"
+      class="btn-switcher"></span>
+    <button [ngClass]="{'btn-toggle__active': animState.btn1}" class="btn-toggle btn-toggle__fix" type="button">Check
+      in</button>
+    <button [ngClass]="{'btn-toggle__active': animState.btn2}" class="btn-toggle right btn-toggle__fix"
+      type="button">Tasks</button>
+  </div>
+</div>
+
+<div class="data-table pt-5 pb-2 mb-5">
+  <div class="container">
+    <div class="row">
+      <p class="text-4_semibold mb-3 mt-3"> Today {{ currentDate | date }} </p>
+    </div>
+    <div class="row mb-3 mt-3">
+      <div class="col-3 col-lg-3">
+        <div class="profile-image">
+        </div>
+      </div>
+      <div class="col-3 d-flex col-lg-3">
+        <p class="text-5_semibold align-self-center"> Alex D </p>
+      </div>
+      <div class="col-3 d-flex col-lg-3">
+        <p class="text-5_regular  align-self-center"> Break </p>
+      </div>
+      <div class="col-3 d-flex col-lg-3">
+        <p class="text-5_regular  align-self-center"> {{ currentDate | date:'shortTime' }} </p>
+      </div>
+    </div>
+    <div class="row mb-3 mt-3">
+      <div class="col-3 col-lg-3">
+        <div class="profile-image">
+        </div>
+      </div>
+      <div class="col-3 d-flex col-lg-3">
+        <p class="text-5_semibold align-self-center"> Alex D </p>
+      </div>
+      <div class="col-3 d-flex col-lg-3">
+        <p class="text-5_regular  align-self-center"> Break </p>
+      </div>
+      <div class="col-3 d-flex col-lg-3">
+        <p class="text-5_regular  align-self-center"> {{ currentDate | date:'shortTime' }} </p>
+      </div>
+    </div>
+    <div class="row mb-3 mt-3">
+      <div class="col-3 col-lg-3">
+        <div class="profile-image">
+        </div>
+      </div>
+      <div class="col-3 d-flex col-lg-3">
+        <p class="text-5_semibold align-self-center"> Alex D </p>
+      </div>
+      <div class="col-3 d-flex col-lg-3">
+        <p class="text-5_regular  align-self-center"> Break </p>
+      </div>
+      <div class="col-3 d-flex col-lg-3">
+        <p class="text-5_regular  align-self-center"> {{ currentDate | date:'shortTime' }} </p>
+      </div>
+    </div>
+  </div>
+</div>

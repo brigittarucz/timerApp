@@ -1,0 +1,143 @@
+.button-base {
+  font-family: "MontserratMedium";
+  font-size: 1.4rem;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: var(--white-color);
+  text-transform: uppercase;
+  /* box-shadow: var(--soft-shadow); */
+}
+
+.button-cancel {
+  background-color: var(--blue-color);
+}
+
+.button-disabled {
+  background-color: var(--light-mint-color);
+}
+
+.button-active {
+  background-color: var(--turqoise-color);
+}
+
+.button-active:hover {
+  background-color: var(--pine-green-color);
+  color: var(--white-color);
+}
+
+.button-active:disabled:hover {
+  background-color: var(--turqoise-color);
+  cursor: default;
+}
+
+// Overriding mat button's CSS properties
+
+.button-add {
+  background-color: var(--turqoise-color);
+  border: 0 !important;
+  padding: 12px 12px !important;
+  border-radius: 60px !important;
+}
+
+.button-active:disabled {
+  background-color: var(--light-mint-color) !important;
+  opacity: 1 !important;
+}
+
+.button-add:disabled {
+  background-color: var(--pine-green-color);
+}
+
+@media screen and (min-width: 800px) {
+  .button-base {
+    font-family: "MontserratSemibold";
+    font-size: 1.6rem;
+    padding: 10px 15px;
+  }
+
+  .button-disabled {
+    background-color: var(--light-mint-color);
+  }
+
+  .button-active {
+    background-color: var(--turqoise-color);
+  }
+
+  .button-active:hover {
+    background-color: var(--pine-green-color);
+    color: var(--white-color);
+  }
+}
+
+/* ************************************* */
+/* *********** BUTTON RESET ************ */
+
+button {
+  -webkit-appearance: none;
+  cursor: pointer;
+  background-color: transparent;
+  padding: 1px 6px;
+  border: none;
+  color: var(--gray-color);
+}
+
+/* ************************************* */
+/* ********** DROPDOWN BUTTON ********** */
+
+.dropdown-button {
+  width: 100%;
+  text-transform: uppercase;
+  background-color: var(--blue-color);
+  color: var(--white-color);
+  padding: 1.3rem 5rem;
+  box-shadow: var(--soft-shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__header {
+    display: block;
+
+    &__margin {
+      margin-right: 2rem;
+
+      &__options {
+        img {
+          margin-left: 1.5rem;
+          width: 2rem;
+        }
+      }
+    }
+  }
+
+  &__arrow {
+    width: 1.5rem;
+    transform: rotate(270deg);
+  }
+}
+
+
+@media screen and (min-width: 500px) {
+  .dropdown-button__header {
+    display: flex;
+  }
+}
+
+
+@media screen and (min-width: 800px) {
+  .dropdown-button {
+    border-radius: 10px;
+  }
+}
+
+/* ************************************* */
+/* ********* BUTTON ARROW PNG ********** */
+
+.button__arrow {
+  width: 1rem;
+
+  &__down {
+    width: 1rem !important;
+    transform: rotate(90deg);
+  }
+}

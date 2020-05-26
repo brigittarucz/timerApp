@@ -1,0 +1,230 @@
+.div__table-container {
+  background-color: var(--white-color);
+  margin-top: -45px;
+  box-shadow: var(--soft-shadow);
+  position: relative;
+  z-index: -1;
+}
+
+@media screen and (min-width: 800px) {
+  .div__table-container {
+    width: 80%;
+    margin-left: 10%;
+  }
+}
+
+/* ************************************* */
+/* ************* PAGE LAYOUT *********** */
+
+.main-container {
+  width: 100%;
+  margin: auto;
+  padding: 3rem 0;
+
+  /* consistent margin on the sides!, when working with table use &__table-margin */
+  &__margin {
+    padding: 0 4rem;
+    margin: auto;
+  }
+
+  &__subheader-margin {
+    padding: 0 4rem;
+    margin-bottom: 3rem;
+
+    &__history-navigation {
+      display: inline-flex;
+      align-items: baseline;
+      padding-bottom: 3rem;
+    }
+
+    &__subheader {
+      width: 100%;
+      display: inline-flex;
+      justify-content: space-between
+    }
+  }
+}
+
+.header-container {
+  width: 100%;
+  margin: auto;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+@media screen and (min-width: 800px) {
+  .main-container {
+    max-width: 85vw;
+
+    &__table-margin {
+      padding: 0 4rem;
+    }
+  }
+}
+
+
+/* ************************************* */
+/* ************ TABLE LAYOUT *********** */
+
+/* This is my version of the table,
+data-table = is a base class of the grey box
+__dropdown-container is container for dropdown-button in the button.scss
+__toggle-container is container for the toggle-button in the toggle-button.scss */
+
+.data-table {
+  font-family: "MontserratMedium", sans-serif;
+  background-color: var(--white-color);
+  margin: -4.5rem auto auto auto;
+  box-shadow: var(--soft-shadow);
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+
+  &__dropdown-container {
+    width: 100%;
+    position: relative;
+    margin: 2.5rem 0;
+    z-index: 2;
+  }
+
+  &__toggle-container {
+    width: 60%;
+    position: relative;
+    margin: 2.5rem auto;
+    z-index: 2;
+  }
+
+  &__content,
+  &__content__timeline {
+    padding: 0 5rem;
+  }
+
+  .img-margin-right {
+    margin-right: 0.5rem;
+  }
+
+  .img-margin-left {
+    margin-left: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .data-table {
+    max-width: 85vw;
+
+    &__dropdown-container {
+      width: 60%;
+      margin: 2.5rem auto;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .data-table__content__timeline {
+    padding: 0 13rem;
+  }
+}
+
+/* ************************************* */
+/* ************* FORM LAYOUT *********** */
+
+.form-grid {
+  width: 100%;
+}
+
+//.template-area {
+//  background: pink;
+//}
+
+@media screen and (min-width: 550px) {
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 5rem;
+  }
+}
+
+@media screen and (min-width: 950px) {
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 5rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .form-grid__large {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 5rem;
+  }
+}
+
+
+/* ************************************* */
+/* ************* MODAL LAYOUT *********** */
+
+// On the H1
+.modal-title {
+  text-align: center;
+}
+
+// On the Modal Form
+.container-modal {
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+// On the Field Component/Container
+.modal-grid-field {
+  display: flex;
+  flex: 0 0 83.3%;
+  width: 90%;
+  margin: auto;
+  // To each div as needed + margins
+  // margin: auto;
+  // width: 80%;
+}
+
+.modal-grid-field div:not(.reset__select) {
+  width: 100%;
+}
+
+// On the Button Container
+.modal-grid-btn {
+  display: flex;
+  flex: 0 0 25%;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 2rem;
+}
+
+// On the Button
+// .modal-btn {
+//   display: inline-block;
+//   margin: 0.5rem 2rem;
+// }
+
+.modal-grid-btn button {
+  width: 20rem;
+  display: inline-block;
+  margin: 0.5rem 2rem;
+}
+
+@media screen and (min-width: 800px) {
+
+  .modal-grid-field {
+    width: 100%;
+  }
+
+  .modal-grid-btn {
+    bottom: unset;
+    box-shadow: none;
+  }
+
+}

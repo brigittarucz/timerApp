@@ -1,0 +1,63 @@
+<div class="dropdown-message">
+  <p class="text-4_semibold capitalize"> Filter &nbsp;&nbsp; </p>
+  <img class="dropdown-icon" src="../../../../../assets/arrow-icon-down.png" (click)="toggleDropdown()">
+</div>
+
+<form class="form-grid form-grid__large dropdown-content">
+
+  <app-select-options
+    [labelText]="'Department'"
+    [placeholderText]="'Select a department'"
+    [options]="testOptions">
+  </app-select-options>
+
+  <app-select-options
+    [labelText]="'Client'"
+    [placeholderText]="'Select a client'"
+    [options]="testOptions">
+  </app-select-options>
+
+  <app-input-datepicker
+    [labelText]="'Start date'">
+  </app-input-datepicker>
+
+  <app-select-options
+    [labelText]="'Year'"
+    [placeholderText]="'Select a year'"
+    [options]="testOptions">
+  </app-select-options>
+
+  <app-select-options
+    [labelText]="'Category'"
+    [placeholderText]="'Select a category'"
+    [options]="testOptions">
+  </app-select-options>
+
+  <app-select-options
+    [labelText]="'Project'"
+    [placeholderText]="'Select a project'"
+    [options]="testOptions">
+  </app-select-options>
+
+  <app-input-datepicker
+    [labelText]="'End date'">
+  </app-input-datepicker>
+
+  <div class="template-area">
+    <div class="group-form padding-fix">
+      <div class="btn-base-toggle align-bottom" data-toggle="buttons" (click)="onToggleButton()">
+        <span
+          [ngClass]="{'btn-switcher__animate': animState.currentAnim === 'btn-switcher__animate', 'btn-switcher__animate__reverse': animState.currentAnim === 'btn-switcher__animate__reverse'}"
+          class="btn-switcher"></span>
+        <button [ngClass]="{'btn-toggle__active': animState.btn1}" class="btn-toggle btn-toggle__fix"
+          type="button">Check in</button>
+        <button [ngClass]="{'btn-toggle__active': animState.btn2}" class="btn-toggle right btn-toggle__fix"
+          type="button">Tasks</button>
+      </div>
+    </div>
+  </div>
+</form>
+
+<button class="button-add float-right" (click)="openModal()">
+  <img class="button-add__png" src="../../../../../assets/user-history/add-icon-white.png" alt="">
+</button>

@@ -1,0 +1,46 @@
+button {
+  margin: 30px 10px;
+}
+
+.button-checkin {
+  margin-left: calc(50% - 110px);
+}
+
+@media screen and (min-width: 800px) {
+  button {
+    margin: 5px;
+  }
+
+  .button-checkin {
+    margin-left: 5px;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .button-checkin {
+    grid-column: 1/span 1;
+  }
+
+  .div__counter {
+    padding-top: 10px;
+    grid-column: 2/span 1;
+    grid-row: 1/span 1;
+  }
+
+  .button-checkout {
+    grid-column: 3/span 1;
+  }
+}
+
+// fix karo
+.temp-width-fix {
+  padding-top: 7rem;
+
+  @media screen and (min-width: 800px) {
+    padding: 0;
+  }
+}

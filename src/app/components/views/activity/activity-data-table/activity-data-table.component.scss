@@ -1,0 +1,71 @@
+@import "../../../../../styles/general/colors";
+
+
+.timeline {
+  position: relative;
+
+  &::after {
+     content: '';
+     position: absolute;
+     width: .2rem;
+     background: $blue-color;
+     top: 0;
+     bottom: 0;
+     left: 0;
+  }
+
+  &__circle {
+     width: 100%;
+     position: relative;
+
+  &::before {
+     content: '';
+     position: absolute;
+     width:2rem;
+     height: 2rem;
+     border-radius: 2rem;
+     background: $blue-color;
+     top: 0;
+     left: -.9rem;
+   }
+
+  &::after {
+     content: '';
+     position: absolute;
+     width:2rem;
+     height: 2rem;
+     border-radius: 2rem;
+     background: $blue-color;
+     bottom: 0;
+     left: -.9rem;
+   }
+  }
+
+  &__content {
+     width: 100%;
+     margin-left: 5rem;
+     position: relative;
+
+    &__header {
+       color: $blue-color;
+     }
+
+    &__main {
+       padding-right: 5rem;
+       margin: auto;
+     }
+  }
+
+}
+
+@media screen and (min-width: 800px) {
+  .timeline {
+    padding-right: 5rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .timeline__content__main {
+    max-width: 60vw;
+  }
+}

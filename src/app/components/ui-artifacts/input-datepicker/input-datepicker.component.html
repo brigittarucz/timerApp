@@ -1,0 +1,27 @@
+<!--<div class="group-form">-->
+<!--  <label class="basic-label" for="{{ID}}">{{labelText}}</label>-->
+<!--  <input-->
+<!--    class="basic-input text-5_regular"-->
+<!--    type="text"-->
+<!--    placeholder="{{placeholderText}}"-->
+<!--    id="{{ID}}"-->
+<!--    autocomplete="fake-email"-->
+<!--    (focusin)="doTriggerSuggestions($event)"-->
+<!--    (focusout)="doHideSuggestions($event)">-->
+<!--  <ul class="basic-input__drop text-5_regular" *ngIf="isVisible">-->
+<!--    <li *ngFor="let option of options;let i = index;">{{option.name}}</li>-->
+<!--  </ul>-->
+<!--</div>-->
+
+<mat-form-field
+  class="group-form"
+  appearance="fill">
+  <label class="basic-label">{{labelText}}</label>
+  <input
+    class="basic-input text-5_regular"
+    matInput
+    [matDatepicker]="picker1"
+    placeholder="DD/MM/YYYY">
+  <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+  <mat-datepicker #picker1></mat-datepicker>
+</mat-form-field>

@@ -1,0 +1,63 @@
+<div class="data-table__toggle-container">
+  <div
+    class="btn-base-toggle align-bottom"
+    data-toggle="buttons"
+    (click)="onToggleButton()">
+
+    <span
+      [ngClass]="{'btn-switcher__animate': animState.currentAnim === 'btn-switcher__animate', 'btn-switcher__animate__reverse': animState.currentAnim === 'btn-switcher__animate__reverse'}"
+      class="btn-switcher"></span>
+    <button
+      [ngClass]="{'btn-toggle__active': animState.btn1}"
+      class="btn-toggle btn-toggle__fix"
+      type="button">Check in</button>
+    <button
+      [ngClass]="{'btn-toggle__active': animState.btn2}"
+      class="btn-toggle right btn-toggle__fix"
+      type="button">Tasks</button>
+  </div>
+</div>
+
+<div class="data-table">
+  <div class="data-table__content">
+
+    <table class="table1">
+      <thead>
+      <tr class="table1-grid">
+        <th><h3 class="text-4_semibold">Department</h3></th>
+        <th><h3 class="text-4_semibold">Category</h3></th>
+        <th><h3 class="text-4_semibold">Client</h3></th>
+        <th><h3 class="text-4_semibold">Project</h3></th>
+        <th><h3 class="text-4_semibold">Time Spent</h3></th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr
+        class="table1-grid"
+        *ngFor="let session of sessions">
+        <td><p class="text-5_regular">{{ session.department }}</p></td>
+        <td><p class="text-5_regular">{{ session.category }}</p></td>
+        <td><p class="text-5_regular">{{ session.client }}</p></td>
+        <td><p class="text-5_regular">{{ session.project }}</p></td>
+        <td><p class="text-5_regular">{{ session.time }}</p></td>
+        <td>
+          <img src="../../../../../assets/tracking/restart-icon.png" alt="">
+        </td>
+      </tr>
+      </tbody>
+      <tfoot>
+      <tr class="table1-grid">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><h3 class="text-4_semibold">Total</h3></td>
+        <td><h3 class="text-4_semibold">00 : 00 : 00</h3></td>
+        <td></td>
+      </tr>
+      </tfoot>
+    </table>
+
+  </div>
+</div>
+

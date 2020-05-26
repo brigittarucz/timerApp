@@ -1,0 +1,73 @@
+@import "../../../../styles/general/colors";
+
+.profile-preview {
+  width: 100%;
+  background-color: var(--white-color);
+  position: absolute;
+  z-index: 10;
+  box-shadow: $soft-shadow;
+
+  @media screen and (min-width: 600px) {
+    width: 50rem;
+    right: 0;
+  }
+
+  &__body {
+    padding: 2rem 0;
+    border-bottom: .1rem solid $grey-color-light;
+    width: 85%;
+    margin: auto;
+
+    @media screen and (min-width: 600px) {
+      display: flex;
+      justify-content: space-between;
+      margin: auto;
+    }
+
+    .profile-prev-general {
+      width: 100%;
+
+      @media screen and (min-width: 600px) {
+        width: 60%;
+      }
+
+      &__icons {
+        display: flex;
+        justify-content: center;
+
+        @media screen and (min-width: 600px) {
+          justify-content: left;
+        }
+      }
+
+      p {
+        text-align: center;
+
+        @media screen and (min-width: 600px) {
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  &__footer {
+    width: 85%;
+    margin: auto;
+    padding: 2rem;
+  }
+}
+
+.profile-image {
+  width: 11rem;
+  height: inherit;
+  display: none;
+
+  @media screen and (min-width: 600px) {
+    display: block;
+  }
+}
+
+.profile-prev-icon {
+  width: 6rem;
+  padding: 1rem;
+}

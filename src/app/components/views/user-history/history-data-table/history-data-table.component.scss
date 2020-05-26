@@ -1,0 +1,10 @@
+@import "../../../../../styles/general/colors";
+
+// Overrides table1
+.table1-grid {
+  @media screen and (max-width: 800px) {
+    .row-mobile-hide {
+      display: none;
+    }
+  }
+}

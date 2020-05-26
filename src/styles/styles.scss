@@ -1,0 +1,119 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../styles/overrides/bootstrap-override";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "./general/button.scss";
+@import "./general/colors.scss";
+@import "./general/fonts.scss";
+@import "./general/forms.scss";
+@import "./general/layout.scss";
+@import "./general/table.scss";
+@import "./general/toggle-button.scss";
+@import "./general/typography.scss";
+
+/* You can add global styles to this file, and also import other style files */
+
+
+html {
+  font-size: 62.5%;
+
+  @media screen and (max-width: 75em) {
+    font-size: 56.25%;
+  }
+
+  @media screen and (max-width: 56.25em) {
+    font-size: 50%;
+  }
+}
+
+body {
+  color: var(--grey-color);
+}
+
+*:focus {
+  outline: none;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+img {
+  cursor: pointer;
+}
+
+
+.profile-image {
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--turqoise-color);
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+
+
+/* Form styles */
+
+.select__generic {
+  border: 0;
+  border-bottom: 1.5px solid var(--grey-color);
+  padding-left: 0;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  z-index: 1;
+}
+
+.reset__select {
+  margin: 5px;
+  margin-top: -25px;
+  width: 15px;
+  height: 15px;
+  float: right;
+  background: url("../assets/cross-icon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  z-index: 2;
+}
+
+.reset__select:hover {
+  cursor: pointer;
+}
+
+/* Overwrite the styles of the mat-dialog-container
+element globally, but only for those that have an id
+of `modal-component` */
+
+mat-dialog-container#modal-component {
+  border-radius: 11px;
+  background-color: white;
+  color: var(--grey-color);
+}
+
+.mat-raised-button:disabled {
+  padding: 12px 10px;
+  border-radius: 60px;
+  color: var(--white-color);
+  text-transform: uppercase;
+  box-shadow: var(--soft-shadow);
+  background-color: var(--light-mint-color) !important;
+}
+
+// Margin general classes
+
+.margin-xl {
+  margin: 3rem;
+}
+
+.margin-bottom-xl {
+  margin-bottom: 3rem;
+}
+
+.margin-bottom-l {
+  margin-bottom: 1.5rem;
+}
+
+.margin-top-l {
+  margin-top: 1.5rem;
+}

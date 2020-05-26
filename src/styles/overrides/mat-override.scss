@@ -1,0 +1,47 @@
+@import "../../styles/general/colors";
+
+/****************************************************/
+/************* INPUT FORM - DATE PICKER *************/
+
+::ng-deep .mat-form-field {
+  &-flex {
+    background: transparent!important;
+    align-items: flex-end!important;
+    padding: 0!important;
+  }
+
+  &-infix {
+    border-top: none;
+    margin-bottom: -0.4rem!important;
+    padding: 0.4rem 0 .8rem 0!important;
+  }
+}
+
+::ng-deep {
+  .mat-input-element{
+    padding-top: 1.3rem!important;
+    font-size: 1.5rem!important;
+  }
+
+  .mat-icon-button {
+    width: 3.5rem!important;
+    height: 3.5rem!important;
+    color: $grey-color-light!important;
+  }
+
+  .mat-datepicker-toggle-default-icon {
+    transform: scale(1.5);
+  }
+
+  .mat-form-field-underline {
+    /*change color of underline*/
+    background-color: $grey-color!important;
+  }
+
+  .mat-form-field-ripple {
+    /*change color of underline when focused*/
+    height: 0.1rem !important;
+    background-color: black!important;
+  }
+}
+

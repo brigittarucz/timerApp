@@ -1,0 +1,75 @@
+@import "../../../../../styles/general/colors";
+
+.button__arrow {
+  width: 1rem !important;
+}
+
+.data-table {
+  margin: auto;
+}
+
+.display-flex {
+  display: flex;
+
+  &__right {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+// ANIMATION ON BUTTON CLICK //
+
+.animate__delete-icon {
+  margin-right: 0.5rem;
+  animation: translate-left 1s 1 forwards, fade-out 0.75s 1 forwards;
+}
+
+.animate__translate-left {
+  animation: translate-left 1s 1 forwards;
+}
+
+.animate__delete-icon-back {
+  margin-right: 0.5rem;
+  opacity: 0;
+  animation: translate-right 1s 1 forwards, fade-in 0.75s 1 forwards;
+}
+
+.animate__translate-right {
+  animation: translate-right 1s 1 forwards;
+}
+
+@keyframes translate-right {
+  from {
+    transform: translateX(-15px);
+  }
+
+  to {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes translate-left {
+  to {
+    transform: translateX(-15px);
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+// .task-row {
+//   margin-left: -50px;
+// }

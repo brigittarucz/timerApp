@@ -1,0 +1,77 @@
+@import "../../../../../styles/general/colors";
+@import "../../../../../styles/overrides/mat-override";
+
+
+.button-add {
+  margin: 3rem 0;
+  width: 6rem;
+  height: 6rem;
+
+  &__png {
+    width: 3rem;
+  }
+}
+
+@media screen and (min-width: 500px){
+  .button-add {
+    margin: 0 0!important;
+  }
+}
+
+.padding-fix {
+  padding-top: 2.5rem;
+}
+
+
+/****************************************************/
+/*************** DROPDOWN MESSAGE *******************/
+
+.dropdown-message {
+  display: inline-flex;
+  align-items: center;
+  padding-bottom: 3rem;
+
+  .dropdown-icon {
+    width: 2rem;
+    height: 1rem;
+  }
+}
+
+.dropdown__content {
+  opacity: 0;
+  height: 0;
+}
+
+@media screen and (min-width: 800px) {
+  .dropdown-message {
+    display: none;
+  }
+
+  .dropdown-content {
+    opacity: 1;
+    height: initial;
+  }
+}
+
+/****************************************************/
+/*************** DROPDOWN ANIMATION *****************/
+
+@keyframes increaseHeight {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: 30rem;
+  }
+}
+
+@keyframes increaseOpacity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

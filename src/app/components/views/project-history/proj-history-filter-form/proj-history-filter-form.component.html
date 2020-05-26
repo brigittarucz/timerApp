@@ -1,0 +1,54 @@
+<div class="dropdown-message">
+  <p class="text-4_semibold capitalize"> Filter &nbsp;&nbsp; </p>
+  <img class="dropdown-icon" src="../../../../../assets/arrow-icon-down.png" (click)="toggleDropdown()">
+</div>
+
+<form class="form-grid form-grid__large dropdown-content" autocomplete="off">
+
+  <div class="template-area">
+    <div class="group-form">
+      <label class="basic-label" for="client">Client</label>
+      <select class="basic-select text-5" id="client" (change)="setClient($event)">
+        <option value="">Select a client</option>
+        <option *ngFor="let client of mockClientsData" value={{client}}>
+          {{client | titlecase }}
+        </option>
+        <!-- <option value="2">2</option>
+        <option value="3">3</option> -->
+      </select>
+    </div>
+  </div>
+
+  <app-select-options class="group-form__disabled"
+    [labelText]="'Department'"
+    [placeholderText]="'Select a department'"
+    [options]="testOptions">
+  </app-select-options>
+
+  <app-input-datepicker
+    [labelText]="'Start date'">
+  </app-input-datepicker>
+
+  <app-select-options
+    [labelText]="'Email'"
+    [placeholderText]="'Select an email'"
+    [options]="testOptions">
+  </app-select-options>
+
+  <app-select-options
+    [labelText]="'Project'"
+    [placeholderText]="'Select a project'"
+    [options]="testOptions">
+  </app-select-options>
+
+  <app-select-options
+    [labelText]="'Category'"
+    [placeholderText]="'Select a category'"
+    [options]="testOptions">
+  </app-select-options>
+
+  <app-input-datepicker
+    [labelText]="'End date'">
+  </app-input-datepicker>
+
+</form>

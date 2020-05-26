@@ -1,0 +1,74 @@
+/* Animations Sidebar */
+
+.sidebar-animation-close {
+  animation: moveOutOfView 1s 1 forwards;
+}
+
+.sidebar-animation-open {
+  width: 0;
+  animation: moveIntoView 1s 1 forwards;
+}
+
+@keyframes moveIntoView {
+  from {
+    width: 75%;
+    margin-left: -70%;
+  }
+
+  to {
+    width: 100%;
+    margin-left: 0%;
+  }
+}
+
+@keyframes moveOutOfView {
+  from {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  to {
+    width: 75%;
+    margin-left: -100%;
+  }
+}
+
+.sidebar-desktop {
+  display: none;
+}
+
+@media screen and (min-width: 800px) {
+  .sidebar-mobile {
+    display: none;
+  }
+
+  header {
+    position: fixed;
+    height: 65px;
+    z-index: 6;
+    width: 100%;
+  }
+
+  .sidebar-desktop {
+    display: block;
+    width: 220px;
+    z-index: 3;
+  }
+
+  aside {
+    display: inline-block;
+    position: fixed;
+    width: 80px;
+    top: 65px;
+  }
+
+  main {
+    position: absolute;
+    display: inline-block;
+    margin-top: 10rem;
+    margin-left: 10rem;
+    width: calc(100% - 10rem);
+    z-index: -1;
+  }
+
+}

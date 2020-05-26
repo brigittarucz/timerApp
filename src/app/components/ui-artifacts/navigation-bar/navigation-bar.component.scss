@@ -1,0 +1,62 @@
+@import "../../../../styles/general/colors";
+
+.navigation {
+  background-color: $white-color;
+  box-shadow: $soft-shadow;
+  width: 100%;
+  height: 7rem;
+  position: fixed;
+  z-index: 15;
+
+  &__main {
+    height: inherit;
+    margin-left: 10rem;
+    width: calc(100% - 10rem);
+
+    &__container {
+      height: inherit;
+      max-width: 85vw;
+      margin: auto;
+
+      &__padding {
+        height: inherit;
+        width: 100%;
+        padding: 0 4rem;
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    &__group {
+      display: flex;
+    }
+
+    .navigation-logo {
+      visibility: hidden;
+
+      @media screen and (min-width: 500px) {
+        visibility: visible;
+      }
+
+      &__icon {
+        width: 15rem;
+      }
+    }
+  }
+
+  .timer-counter {
+    max-width: 50rem;
+    display: none;
+
+    @media screen and (min-width: 800px) {
+      display: inline-flex;
+    }
+  }
+}
+
+.burger-menu {
+  position: absolute;
+  left: 2rem;
+  top: 2rem;
+}

@@ -1,0 +1,18 @@
+<div class="container temp-width-fix">
+
+  <button class="btn button-base button-active button-checkin" (click)="changeStatus()"
+    #checkInButton>{{checkInButtonTextContent}}</button>
+  <button class="btn button-base button-active button-checkout" [disabled]="!checkInStatus"
+    (click)="verifyStatusAndCheckOut(checkInButton)">
+    Check Out
+  </button>
+
+  <div class="row div__counter">
+    <div class="col-sm-12 d-flex justify-content-center">
+      <p class="counter__real-time text-3_regular"> {{counter.h | secondsFormatter }} :
+        {{counter.min | secondsFormatter }} : {{counter.sec | secondsFormatter}}</p>
+    </div>
+  </div>
+
+</div>
+

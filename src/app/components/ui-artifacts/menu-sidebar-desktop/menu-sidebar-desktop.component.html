@@ -1,0 +1,31 @@
+<div class="sidebar__quick-navigation-small" *ngFor="let class of classesArr2; let i = index"
+  [ngStyle]="{'animation': openAnimation === true ? 'animationDisplayMenu 1.3s 1 forwards' : 'none'}">
+  <a [routerLink]="routesArr[i]" (click)="onSelect($event)" [class.active]="class === selectedButton">
+    <div [ngStyle]="class === selectedButton && {'background-color': 'var(--blue-color)', 'border-radius': '60px'}">
+      <span class="icon-sidebar pr-4 {{class}}"
+        [ngStyle]="class === selectedButton && {'background-image': 'url(../../../../assets/navigation/' + classesImgArr[i] + '-white.png)'}"></span>
+    </div>
+  </a>
+</div>
+
+<div *ngIf="openAnimation === true">
+  <div class="sidebar__quick-navigation-large" style="text-transform: uppercase;">
+    <div *ngFor="let obj of classesArr; let j = index">
+      <div *ngFor="let key of obj | viewKeys">
+        <p class="category-menu text-4_semibold pl-1 pt-4"> {{ key }} </p>
+        <div class="sidebar__quick-navigation-large-open" *ngFor="let class of obj[key]; let i = index; let c = count;">
+          <a [routerLink]="routesArr[i]" (click)="onSelect($event)" [class.active]="class === selectedButton">
+            <div
+              [ngStyle]="class === selectedButton && {'background-color': 'var(--blue-color)', 'border-radius': '20px', 'color': 'white'}"
+              class="container-menu">
+              <span class="icon-sidebar pr-4 {{class}}"
+                [ngStyle]="class === selectedButton && {'background-image': 'url(../../../../assets/navigation/' + (j === 0 ? classesImgArr[i] : j === 1 ? classesImgArr[i+3] : classesImgArr[i+4]) + '-white.png)'}"></span>
+              <h3 class="text-5_regular {{j === 0 ? i : j === 1 ? i+3 : i+4}} container-menu_text">
+                {{j === 0 ? menuItemText[i] : j === 1 ? menuItemText[i+3] : menuItemText[i+4]}} </h3>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

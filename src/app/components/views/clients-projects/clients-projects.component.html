@@ -1,0 +1,22 @@
+<div class="header-container">
+  <h1 class="text-1_semibold text-center">Clients and Projects</h1>
+</div>
+
+<div class="main-container">
+
+  <div class="main-container__margin">
+    <app-clients-projects-filter-form></app-clients-projects-filter-form>
+  </div>
+
+  <div class="main-container__subheader-margin">
+    <div class="main-container__subheader-margin__subheader">
+      <h2 class="text-2_semibold">Clients</h2>
+      <button class="button-add" (click)="openModal()">
+        <img class="button-add__png" src="../../../../assets/user-history/add-icon-white.png">
+      </button>
+    </div>
+  </div>
+  <div class="main-container__table-margin">
+    <app-clients-projects-data-table></app-clients-projects-data-table>
+  </div>
+</div>

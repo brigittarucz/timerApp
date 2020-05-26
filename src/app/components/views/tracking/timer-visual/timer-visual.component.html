@@ -1,0 +1,46 @@
+<div class="div__tracking pt-2 pb-2">
+  <div class="container div__tracking-registration mt-5 text-center">
+    <div class="row">
+      <div class="col-4">
+        <h3 class="text-4_semibold"> Task </h3>
+        <p class="text-5_regular current__working-task"> {{mockStats[0].task}} </p>
+      </div>
+      <div class="col-4">
+        <h3 class="text-4_semibold"> Today </h3>
+        <p class="text-5_regular current__working-day"> {{mockStats[0].today | secondsConverter}} </p>
+      </div>
+      <div class="col-4">
+        <h3 class="text-4_semibold"> Week </h3>
+        <p class="text-5_regular current__working-week"> {{mockStats[0].week | secondsConverter }} </p>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-4">
+        <h3 class="text-4_semibold"> Project </h3>
+        <p class="text-5_regular current__working-project"> {{mockStats[0].project }} </p>
+      </div>
+      <div class="col-4">
+        <h3 class="text-4_semibold"> Month </h3>
+        <p class="text-5_regular current__working-month"> {{mockStats[0].month | secondsConverter}} </p>
+      </div>
+      <div class="col-4">
+        <h3 class="text-4_semibold"> Year </h3>
+        <p class="text-5_regular current__working-year"> {{mockStats[0].year | secondsConverter}} </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="div__tracking-visual">
+    <div class="div__tracking-visual-border">
+      <p> <span class="text-1_regular">{{counter.h | secondsFormatter }} :
+          {{counter.min | secondsFormatter }}</span><span class="text-4_semibold_regular"> :
+          {{counter.sec | secondsFormatter }}</span></p> <br>
+      <div class="div__tracking-controls">
+        <img class="controls-image div__tracking-visual-pause" (click)="switchTaskCounterState($event)"
+          src="../../../../../assets/tracking/pause.png">
+        <img class="controls-image div__tracking-visual-stop" (click)="stopTaskCounter()"
+          src="../../../../../assets/tracking/stop.png">
+      </div>
+    </div>
+  </div>
+</div>

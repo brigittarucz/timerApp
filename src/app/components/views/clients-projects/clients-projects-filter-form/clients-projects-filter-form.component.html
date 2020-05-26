@@ -1,0 +1,29 @@
+<div class="dropdown-message">
+  <p class="text-4_semibold capitalize"> Filter &nbsp;&nbsp; </p>
+  <img class="dropdown-icon"
+       src="../../../../../assets/arrow-icon-down.png"
+       (click)="toggleDropdown()">
+</div>
+
+<form class="form-grid dropdown-content"
+      [ngStyle]="dropdownState && {'animation': 'increaseHeight 0.5s 1 forwards, increaseOpacity 0.5s 1 1s forwards'}">
+
+  <app-select-options
+    [labelText]="'Client'"
+    [placeholderText]="'All clients'"
+    [options]="testOptions">
+  </app-select-options>
+
+  <app-select-options
+    [labelText]="'Project'"
+    [placeholderText]="'All projects'"
+    [options]="testOptions">
+  </app-select-options>
+
+  <app-select-options
+    [labelText]="'Status'"
+    [placeholderText]="'All status'"
+    [options]="testOptions">
+  </app-select-options>
+
+</form>

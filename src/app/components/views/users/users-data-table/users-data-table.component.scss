@@ -1,0 +1,23 @@
+
+.data-table {
+  margin-top: 4rem;
+
+  @media screen and (min-width: 400px) {
+    margin: auto;
+  }
+}
+
+// Overrides table1
+.table1-grid__2fr {
+  @media screen and (max-width: 1150px) {
+    .row-mobile-hide {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .row-mobile-hide__sm {
+      display: none;
+    }
+  }
+}
